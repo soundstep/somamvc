@@ -1,0 +1,1530 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
+<meta content="CanvasUI,com.soundstep.ui.layouts.CanvasUI,alignX,alignY,baseUI,bottom,buttonMode,bypassSize,canvasAlpha,canvasColor,container,forceReferenceHeight,forceReferenceWidth,height,horizontalCenter,initialWidth,keepOnScreen,layoutMask,left,mouseChildren,numChildren,onStage,properties,ratio,reference,right,scrollPane,top,ui,useInitialSize,verticalCenter,width,wrapper,x,y,percentHeight,percentWidth,addChild,addChildAt,addChildUI,contains,forceSizeContainer,getChildAt,getChildByName,getChildIndex,getChildUI,getChildUIByName,refresh,removeChild,removeChildAt,removeChildUI,setChildIndex,swapChildren,swapChildrenAt" name="keywords">
+<title>com.soundstep.ui.layouts.CanvasUI</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'CanvasUI - Soundstep | Soma';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../index-list.html')" href="../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../index.html?com/soundstep/ui/layouts/CanvasUI.html&amp;com/soundstep/ui/layouts/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;CanvasUI</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class CanvasUI"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soundstep.ui.layouts</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class CanvasUI</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">CanvasUI <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.display.MovieClip</td>
+</tr>
+</table>
+<p></p>
+  <b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br />
+  <b>Class version:</b> 3.0.2<br />
+  <b>Actionscript version:</b> 3.0<br />
+  <b>Copyright:</b>
+  Creative Commons Attribution-ShareAlike 3.0 Unported License<br /> 
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">http://creativecommons.org/licenses/by-sa/3.0/</a><br />
+  You can use BaseUI in any flash site, except to include/distribute it in another framework, application, template, component or structure that is meant to build, scaffold or generate source files.<br />
+  <br />
+  <b>Date:</b> 08-2008<br />
+  <b>Usage:</b><br />
+  A CanvasUI layout container defines a rectangular region in which you place children DisplayObject. It is the only container that lets you explicitly specify the location of its children.<br>
+  CanvasUI is a subclass of MovieClip, you have the choice to use addChild or addChildUI, this last method will automaticaly create an ElementUI instance and make you able to use properties like top, bottom, left, right and all other properties of the Element class.<br>
+  Not only for the children, you can use the Element properties on the canvas itself, the difference with the ElementUI properties is that you have specific properties for the percentage size: percentWidth and percentHeight.<br>
+  Methods to manage the ElementUI instances have been added, like for example getChildUI or removeChildUI.<br>
+  The CanvasUI constructor takes 4 optionals parameters: width, height, layoutScroll and layout mask.<br>
+  By default, CanvasUI build a mask to show only the content within the size specified and creates scrollbars (scrollpane instance) if the content is bigger than the size specified.<br>
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br>  <div class='listing'><pre>
+  // create layout
+  var canvas:CanvasUI = new CanvasUI();
+  addChild(canvas);
+  canvas.canvasAlpha = .2;
+  // add children
+  var s:Sprite = new Sprite();
+  s.name = "mySprite";
+  s.graphics.beginFill(0x0000FF, .5);
+  s.graphics.drawRect(0, 0, 150, 300);
+  canvas.addChildUI(s);
+  canvas.getChildUIByName("mySprite").right = 20;
+  canvas.getChildUI(s).bottom = 20;
+  var txt:TextField = new TextField();
+  txt.name = "myTextField";
+  txt.autoSize = TextFieldAutoSize.LEFT;
+  txt.text = "TextField test";
+  canvas.addChildUI(txt);
+  canvas.getChildUIByName("myTextField").horizontalCenter = 0;
+  canvas.getChildUI(txt).verticalCenter = 0;
+  // change canvas ui property 
+  canvas.ratio = ElementUI.RATIO_IN;
+  canvas.properties = {top:10, bottom:10, left:10, right:10};
+  </pre></div>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#alignX">alignX</a> : String<div class="summaryTableDescription">
+   horizontal alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_LEFT, ElementUI.ALIGN_RIGHT, ElementUI.ALIGN_CENTER
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#alignY">alignY</a> : String<div class="summaryTableDescription">
+   vertical alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_CENTER, ElementUI.ALIGN_TOP, ElementUI.ALIGN_BOTTOM 
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#baseUI">baseUI</a> : <a href="../../ui/BaseUI.html">BaseUI</a>
+<div class="summaryTableDescription">[read-only]
+   get the instance of the BaseUI class, used for the children added with addChild or addChildUI
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bottom">bottom</a> : Number<div class="summaryTableDescription">
+   bottom value (from the reference), Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#buttonMode">buttonMode</a> : Boolean<div class="summaryTableDescription">
+   Specifies the button mode of this sprite
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bypassSize">bypassSize</a> : Boolean<div class="summaryTableDescription">
+   whether or not the DisplayObject will be resized (not working with ratio set to RATIO_IN or RATIO_OUT)
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#canvasAlpha">canvasAlpha</a> : Number<div class="summaryTableDescription">
+   background alpha of the canvas
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#canvasColor">canvasColor</a> : uint<div class="summaryTableDescription">
+   background color of the canvas
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#container">container</a> : Sprite<div class="summaryTableDescription">[read-only]
+   get the instance of the container, it contains the children added with addChild and addChildUI
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#forceReferenceHeight">forceReferenceHeight</a> : Number<div class="summaryTableDescription">
+   force the height of the reference
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#forceReferenceWidth">forceReferenceWidth</a> : Number<div class="summaryTableDescription">
+   force the width of the reference
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#height">height</a> : Number<div class="summaryTableDescription">
+   height of the canvas
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#horizontalCenter">horizontalCenter</a> : Number<div class="summaryTableDescription">
+   horizontal center value (from the reference), Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#initialWidth">initialWidth</a> : Number<div class="summaryTableDescription">
+   width of the DisplayObject when added to the BaseUI instance
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#keepOnScreen">keepOnScreen</a> : Boolean<div class="summaryTableDescription">
+   keep a DisplayObject in the screen
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#layoutMask">layoutMask</a> : <a href="core/Mask.html">Mask</a>
+<div class="summaryTableDescription">[read-only]
+   get the instance of the mask
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#left">left</a> : Number<div class="summaryTableDescription">
+   left value (from the reference), Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#mouseChildren">mouseChildren</a> : Boolean<div class="summaryTableDescription">
+   Determines whether or not the children of the object are mouse enabled
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#numChildren">numChildren</a> : int<div class="summaryTableDescription">[read-only]
+   Returns the number of children of the CanvasUI container
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onStage">onStage</a> : Boolean<div class="summaryTableDescription">
+   set the stage as a reference to calculate position ans sizes, if false the parent will be the reference
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#percentHeight">percentHeight</a> : *<div class="summaryTableDescription">[write-only]
+   set the height percentage (will accept Number or String, with or without the percentage character
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#percentWidth">percentWidth</a> : *<div class="summaryTableDescription">[write-only]
+   set the width percentage (will accept Number or String, with or without the percentage character
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#properties">properties</a> : Object<div class="summaryTableDescription">
+   Object to get or set the CanvasUI properties, for example:<br/>
+   <code>element.properties = {top:0, bottom:"20", onStage:false, width:"50%"};</code>
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ratio">ratio</a> : String<div class="summaryTableDescription">
+   type of ratio of the CanvasUI, can be ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   any other String will set the ratio to none <br/>
+   the following properties cannot be set or are not used a ratio has been specified:<br/>
+   x, y, width, height, horizontalCenter and verticalCenter 
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#reference">reference</a> : DisplayObjectContainer<div class="summaryTableDescription">
+   specify a DisplayObjectContainer reference on which the size and position of the ElementUI will refer to<br/>
+   if not set, the onStage property value is the reference (onStage true = stage, onStage false = parent)
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#right">right</a> : Number<div class="summaryTableDescription">
+   right value (from the reference), Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scrollPane">scrollPane</a> : *<div class="summaryTableDescription">[read-only]
+   get the instance of the scrollpane used for the scrollbars<br>
+   you must cast the return: Scrollpane(canvas.scrollpane), the wild card has been used not to import the SCrollpane classes if not used
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#top">top</a> : Number<div class="summaryTableDescription">
+   top value (from the reference), Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ui">ui</a> : <a href="../../ui/ElementUI.html">ElementUI</a>
+<div class="summaryTableDescription">[read-only]
+   get a the wrapper ElementUI instance
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#useInitialSize">useInitialSize</a> : Boolean<div class="summaryTableDescription">
+   use the size that has been recorded when the DisplayObject has been added to the BaseUI instance<br/>
+   useful when a mask or other DisplayObject can disturb the real size of the DisplayObject 
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#verticalCenter">verticalCenter</a> : Number<div class="summaryTableDescription">
+   vertical center value (from the reference), Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#width">width</a> : Number<div class="summaryTableDescription">
+   width of the canvas
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#wrapper">wrapper</a> : <a href="core/Wrapper.html">Wrapper</a>
+<div class="summaryTableDescription">[read-only]
+   get the instance of the wrapper
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#x">x</a> : Number<div class="summaryTableDescription">
+   x position of the canvas, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#y">y</a> : Number<div class="summaryTableDescription">
+   y position of the canvas
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#CanvasUI()">CanvasUI</a>(widthLayout:Number = 100, heightLayout:Number = 100, layoutScrollbar:Boolean = true, layoutMask:Boolean = true)</div>
+<div class="summaryTableDescription">
+   Constructor
+   Create an instance of the CanvasUI class
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addChild()">addChild</a>(child:DisplayObject):DisplayObject</div>
+<div class="summaryTableDescription">
+   Adds a child DisplayObject instance to this CanvasUI container
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addChildAt()">addChildAt</a>(child:DisplayObject, index:int):DisplayObject</div>
+<div class="summaryTableDescription">
+   Adds a child DisplayObject instance to the CanvasUI container
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addChildUI()">addChildUI</a>(child:DisplayObject):<a href="../../ui/ElementUI.html">ElementUI</a>
+</div>
+<div class="summaryTableDescription">
+   add a child DisplayObject instance to the canvas and create a ElementUI instance
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#contains()">contains</a>(child:DisplayObject):Boolean</div>
+<div class="summaryTableDescription">
+   Determines whether or not the specified display object is a child of the CanvasUI container or the instance itself
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#forceSizeContainer()">forceSizeContainer</a>(width:Number, height:Number):void</div>
+<div class="summaryTableDescription">
+   function to force the size of the container (will update the scrollbars if used)
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getChildAt()">getChildAt</a>(index:int):DisplayObject</div>
+<div class="summaryTableDescription">
+   Returns the child display object instance that exists at the specified index
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getChildByName()">getChildByName</a>(name:String):DisplayObject</div>
+<div class="summaryTableDescription">
+   Returns the child display object that exists with the specified name
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getChildIndex()">getChildIndex</a>(child:DisplayObject):int</div>
+<div class="summaryTableDescription">
+   Returns the index position of a child DisplayObject instance
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getChildUI()">getChildUI</a>(child:DisplayObject):<a href="../../ui/ElementUI.html">ElementUI</a>
+</div>
+<div class="summaryTableDescription">
+   get a child ElementUI instance 
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getChildUIByName()">getChildUIByName</a>(name:String):<a href="../../ui/ElementUI.html">ElementUI</a>
+</div>
+<div class="summaryTableDescription">
+   get a child ElementUI instance using the name
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#refresh()">refresh</a>(e:<a href="../events/BaseEventUI.html">BaseEventUI</a> = null):void</div>
+<div class="summaryTableDescription">
+   refresh the canvas elements and its children position
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeChild()">removeChild</a>(child:DisplayObject):DisplayObject</div>
+<div class="summaryTableDescription">
+   Removes the specified child DisplayObject instance from the child list of the CanvasUI container
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeChildAt()">removeChildAt</a>(index:int):DisplayObject</div>
+<div class="summaryTableDescription">
+   Removes a child DisplayObject from the specified index position in the child list of the DisplayObjectContainer
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeChildUI()">removeChildUI</a>(child:DisplayObject):void</div>
+<div class="summaryTableDescription">
+   remove a child from the BaseUI instance
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setChildIndex()">setChildIndex</a>(child:DisplayObject, index:int):void</div>
+<div class="summaryTableDescription">
+   Changes the position of an existing child in the CanvasUI container
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#swapChildren()">swapChildren</a>(child1:DisplayObject, child2:DisplayObject):void</div>
+<div class="summaryTableDescription">
+   Swaps the z-order (front-to-back order) of the two specified child objects
+   </div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#swapChildrenAt()">swapChildrenAt</a>(index1:int, index2:int):void</div>
+<div class="summaryTableDescription">
+   Swaps the z-order (front-to-back order) of the child objects at the two specified index positions in the child list.</div>
+</td><td class="summaryTableOwnerCol">CanvasUI</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="alignX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">alignX</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>alignX:String</code>&nbsp;&nbsp;[read-write]<p>
+   horizontal alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_LEFT, ElementUI.ALIGN_RIGHT, ElementUI.ALIGN_CENTER
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get alignX():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set alignX(value:String):void</code>
+<br>
+</div>
+<a name="alignY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">alignY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>alignY:String</code>&nbsp;&nbsp;[read-write]<p>
+   vertical alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_CENTER, ElementUI.ALIGN_TOP, ElementUI.ALIGN_BOTTOM 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get alignY():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set alignY(value:String):void</code>
+<br>
+</div>
+<a name="baseUI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">baseUI</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>baseUI:<a href="../../ui/BaseUI.html">BaseUI</a></code>&nbsp;&nbsp;[read-only]<p>
+   get the instance of the BaseUI class, used for the children added with addChild or addChildUI
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get baseUI():<a href="../../ui/BaseUI.html">BaseUI</a></code>
+<br>
+</div>
+<a name="bottom"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bottom</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bottom:Number</code>&nbsp;&nbsp;[read-write]<p>
+   bottom value (from the reference), Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bottom():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bottom(value:Number):void</code>
+<br>
+</div>
+<a name="buttonMode"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">buttonMode</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>buttonMode:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   Specifies the button mode of this sprite
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get buttonMode():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set buttonMode(value:Boolean):void</code>
+<br>
+</div>
+<a name="bypassSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bypassSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bypassSize:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   whether or not the DisplayObject will be resized (not working with ratio set to RATIO_IN or RATIO_OUT)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bypassSize():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bypassSize(value:Boolean):void</code>
+<br>
+</div>
+<a name="canvasAlpha"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">canvasAlpha</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>canvasAlpha:Number</code>&nbsp;&nbsp;[read-write]<p>
+   background alpha of the canvas
+   </p><p>The default value is <code>Number 0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get canvasAlpha():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set canvasAlpha(value:Number):void</code>
+<br>
+</div>
+<a name="canvasColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">canvasColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>canvasColor:uint</code>&nbsp;&nbsp;[read-write]<p>
+   background color of the canvas
+   </p><p>The default value is <code>uint 0x000000</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get canvasColor():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set canvasColor(value:uint):void</code>
+<br>
+</div>
+<a name="container"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">container</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>container:Sprite</code>&nbsp;&nbsp;[read-only]<p>
+   get the instance of the container, it contains the children added with addChild and addChildUI
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get container():Sprite</code>
+<br>
+</div>
+<a name="forceReferenceHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forceReferenceHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>forceReferenceHeight:Number</code>&nbsp;&nbsp;[read-write]<p>
+   force the height of the reference
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get forceReferenceHeight():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set forceReferenceHeight(value:Number):void</code>
+<br>
+</div>
+<a name="forceReferenceWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forceReferenceWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>forceReferenceWidth:Number</code>&nbsp;&nbsp;[read-write]<p>
+   force the width of the reference
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get forceReferenceWidth():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set forceReferenceWidth(value:Number):void</code>
+<br>
+</div>
+<a name="height"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">height</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>height:Number</code>&nbsp;&nbsp;[read-write]<p>
+   height of the canvas
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get height():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set height(value:Number):void</code>
+<br>
+</div>
+<a name="horizontalCenter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">horizontalCenter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>horizontalCenter:Number</code>&nbsp;&nbsp;[read-write]<p>
+   horizontal center value (from the reference), Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get horizontalCenter():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set horizontalCenter(value:Number):void</code>
+<br>
+</div>
+<a name="initialWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initialWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>initialWidth:Number</code>&nbsp;&nbsp;[read-write]<p>
+   width of the DisplayObject when added to the BaseUI instance
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get initialWidth():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set initialWidth(value:Number):void</code>
+<br>
+</div>
+<a name="keepOnScreen"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">keepOnScreen</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>keepOnScreen:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   keep a DisplayObject in the screen
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get keepOnScreen():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set keepOnScreen(value:Boolean):void</code>
+<br>
+</div>
+<a name="layoutMask"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">layoutMask</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>layoutMask:<a href="core/Mask.html">Mask</a></code>&nbsp;&nbsp;[read-only]<p>
+   get the instance of the mask
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get layoutMask():<a href="core/Mask.html">Mask</a></code>
+<br>
+</div>
+<a name="left"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">left</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>left:Number</code>&nbsp;&nbsp;[read-write]<p>
+   left value (from the reference), Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get left():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set left(value:Number):void</code>
+<br>
+</div>
+<a name="mouseChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">mouseChildren</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>mouseChildren:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   Determines whether or not the children of the object are mouse enabled
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get mouseChildren():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set mouseChildren(value:Boolean):void</code>
+<br>
+</div>
+<a name="numChildren"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">numChildren</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>numChildren:int</code>&nbsp;&nbsp;[read-only]<p>
+   Returns the number of children of the CanvasUI container
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get numChildren():int</code>
+<br>
+</div>
+<a name="onStage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onStage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>onStage:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   set the stage as a reference to calculate position ans sizes, if false the parent will be the reference
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get onStage():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set onStage(value:Boolean):void</code>
+<br>
+</div>
+<a name="percentHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">percentHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>percentHeight:*</code>&nbsp;&nbsp;[write-only]<p>
+   set the height percentage (will accept Number or String, with or without the percentage character
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set percentHeight(value:*):void</code>
+<br>
+</div>
+<a name="percentWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">percentWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>percentWidth:*</code>&nbsp;&nbsp;[write-only]<p>
+   set the width percentage (will accept Number or String, with or without the percentage character
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set percentWidth(value:*):void</code>
+<br>
+</div>
+<a name="properties"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">properties</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>properties:Object</code>&nbsp;&nbsp;[read-write]<p>
+   Object to get or set the CanvasUI properties, for example:<br/>
+   <code>element.properties = {top:0, bottom:"20", onStage:false, width:"50%"};</code>
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get properties():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set properties(value:Object):void</code>
+<br>
+</div>
+<a name="ratio"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ratio</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ratio:String</code>&nbsp;&nbsp;[read-write]<p>
+   type of ratio of the CanvasUI, can be ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   any other String will set the ratio to none <br/>
+   the following properties cannot be set or are not used a ratio has been specified:<br/>
+   x, y, width, height, horizontalCenter and verticalCenter 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ratio():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set ratio(value:String):void</code>
+<br>
+</div>
+<a name="reference"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reference</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>reference:DisplayObjectContainer</code>&nbsp;&nbsp;[read-write]<p>
+   specify a DisplayObjectContainer reference on which the size and position of the ElementUI will refer to<br/>
+   if not set, the onStage property value is the reference (onStage true = stage, onStage false = parent)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get reference():DisplayObjectContainer</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set reference(value:DisplayObjectContainer):void</code>
+<br>
+</div>
+<a name="right"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">right</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>right:Number</code>&nbsp;&nbsp;[read-write]<p>
+   right value (from the reference), Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get right():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set right(value:Number):void</code>
+<br>
+</div>
+<a name="scrollPane"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scrollPane</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scrollPane:*</code>&nbsp;&nbsp;[read-only]<p>
+   get the instance of the scrollpane used for the scrollbars<br>
+   you must cast the return: Scrollpane(canvas.scrollpane), the wild card has been used not to import the SCrollpane classes if not used
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scrollPane():*</code>
+<br>
+</div>
+<a name="top"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">top</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>top:Number</code>&nbsp;&nbsp;[read-write]<p>
+   top value (from the reference), Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get top():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set top(value:Number):void</code>
+<br>
+</div>
+<a name="ui"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ui</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ui:<a href="../../ui/ElementUI.html">ElementUI</a></code>&nbsp;&nbsp;[read-only]<p>
+   get a the wrapper ElementUI instance
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ui():<a href="../../ui/ElementUI.html">ElementUI</a></code>
+<br>
+</div>
+<a name="useInitialSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">useInitialSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>useInitialSize:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   use the size that has been recorded when the DisplayObject has been added to the BaseUI instance<br/>
+   useful when a mask or other DisplayObject can disturb the real size of the DisplayObject 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get useInitialSize():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set useInitialSize(value:Boolean):void</code>
+<br>
+</div>
+<a name="verticalCenter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">verticalCenter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>verticalCenter:Number</code>&nbsp;&nbsp;[read-write]<p>
+   vertical center value (from the reference), Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get verticalCenter():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set verticalCenter(value:Number):void</code>
+<br>
+</div>
+<a name="width"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">width</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>width:Number</code>&nbsp;&nbsp;[read-write]<p>
+   width of the canvas
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get width():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set width(value:Number):void</code>
+<br>
+</div>
+<a name="wrapper"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">wrapper</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>wrapper:<a href="core/Wrapper.html">Wrapper</a></code>&nbsp;&nbsp;[read-only]<p>
+   get the instance of the wrapper
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get wrapper():<a href="core/Wrapper.html">Wrapper</a></code>
+<br>
+</div>
+<a name="x"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">x</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>x:Number</code>&nbsp;&nbsp;[read-write]<p>
+   x position of the canvas, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get x():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set x(value:Number):void</code>
+<br>
+</div>
+<a name="y"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">y</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>y:Number</code>&nbsp;&nbsp;[read-write]<p>
+   y position of the canvas
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get y():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set y(value:Number):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="CanvasUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CanvasUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function CanvasUI(widthLayout:Number = 100, heightLayout:Number = 100, layoutScrollbar:Boolean = true, layoutMask:Boolean = true)</code><p>
+   Constructor
+   Create an instance of the CanvasUI class
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">widthLayout</span>:Number</code> (default = <code>100</code>)<code></code> &mdash; width of the canvas
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">heightLayout</span>:Number</code> (default = <code>100</code>)<code></code> &mdash; height of the canvas 
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">layoutScrollbar</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; whether or not the canvas creates and uses a mask to show only the content within the canvas
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">layoutMask</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; whether or not the canvas creates and uses scrollbars if the content is bigger than the canvas (scrollpane instance)
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addChild()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addChild</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function addChild(child:DisplayObject):DisplayObject</code><p>
+   Adds a child DisplayObject instance to this CanvasUI container
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+</div>
+<a name="addChildAt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addChildAt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function addChildAt(child:DisplayObject, index:int):DisplayObject</code><p>
+   Adds a child DisplayObject instance to the CanvasUI container
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; int depth
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+</div>
+<a name="addChildUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addChildUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addChildUI(child:DisplayObject):<a href="../../ui/ElementUI.html">ElementUI</a></code><p>
+   add a child DisplayObject instance to the canvas and create a ElementUI instance
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject 
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../ui/ElementUI.html">ElementUI</a></code> &mdash; 
+                        ElementUI instance of the DisplayObject
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="contains()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">contains</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function contains(child:DisplayObject):Boolean</code><p>
+   Determines whether or not the specified display object is a child of the CanvasUI container or the instance itself
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; Boolean
+   </td>
+</tr>
+</table>
+</div>
+<a name="forceSizeContainer()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forceSizeContainer</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function forceSizeContainer(width:Number, height:Number):void</code><p>
+   function to force the size of the container (will update the scrollbars if used)
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">width</span>:Number</code> &mdash; Number 
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">height</span>:Number</code> &mdash; Number 
+   </td>
+</tr>
+</table>
+</div>
+<a name="getChildAt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getChildAt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function getChildAt(index:int):DisplayObject</code><p>
+   Returns the child display object instance that exists at the specified index
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; int
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+</div>
+<a name="getChildByName()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getChildByName</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function getChildByName(name:String):DisplayObject</code><p>
+   Returns the child display object that exists with the specified name
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; String
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+</div>
+<a name="getChildIndex()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getChildIndex</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function getChildIndex(child:DisplayObject):int</code><p>
+   Returns the index position of a child DisplayObject instance
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash; int
+   </td>
+</tr>
+</table>
+</div>
+<a name="getChildUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getChildUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getChildUI(child:DisplayObject):<a href="../../ui/ElementUI.html">ElementUI</a></code><p>
+   get a child ElementUI instance 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject 
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../ui/ElementUI.html">ElementUI</a></code> &mdash; 
+                        ElementUI instance of the DisplayObject
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getChildUIByName()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getChildUIByName</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getChildUIByName(name:String):<a href="../../ui/ElementUI.html">ElementUI</a></code><p>
+   get a child ElementUI instance using the name
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; String 
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../ui/ElementUI.html">ElementUI</a></code> &mdash; 
+                        ElementUI instance of the DisplayObject
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="refresh()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">refresh</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function refresh(e:<a href="../events/BaseEventUI.html">BaseEventUI</a> = null):void</code><p>
+   refresh the canvas elements and its children position
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="../events/BaseEventUI.html">BaseEventUI</a></code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="removeChild()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeChild</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function removeChild(child:DisplayObject):DisplayObject</code><p>
+   Removes the specified child DisplayObject instance from the child list of the CanvasUI container
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeChildAt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeChildAt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function removeChildAt(index:int):DisplayObject</code><p>
+   Removes a child DisplayObject from the specified index position in the child list of the DisplayObjectContainer
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; int
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeChildUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeChildUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeChildUI(child:DisplayObject):void</code><p>
+   remove a child from the BaseUI instance
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject 
+   </td>
+</tr>
+</table>
+</div>
+<a name="setChildIndex()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setChildIndex</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function setChildIndex(child:DisplayObject, index:int):void</code><p>
+   Changes the position of an existing child in the CanvasUI container
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">index</span>:int</code> &mdash; int new depth
+   </td>
+</tr>
+</table>
+</div>
+<a name="swapChildren()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">swapChildren</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function swapChildren(child1:DisplayObject, child2:DisplayObject):void</code><p>
+   Swaps the z-order (front-to-back order) of the two specified child objects
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">child1</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">child2</span>:DisplayObject</code> &mdash; DisplayObject
+   </td>
+</tr>
+</table>
+</div>
+<a name="swapChildrenAt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">swapChildrenAt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function swapChildrenAt(index1:int, index2:int):void</code><p>
+   Swaps the z-order (front-to-back order) of the child objects at the two specified index positions in the child list.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">index1</span>:int</code> &mdash; int
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">index2</span>:int</code> &mdash; int
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

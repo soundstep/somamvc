@@ -1,0 +1,1800 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Soma,com.soma.Soma,FIXED_LAYOUT,GLOBAL_LOADING_CENTERED,LIQUID_LAYOUT,MODEL_BACKGROUND,MODEL_BASE,MODEL_BASEUI,MODEL_CONFIG,MODEL_CONTENT,MODEL_LIBRARY,MODEL_LOADER,MODEL_MENU,MODEL_PAGE,MODEL_STYLE,VERSION,background,base,baseUI,classImport,config,container,content,currentLanguage,initialized,languageEnabled,library,loader,menu,page,referenceBaseUI,styles,ui,addEventListener,dispatchEvent,getClass,getInstance,getModel,hasEventListener,initLanguage,registerClass,registerGloBalStyleSheet,removeEventListener,start,startWithXML,willTrigger" name="keywords">
+<title>com.soma.Soma</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Soma - Soundstep | Soma';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?com/soma/Soma.html&amp;com/soma/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Soma</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Soma"); titleBar_setSubNav(true,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Soma</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="interfaces/IModelLocator.html">IModelLocator</a></td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     The Soma Singleton (extendable) is the entry point to access to the framework.
+     </p>
+     <p></p>
+<br>
+<span class="label">Example</span>
+<br>     <div class='listing'><pre>
+Soma.getInstance().addEventListener(SomaEvent.INITIALIZED, initialized);
+Soma.getInstance().addEventListener(ContentEvent.LOADED, contentLoaded);
+Soma.getInstance().registerGloBalStyleSheet("css/styles.css");
+Soma.getInstance().start(this, "data/site.xml", new Config());
+
+private function contentLoaded(e:ContentEvent = null):void {
+    // xml and stylesheet have been loaded (components that don't require the XML Site Definition are initialized)
+    trace(Soma.getInstance().container);
+    trace(Soma.getInstance().content.data.toXMLString());
+}
+
+private function initialized(e:SomaEvent = null):void {
+    // Soma is initialized
+    trace(Soma.getInstance().page.currentPage);
+}
+     </pre></div>
+     <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#background">background</a> : <a href="model/BackgroundManager.html">BackgroundManager</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the background manager (containing the background container and the backgrounds).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#base">base</a> : <a href="model/BaseManager.html">BaseManager</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the base manager library.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#baseUI">baseUI</a> : <a href="../soundstep/ui/BaseUI.html">BaseUI</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the global BaseUI instance (used for loading class if centered and the layout if set to fixed).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#classImport">classImport</a> : <a href="assets/ClassImport.html">ClassImport</a>
+<div class="summaryTableDescription">[read-only] Return the global ClassImport instance (use Soma.getInstance().registerClass and Soma.getInstance().getClass).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#config">config</a> : <a href="interfaces/IConfig.html">IConfig</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the config file.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#container">container</a> : Sprite<div class="summaryTableDescription">[read-only] 
+   Get the main container of the site (contains pages, menu and loading);
+   </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#content">content</a> : <a href="model/ContentManager.html">ContentManager</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the content manager (containing the XML Site Definition).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#currentLanguage">currentLanguage</a> : String<div class="summaryTableDescription"> 
+   Current language String (example: "en") set using Soma.getInstance().initLanguage(true, "en");
+   </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#GLOBAL_LOADING_CENTERED">GLOBAL_LOADING_CENTERED</a> : Boolean<div class="summaryTableDescription">[static] static global value whether or not the user loading display (super class: com.soma.view.Loading, interface: com.soma.loader.ILoading) of the main global loader (Soma.getInstance().loader) will be centered in the layout (default true).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#initialized">initialized</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Whether or not Soma is initialized.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#languageEnabled">languageEnabled</a> : Boolean<div class="summaryTableDescription"> 
+   Whether or not the language is enabled.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#library">library</a> : <a href="interfaces/ILibrary.html">ILibrary</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the global library.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loader">loader</a> : <a href="loader/SomaLoader.html">SomaLoader</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the global loader (used to load the stylesheet, the XML Site Definition and the assets in the pages).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#menu">menu</a> : <a href="model/MenuManager.html">MenuManager</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the menu manager (containing the global menu if used).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#page">page</a> : <a href="model/PageManager.html">PageManager</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the page manager (containing the page container and the pages).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#referenceBaseUI">referenceBaseUI</a> : DisplayObjectContainer<div class="summaryTableDescription">[read-only] 
+   Get the reference of the global BaseUI instance, the reference is the main container if the layout is set to fixed or the stage if the layout is set to liquid.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#styles">styles</a> : <a href="model/StyleManager.html">StyleManager</a>
+<div class="summaryTableDescription">[read-only] 
+   Get the style manager (containing stylesheets loaded).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ui">ui</a> : DisplayObjectContainer<div class="summaryTableDescription">[read-only] 
+   Get the main document class registered when Soma starts, usually Sprite or MovieClip.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Soma()">Soma</a>()</div>
+<div class="summaryTableDescription"> Soma is an extendable Singleton, use Soma.getInstance().</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEventListener()">addEventListener</a>(p_type:String, p_listener:Function, p_useCapture:Boolean = false, p_priority:int = 0, p_useWeakReference:Boolean = false):void</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispatchEvent()">dispatchEvent</a>(p_event:<a href="control/CairngormEvent.html">CairngormEvent</a>):Boolean</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getClass()">getClass</a>(className:String):Class</div>
+<div class="summaryTableDescription"> Get a Class registered using the method Soma.getInstance().registerClass.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getInstance()">getInstance</a>():<a href="../soma/Soma.html">Soma</a>
+</div>
+<div class="summaryTableDescription">[static] 
+   Soma is an extendable Singleton, getInstance() is returning the Soma instance to access to the framework and its components.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getModel()">getModel</a>(model:String):*</div>
+<div class="summaryTableDescription"> 
+   Get a model instance from Soma (managers).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasEventListener()">hasEventListener</a>(type:String):Boolean</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initLanguage()">initLanguage</a>(languageEnabled:Boolean, language:String = ""):void</div>
+<div class="summaryTableDescription">
+   Initialize a String language (the current language when Soma starts) to be used in the deep-linking URL with SWFAddress.<br/>
+   It must be used before starting Soma and it will prepend the value before the URL, example: mysite.com/#/home will become mysite.com/#/en/home.<br/>
+   The value can be changed at run-time using Soma.getInstance().currentLanguage and will dispatch a SomaEvent.LANGUAGE_CHANGED event through the framework.<br/>
+   </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#registerClass()">registerClass</a>(value:Class):String</div>
+<div class="summaryTableDescription"> Register a Class with the ClassImport instance to force its import by the compiler (useful with getDefinitionByName).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#registerGloBalStyleSheet()">registerGloBalStyleSheet</a>(url:String):void</div>
+<div class="summaryTableDescription"> 
+   Register the URL of a global stylesheet (css) to load at the initialization process.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeEventListener()">removeEventListener</a>(p_type:String, p_listener:Function, p_useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#start()">start</a>(ui:DisplayObjectContainer, xmlFile:String, config:<a href="interfaces/IConfig.html">IConfig</a>):void</div>
+<div class="summaryTableDescription">
+   Starts the Soma framework.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#startWithXML()">startWithXML</a>(ui:DisplayObjectContainer, xml:XML, config:<a href="interfaces/IConfig.html">IConfig</a>):void</div>
+<div class="summaryTableDescription">
+   Starts the Soma framework with an XML already loaded.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#willTrigger()">willTrigger</a>(type:String):Boolean</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:EXCLUDED">EXCLUDED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when an excluded page has been called.<br/><br/>
+  See <a href=http://www.soundstep.com/somaprotest/www/#/page-system/excluded/"" target="_blank">Soma Protest Page Excluded</a> section.<br/>
+  Soma.getInstance().addEventListener(PageEvent.EXCLUDED, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:EXCLUDED_PARENT">EXCLUDED_PARENT</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a page that contains excluded page children has been called.</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:HIDE">HIDE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Soma command to display a background using the id from the XML Site Definition, use from anywhere in the code:<br/><br/>
+  The parameter should the ID of the background (id attribute in the XML Site Definition)<br/><br/>
+  new BackgroundEvent(BackgroundEvent.HIDE, "myBackground").dispatch();
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:INITIALIZED">INITIALIZED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when Soma has been initialized.<br/><br/> 
+  Soma.getInstance().addEventListener(SomaEvent.INITIALIZED, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:LANGUAGE_CHANGED">LANGUAGE_CHANGED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates the language (string in the URL) has been changed.<br/><br/>
+  Soma.getInstance().addEventListener(SomaEvent.LANGUAGE_CHANGED, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:LOADED">LOADED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when the XML Site Definition has been loaded.<br/><br/>
+  Soma.getInstance().addEventListener(StyleSheetEvent.LOADED, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:LOADED">LOADED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when the XML Site Definition has been loaded.<br/><br/>
+  Soma.getInstance().addEventListener(ContentEvent.LOADED, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:OPEN_MENU">OPEN_MENU</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Soma command that will be received by the user's custom menu (IMenu) to update the state of this menu when a new page is about to be displayed.<br/><br/>
+  This event is automatically dispatched by the PageManager instance in some case, such as a URL change (Soma.getInstance().page).<br/><br/>
+  Can also be used as a command from anywhere in the code, the parameter should be the ID of the page (id attribute in the XML Site Definition):<br/><br/>
+  new MenuEvent(MenuEvent.OPEN_MENU, "myID").dispatch();
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:SHOW">SHOW</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Soma command to display a page using the id from the XML Site Definition, use from anywhere in the code.<br/><br/>
+  The parameter should the ID of the page (id attribute in the XML Site Definition)<br/><br/>
+  new PageEvent(PageEvent.SHOW, "myPageID").dispatch();
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:SHOW">SHOW</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Soma command to display a background using the id from the XML Site Definition, use from anywhere in the code:<br/><br/>
+  The parameter should the ID of the background (id attribute in the XML Site Definition)<br/><br/>
+  new BackgroundEvent(BackgroundEvent.SHOW, "myBackground").dispatch();
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:SHOW_EXTERNAL_LINK">SHOW_EXTERNAL_LINK</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Soma command to open a new browser window in case the page in the XML Site Definition is an external link, example:<br/><br/>
+  &lt;page id="soundstep" externalLink="http://www.soundstep.com/"&gt;<br/>
+      &lt;title&gt;&lt;![CDATA[Soundstep]]&gt;&lt;/title&gt;<br/>
+  &lt;/page&gt;<br/><br/>
+  This event can be automatically dispatched by the Singleton MenuContext (right-click menu).<br/>
+  Can also be used as a command from anywhere in the code:<br/><br/>
+  new PageEvent(PageEvent.SHOW_EXTERNAL_LINK, null, "http://www.soundstep.com/").dispatch();<br/>
+  new PageEvent(PageEvent.SHOW_EXTERNAL_LINK, myPage.&#64;id, myPage.&#64;externalLink).dispatch();
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:STARTED">STARTED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a page is about to be instantiated by the PageManager instance (Soma.getInstance().page).<br/><br/>
+  This event can be default prevented to stop the page manager to display and hide pages.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.STARTED, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:TRANSITION_IN">TRANSITION_IN</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a page has been instantiated and is about to be displayed.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_IN, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:TRANSITION_IN">TRANSITION_IN</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a background is about to be displayed by the BackgroundManager instance (Soma.getInstance().background).<br/><br/>
+  Soma.getInstance().addEventListener(BackgroundEvent.TRANSITION_IN, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:TRANSITION_IN_COMPLETE">TRANSITION_IN_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a page has been displayed.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_IN_COMPLETE, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:TRANSITION_OUT">TRANSITION_OUT</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a page is about to be hidden.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_OUT, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:TRANSITION_OUT">TRANSITION_OUT</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a background is about to be hidden by the BackgroundManager instance (Soma.getInstance().background).<br/><br/>
+  Soma.getInstance().addEventListener(BackgroundEvent.TRANSITION_OUT, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:TRANSITION_OUT_COMPLETE">TRANSITION_OUT_COMPLETE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when a page has been hidden.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_OUT_COMPLETE, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:UPDATED">UPDATED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol"> Indicates when the XML Site Definition has been updated.<br/><br/>
+  Soma.getInstance().addEventListener(ContentEvent.UPDATED, eventHandler);
+     </td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#FIXED_LAYOUT">FIXED_LAYOUT</a> : String = "fixed"<div class="summaryTableDescription">[static] Constant value used to defined that the layout of the site is a fixed user interface, the width and height are fixed values applied to the main container (Soma.getInstance().container).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#LIQUID_LAYOUT">LIQUID_LAYOUT</a> : String = "liquid"<div class="summaryTableDescription">[static] Constant value used to defined that the layout of the site is a liquid user interface, the width and height of the main container is updated to fit the browser (Soma.getInstance().container).</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_BACKGROUND">MODEL_BACKGROUND</a> : String = "com.soma.Soma.MODEL_BACKGROUND"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_BACKGROUND) equivalent to Soma.getInstance().background </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_BASE">MODEL_BASE</a> : String = "com.soma.Soma.MODEL_BASE"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_BASE) equivalent to Soma.getInstance().base </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_BASEUI">MODEL_BASEUI</a> : String = "com.soma.Soma.MODEL_BASEUI"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_BASEUI) equivalent to Soma.getInstance().baseUI </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_CONFIG">MODEL_CONFIG</a> : String = "com.soma.Soma.MODEL_CONFIG"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_CONFIG) equivalent to Soma.getInstance().config </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_CONTENT">MODEL_CONTENT</a> : String = "com.soma.Soma.MODEL_CONTENT"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_CONTENT) equivalent to Soma.getInstance().content </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_LIBRARY">MODEL_LIBRARY</a> : String = "com.soma.Soma.MODEL_LIBRARY"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_LIBRARY) equivalent to Soma.getInstance().library </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_LOADER">MODEL_LOADER</a> : String = "com.soma.Soma.MODEL_LOADER"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel example: Soma.getInstance().getModel(Soma.MODEL_LOADER) equivalent to Soma.getInstance().loader </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_MENU">MODEL_MENU</a> : String = "com.soma.Soma.MODEL_MENU"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_MENU) equivalent to Soma.getInstance().menu </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_PAGE">MODEL_PAGE</a> : String = "com.soma.Soma.MODEL_PAGE"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_PAGE) equivalent to Soma.getInstance().page </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MODEL_STYLE">MODEL_STYLE</a> : String = "com.soma.Soma.MODEL_STYLE"<div class="summaryTableDescription">[static] Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_STYLE) equivalent to Soma.getInstance().styles </div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#VERSION">VERSION</a> : String = "2.0"<div class="summaryTableDescription">[static] Constant value of the Soma Version.</div>
+</td><td class="summaryTableOwnerCol">Soma</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="background"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">background</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>background:<a href="model/BackgroundManager.html">BackgroundManager</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the background manager (containing the background container and the backgrounds).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get background():<a href="model/BackgroundManager.html">BackgroundManager</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().background.container // access to container of the backgrounds
+   Soma.getInstance().background.currentBackground // access to currently displayed background
+   </pre></div>
+   <p></p>
+</div>
+<a name="base"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">base</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>base:<a href="model/BaseManager.html">BaseManager</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the base manager library. The Base is a Sprite layer between the backgrounds Sprite layer and the site container layer and is meant to easily add DisplayObject (even from the XML) that are always on the screen (such as a logo). 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get base():<a href="model/BaseManager.html">BaseManager</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().base.container; // access to the container of the Base layer
+   Soma.getInstance().base.getElementByID("my asset") // access to a Base DisplayObject (instantiated from the XML or by code).
+   </pre></div>
+   <p></p>
+</div>
+<a name="baseUI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">baseUI</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>baseUI:<a href="../soundstep/ui/BaseUI.html">BaseUI</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the global BaseUI instance (used for loading class if centered and the layout if set to fixed).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get baseUI():<a href="../soundstep/ui/BaseUI.html">BaseUI</a></code>
+<br>
+</div>
+<a name="classImport"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">classImport</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>classImport:<a href="assets/ClassImport.html">ClassImport</a></code>&nbsp;&nbsp;[read-only]<p> Return the global ClassImport instance (use Soma.getInstance().registerClass and Soma.getInstance().getClass). 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get classImport():<a href="assets/ClassImport.html">ClassImport</a></code>
+<br>
+</div>
+<a name="config"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">config</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>config:<a href="interfaces/IConfig.html">IConfig</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the config file.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get config():<a href="interfaces/IConfig.html">IConfig</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().config.siteName(); // access to the site name
+   MyConfig(Soma.getInstance().config).myConfigMethod(); // access to a specific user method
+   </pre></div>
+   <p></p>
+</div>
+<a name="container"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">container</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>container:Sprite</code>&nbsp;&nbsp;[read-only]<p> 
+   Get the main container of the site (contains pages, menu and loading);
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get container():Sprite</code>
+<br>
+</div>
+<a name="content"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">content</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>content:<a href="model/ContentManager.html">ContentManager</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the content manager (containing the XML Site Definition).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get content():<a href="model/ContentManager.html">ContentManager</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().content.data // access to the XML Site Definition
+   </pre></div>
+   <p></p>
+</div>
+<a name="currentLanguage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">currentLanguage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>currentLanguage:String</code>&nbsp;&nbsp;[read-write]<p> 
+   Current language String (example: "en") set using Soma.getInstance().initLanguage(true, "en");
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get currentLanguage():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set currentLanguage(value:String):void</code>
+<br>
+</div>
+<a name="GLOBAL_LOADING_CENTERED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">GLOBAL_LOADING_CENTERED</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var GLOBAL_LOADING_CENTERED:Boolean</code><p> static global value whether or not the user loading display (super class: com.soma.view.Loading, interface: com.soma.loader.ILoading) of the main global loader (Soma.getInstance().loader) will be centered in the layout (default true). It must be changed before starting Soma, if the value is true, the loading display class will be added to the global baseUI instance (Soma.getInstance().baseUI).  </p></div>
+<a name="initialized"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initialized</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>initialized:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Whether or not Soma is initialized.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get initialized():Boolean</code>
+<br>
+</div>
+<a name="languageEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">languageEnabled</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>languageEnabled:Boolean</code>&nbsp;&nbsp;[read-write]<p> 
+   Whether or not the language is enabled.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get languageEnabled():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set languageEnabled(value:Boolean):void</code>
+<br>
+</div>
+<a name="library"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">library</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>library:<a href="interfaces/ILibrary.html">ILibrary</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the global library. It contains special assets registered by the framework such as SomaText, SomaVideo, ... and used by a NodeParser instance to dynamically instantiate assets from the XML Site Definition.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get library():<a href="interfaces/ILibrary.html">ILibrary</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().library.registerAsset("myAsset", "com.mypackage.MyAssetClass"); // register a custom asset class
+   &lt;myAsset id="myAssetID" x="10" y="10" /&gt; // use of a registered custom asset in the XML Site Definition
+   </pre></div>
+   <p></p>
+</div>
+<a name="loader"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loader</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loader:<a href="loader/SomaLoader.html">SomaLoader</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the global loader (used to load the stylesheet, the XML Site Definition and the assets in the pages).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loader():<a href="loader/SomaLoader.html">SomaLoader</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   var itemloaded:Dictionary = Soma.getInstance().loader.getLoadedItems(); // access to a list of items previously loaded
+   Soma.getInstance().loader.add("image.jpg"); // add an image to load in the global loader
+   Soma.getInstance().loader.start(); // start to load
+   </pre></div>
+   <p></p>
+</div>
+<a name="menu"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">menu</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>menu:<a href="model/MenuManager.html">MenuManager</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the menu manager (containing the global menu if used).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get menu():<a href="model/MenuManager.html">MenuManager</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().menu.getMenu(Soma.getInstance().config.menuClassName) // access to the global menu
+   </pre></div>
+   <p></p>
+</div>
+<a name="page"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">page</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>page:<a href="model/PageManager.html">PageManager</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the page manager (containing the page container and the pages).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get page():<a href="model/PageManager.html">PageManager</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().page.currentPage // access to the current page
+   </pre></div>
+   <p></p>
+</div>
+<a name="referenceBaseUI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">referenceBaseUI</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>referenceBaseUI:DisplayObjectContainer</code>&nbsp;&nbsp;[read-only]<p> 
+   Get the reference of the global BaseUI instance, the reference is the main container if the layout is set to fixed or the stage if the layout is set to liquid.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get referenceBaseUI():DisplayObjectContainer</code>
+<br>
+</div>
+<a name="styles"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">styles</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>styles:<a href="model/StyleManager.html">StyleManager</a></code>&nbsp;&nbsp;[read-only]<p> 
+   Get the style manager (containing stylesheets loaded).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get styles():<a href="model/StyleManager.html">StyleManager</a></code>
+<br>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().style.loadStyleSheet("myStylesheet", "myNewStyleSheet.css"); // load a stylesheet
+   Soma.getInstance().style.getStyleSheet("myStylesheet"); // get a stylesheet
+   Soma.getInstance().style.getGlobalStyle("myStyle"); // get a style from the global stylesheet
+   </pre></div>
+   <p></p>
+</div>
+<a name="ui"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ui</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ui:DisplayObjectContainer</code>&nbsp;&nbsp;[read-only]<p> 
+   Get the main document class registered when Soma starts, usually Sprite or MovieClip. To access to your own Document class methods and property you can cast to your own class: MyMainClass(Soma.getInstance().ui).myMethod()
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ui():DisplayObjectContainer</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Soma()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Soma</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Soma()</code><p> Soma is an extendable Singleton, use Soma.getInstance(). See the Soma Protest source code for an example to extend Soma and alter the initializing/starting process. </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addEventListener(p_type:String, p_listener:Function, p_useCapture:Boolean = false, p_priority:int = 0, p_useWeakReference:Boolean = false):void</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">p_type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p_listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p_useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p_priority</span>:int</code> (default = <code>0</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p_useWeakReference</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="dispatchEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispatchEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function dispatchEvent(p_event:<a href="control/CairngormEvent.html">CairngormEvent</a>):Boolean</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">p_event</span>:<a href="control/CairngormEvent.html">CairngormEvent</a></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="getClass()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getClass</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getClass(className:String):Class</code><p> Get a Class registered using the method Soma.getInstance().registerClass.
+   <div class='listing'><pre>
+   var MyClassType:Class = Soma.getInstance().getClass("MyClass");
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">className</span>:String</code> &mdash; Class name (String) of a class to force its import by the compiler (useful with getDefinitionByName).
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Class</code> &mdash; A Class.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getInstance()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getInstance</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getInstance():<a href="../soma/Soma.html">Soma</a></code><p> 
+   Soma is an extendable Singleton, getInstance() is returning the Soma instance to access to the framework and its components.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../soma/Soma.html">Soma</a></code> &mdash; 
+                        Soma instance
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getModel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getModel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getModel(model:String):*</code><p> 
+   Get a model instance from Soma (managers). 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">model</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>*</code> &mdash; the StyleManager instance.
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   // access to the background manager (equals to Soma.getInstance().background);
+   var background:BackgroundManager = Soma.getInstance().getModel(Soma.MODEL_BACKGROUND) as BackgroundManager;
+   </pre></div>
+   <p></p>
+</div>
+<a name="hasEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hasEventListener(type:String):Boolean</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="initLanguage()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initLanguage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function initLanguage(languageEnabled:Boolean, language:String = ""):void</code><p>
+   Initialize a String language (the current language when Soma starts) to be used in the deep-linking URL with SWFAddress.<br/>
+   It must be used before starting Soma and it will prepend the value before the URL, example: mysite.com/#/home will become mysite.com/#/en/home.<br/>
+   The value can be changed at run-time using Soma.getInstance().currentLanguage and will dispatch a SomaEvent.LANGUAGE_CHANGED event through the framework.<br/>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">languageEnabled</span>:Boolean</code> &mdash; Enable or Disable the language String in the URL.  
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">language</span>:String</code> (default = "<code></code>")<code></code> &mdash; Specify the language String used in the URL, example: "en", "de", and so on.
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>   <div class='listing'><pre>
+   Soma.getInstance().initLanguage(true, "en");
+   Soma.getInstance().addEventListener(SomaEvent.LANGUAGE_CHANGED, languageHandler);
+   Soma.getInstance().currentLanguage = "de";
+   </pre></div>
+   <p></p>
+</div>
+<a name="registerClass()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">registerClass</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function registerClass(value:Class):String</code><p> Register a Class with the ClassImport instance to force its import by the compiler (useful with getDefinitionByName).
+   You can get the class using the method Soma.getInstance().getClass.
+   <div class='listing'><pre>
+   Soma.getInstance().registerClass(MyClass);
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Class</code> &mdash; Class.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; The String of the class name.
+   </td>
+</tr>
+</table>
+</div>
+<a name="registerGloBalStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">registerGloBalStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function registerGloBalStyleSheet(url:String):void</code><p> 
+   Register the URL of a global stylesheet (css) to load at the initialization process.
+   Soma will load the stylesheet (before the XML) and dispatch a StyleSheetEvent.LOADED event.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; URL of the global stylesheet.
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>      <div class='listing'><pre>
+Soma.getInstance().registerGloBalStyleSheet("css/styles.css");
+Soma.getInstance().addEventListener(StyleSheetEvent.LOADED, stylesheetHandler);
+Soma.getInstance().start(this, "data/site.xml", new Config());
+
+private function stylesheetHandler(e:StyleSheetEvent):void {
+ trace(e.stylesheet);
+ trace(Soma.getInstance().style.getStyleSheet(StyleManager.GLOBAL_STYLESHEET_ID));
+}
+      </pre></div>
+   <p></p>
+</div>
+<a name="removeEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeEventListener(p_type:String, p_listener:Function, p_useCapture:Boolean = false):void</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">p_type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p_listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p_useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="start()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function start(ui:DisplayObjectContainer, xmlFile:String, config:<a href="interfaces/IConfig.html">IConfig</a>):void</code><p>
+   Starts the Soma framework. The 3 parameters are required: the main document class, the URL of the XML Site definition describing the site structure and a Config file (interface: com.interface.IConfig) containing information needed by the framework.<br/>
+   Part 1: Soma starts, creates the containers and initializes the global managers (such as controller, loader, config, ...).<br/>
+   Part 2: Soma loads the XML Site definition (and stylesheet if set before starting).<br/>
+   Part 3: Soma initializes the managers that need the XML Site definition (such as menu, loading, pages, styles, ...).<br/>
+   Part 4: Soma dispatches a SomaEvent.INITIALIZED when done.<br/>
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">ui</span>:DisplayObjectContainer</code> &mdash; main Document Class (AS Entry Point), accessible using Soma.getInstance().ui
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">xmlFile</span>:String</code> &mdash; URL of the XML Site Definition to load (describing the structure of the site), accessible using Soma.getInstance().content.data
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">config</span>:<a href="interfaces/IConfig.html">IConfig</a></code> &mdash; user config file (containing framework options and global configuration), accessible using Soma.getInstance().config 
+      </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>      <div class='listing'><pre>
+Soma.getInstance().addEventListener(SomaEvent.INITIALIZED, initialized);
+Soma.getInstance().addEventListener(ContentEvent.LOADED, contentLoaded);
+Soma.getInstance().registerGloBalStyleSheet("css/styles.css");
+Soma.getInstance().start(this, "data/site.xml", new Config());
+
+private function contentLoaded(e:ContentEvent = null):void {
+    // xml and stylesheet have been loaded (components that don't require the XML Site Definition are initialized)
+    trace(Soma.getInstance().container);
+    trace(Soma.getInstance().content.data.toXMLString());
+}
+
+private function initialized(e:SomaEvent = null):void {
+    // Soma is initialized
+    trace(Soma.getInstance().page.currentPage);
+}
+      </pre></div>
+      <p></p>
+</div>
+<a name="startWithXML()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">startWithXML</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function startWithXML(ui:DisplayObjectContainer, xml:XML, config:<a href="interfaces/IConfig.html">IConfig</a>):void</code><p>
+   Starts the Soma framework with an XML already loaded.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">ui</span>:DisplayObjectContainer</code> &mdash; main Document Class (AS Entry Point), accessible using Soma.getInstance().ui
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> &mdash; XML Site Definition (describing the structure of the site), accessible using Soma.getInstance().content.data
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">config</span>:<a href="interfaces/IConfig.html">IConfig</a></code> &mdash; user config file (containing framework options and global configuration), accessible using Soma.getInstance().config 
+      </td>
+</tr>
+</table>
+<br>
+<span class="label">Example</span>
+<br>      <div class='listing'><pre>Soma.getInstance().start(this, myXMLSiteDefinition, new Config());</pre></div>
+      <p></p>
+</div>
+<a name="willTrigger()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">willTrigger</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function willTrigger(type:String):Boolean</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:EXCLUDED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EXCLUDED</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.EXCLUDED</code></a>
+<br>
+<p></p><p> Indicates when an excluded page has been called.<br/><br/>
+  See <a href=http://www.soundstep.com/somaprotest/www/#/page-system/excluded/"" target="_blank">Soma Protest Page Excluded</a> section.<br/>
+  Soma.getInstance().addEventListener(PageEvent.EXCLUDED, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:EXCLUDED_PARENT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EXCLUDED_PARENT</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.EXCLUDED_PARENT</code></a>
+<br>
+<p></p><p> Indicates when a page that contains excluded page children has been called.
+  See <a href=http://www.soundstep.com/somaprotest/www/#/page-system/excluded/"" target="_blank">Soma Protest Page Excluded</a> section.<br/>
+  Soma.getInstance().addEventListener(PageEvent.EXCLUDED_PARENT, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:HIDE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HIDE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.BackgroundEvent.HIDE</code></a>
+<br>
+<p></p><p> Soma command to display a background using the id from the XML Site Definition, use from anywhere in the code:<br/><br/>
+  The parameter should the ID of the background (id attribute in the XML Site Definition)<br/><br/>
+  new BackgroundEvent(BackgroundEvent.HIDE, "myBackground").dispatch();
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/BackgroundManager.html" target="">BackgroundManager</a>
+<br>
+<a href="events/BackgroundEvent.html" target="">BackgroundEvent</a>
+</div>
+</div>
+<a name="event:INITIALIZED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">INITIALIZED</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.SomaEvent.INITIALIZED</code></a>
+<br>
+<p></p><p> Indicates when Soma has been initialized.<br/><br/> 
+  Soma.getInstance().addEventListener(SomaEvent.INITIALIZED, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="events/SomaEvent.html" target="">SomaEvent</a>
+</div>
+</div>
+<a name="event:LANGUAGE_CHANGED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LANGUAGE_CHANGED</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.SomaEvent.LANGUAGE_CHANGED</code></a>
+<br>
+<p></p><p> Indicates the language (string in the URL) has been changed.<br/><br/>
+  Soma.getInstance().addEventListener(SomaEvent.LANGUAGE_CHANGED, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="events/SomaEvent.html" target="">SomaEvent</a>
+</div>
+</div>
+<a name="event:LOADED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LOADED</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.StyleSheetEvent.LOADED</code></a>
+<br>
+<p></p><p> Indicates when the XML Site Definition has been loaded.<br/><br/>
+  Soma.getInstance().addEventListener(StyleSheetEvent.LOADED, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/StyleManager.html" target="">StyleManager</a>
+<br>
+<a href="events/StyleSheetEvent.html" target="">StyleSheetEvent</a>
+</div>
+</div>
+<a name="event:LOADED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LOADED</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.ContentEvent.LOADED</code></a>
+<br>
+<p></p><p> Indicates when the XML Site Definition has been loaded.<br/><br/>
+  Soma.getInstance().addEventListener(ContentEvent.LOADED, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/ContentManager.html" target="">ContentManager</a>
+<br>
+<a href="events/ContentEvent.html" target="">ContentEvent</a>
+</div>
+</div>
+<a name="event:OPEN_MENU"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">OPEN_MENU</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.MenuEvent.OPEN_MENU</code></a>
+<br>
+<p></p><p> Soma command that will be received by the user's custom menu (IMenu) to update the state of this menu when a new page is about to be displayed.<br/><br/>
+  This event is automatically dispatched by the PageManager instance in some case, such as a URL change (Soma.getInstance().page).<br/><br/>
+  Can also be used as a command from anywhere in the code, the parameter should be the ID of the page (id attribute in the XML Site Definition):<br/><br/>
+  new MenuEvent(MenuEvent.OPEN_MENU, "myID").dispatch();
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/MenuManager.html" target="">MenuManager</a>
+<br>
+<a href="events/MenuEvent.html" target="">MenuEvent</a>
+</div>
+</div>
+<a name="event:SHOW"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SHOW</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.SHOW</code></a>
+<br>
+<p></p><p> Soma command to display a page using the id from the XML Site Definition, use from anywhere in the code.<br/><br/>
+  The parameter should the ID of the page (id attribute in the XML Site Definition)<br/><br/>
+  new PageEvent(PageEvent.SHOW, "myPageID").dispatch();
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:SHOW"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SHOW</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.BackgroundEvent.SHOW</code></a>
+<br>
+<p></p><p> Soma command to display a background using the id from the XML Site Definition, use from anywhere in the code:<br/><br/>
+  The parameter should the ID of the background (id attribute in the XML Site Definition)<br/><br/>
+  new BackgroundEvent(BackgroundEvent.SHOW, "myBackground").dispatch();
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/BackgroundManager.html" target="">BackgroundManager</a>
+<br>
+<a href="events/BackgroundEvent.html" target="">BackgroundEvent</a>
+</div>
+</div>
+<a name="event:SHOW_EXTERNAL_LINK"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SHOW_EXTERNAL_LINK</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.SHOW_EXTERNAL_LINK</code></a>
+<br>
+<p></p><p> Soma command to open a new browser window in case the page in the XML Site Definition is an external link, example:<br/><br/>
+  &lt;page id="soundstep" externalLink="http://www.soundstep.com/"&gt;<br/>
+      &lt;title&gt;&lt;![CDATA[Soundstep]]&gt;&lt;/title&gt;<br/>
+  &lt;/page&gt;<br/><br/>
+  This event can be automatically dispatched by the Singleton MenuContext (right-click menu).<br/>
+  Can also be used as a command from anywhere in the code:<br/><br/>
+  new PageEvent(PageEvent.SHOW_EXTERNAL_LINK, null, "http://www.soundstep.com/").dispatch();<br/>
+  new PageEvent(PageEvent.SHOW_EXTERNAL_LINK, myPage.&#64;id, myPage.&#64;externalLink).dispatch();
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:STARTED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">STARTED</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.STARTED</code></a>
+<br>
+<p></p><p> Indicates when a page is about to be instantiated by the PageManager instance (Soma.getInstance().page).<br/><br/>
+  This event can be default prevented to stop the page manager to display and hide pages.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.STARTED, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:TRANSITION_IN"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_IN</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.TRANSITION_IN</code></a>
+<br>
+<p></p><p> Indicates when a page has been instantiated and is about to be displayed.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_IN, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:TRANSITION_IN"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_IN</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.BackgroundEvent.TRANSITION_IN</code></a>
+<br>
+<p></p><p> Indicates when a background is about to be displayed by the BackgroundManager instance (Soma.getInstance().background).<br/><br/>
+  Soma.getInstance().addEventListener(BackgroundEvent.TRANSITION_IN, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/BackgroundManager.html" target="">BackgroundManager</a>
+<br>
+<a href="events/BackgroundEvent.html" target="">BackgroundEvent</a>
+</div>
+</div>
+<a name="event:TRANSITION_IN_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_IN_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.TRANSITION_IN_COMPLETE</code></a>
+<br>
+<p></p><p> Indicates when a page has been displayed.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_IN_COMPLETE, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:TRANSITION_OUT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_OUT</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.TRANSITION_OUT</code></a>
+<br>
+<p></p><p> Indicates when a page is about to be hidden.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_OUT, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:TRANSITION_OUT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_OUT</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.BackgroundEvent.TRANSITION_OUT</code></a>
+<br>
+<p></p><p> Indicates when a background is about to be hidden by the BackgroundManager instance (Soma.getInstance().background).<br/><br/>
+  Soma.getInstance().addEventListener(BackgroundEvent.TRANSITION_OUT, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/BackgroundManager.html" target="">BackgroundManager</a>
+<br>
+<a href="events/BackgroundEvent.html" target="">BackgroundEvent</a>
+</div>
+</div>
+<a name="event:TRANSITION_OUT_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_OUT_COMPLETE</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.PageEvent.TRANSITION_OUT_COMPLETE</code></a>
+<br>
+<p></p><p> Indicates when a page has been hidden.<br/><br/>
+  Soma.getInstance().addEventListener(PageEvent.TRANSITION_OUT_COMPLETE, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="events/PageEvent.html" target="">PageEvent</a>
+</div>
+</div>
+<a name="event:UPDATED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UPDATED</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>com.soma.events.ContentEvent.UPDATED</code></a>
+<br>
+<p></p><p> Indicates when the XML Site Definition has been updated.<br/><br/>
+  Soma.getInstance().addEventListener(ContentEvent.UPDATED, eventHandler);
+     </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="model/ContentManager.html" target="">ContentManager</a>
+<br>
+<a href="events/ContentEvent.html" target="">ContentEvent</a>
+</div>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="FIXED_LAYOUT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">FIXED_LAYOUT</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const FIXED_LAYOUT:String = "fixed"</code><p> Constant value used to defined that the layout of the site is a fixed user interface, the width and height are fixed values applied to the main container (Soma.getInstance().container). The values are set in the XML Site definition &lt;site layout="fixed" width="800" height="600"&gt;. </p></div>
+<a name="LIQUID_LAYOUT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LIQUID_LAYOUT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const LIQUID_LAYOUT:String = "liquid"</code><p> Constant value used to defined that the layout of the site is a liquid user interface, the width and height of the main container is updated to fit the browser (Soma.getInstance().container). The values are set in the XML Site definition &lt;site layout="liquid"&gt; or &lt;site&gt;.</p></div>
+<a name="MODEL_BACKGROUND"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_BACKGROUND</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_BACKGROUND:String = "com.soma.Soma.MODEL_BACKGROUND"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_BACKGROUND) equivalent to Soma.getInstance().background </p></div>
+<a name="MODEL_BASE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_BASE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_BASE:String = "com.soma.Soma.MODEL_BASE"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_BASE) equivalent to Soma.getInstance().base </p></div>
+<a name="MODEL_BASEUI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_BASEUI</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_BASEUI:String = "com.soma.Soma.MODEL_BASEUI"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_BASEUI) equivalent to Soma.getInstance().baseUI </p></div>
+<a name="MODEL_CONFIG"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_CONFIG</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_CONFIG:String = "com.soma.Soma.MODEL_CONFIG"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_CONFIG) equivalent to Soma.getInstance().config </p></div>
+<a name="MODEL_CONTENT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_CONTENT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_CONTENT:String = "com.soma.Soma.MODEL_CONTENT"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_CONTENT) equivalent to Soma.getInstance().content </p></div>
+<a name="MODEL_LIBRARY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_LIBRARY</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_LIBRARY:String = "com.soma.Soma.MODEL_LIBRARY"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_LIBRARY) equivalent to Soma.getInstance().library </p></div>
+<a name="MODEL_LOADER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_LOADER</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_LOADER:String = "com.soma.Soma.MODEL_LOADER"</code><p> Constant value used to get a specific model class (manager) with the method getModel example: Soma.getInstance().getModel(Soma.MODEL_LOADER) equivalent to Soma.getInstance().loader </p></div>
+<a name="MODEL_MENU"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_MENU</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_MENU:String = "com.soma.Soma.MODEL_MENU"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_MENU) equivalent to Soma.getInstance().menu </p></div>
+<a name="MODEL_PAGE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_PAGE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_PAGE:String = "com.soma.Soma.MODEL_PAGE"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_PAGE) equivalent to Soma.getInstance().page </p></div>
+<a name="MODEL_STYLE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MODEL_STYLE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MODEL_STYLE:String = "com.soma.Soma.MODEL_STYLE"</code><p> Constant value used to get a specific model class (manager) with the method getModel, example: Soma.getInstance().getModel(Soma.MODEL_STYLE) equivalent to Soma.getInstance().styles </p></div>
+<a name="VERSION"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VERSION</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const VERSION:String = "2.0"</code><p> Constant value of the Soma Version.</p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

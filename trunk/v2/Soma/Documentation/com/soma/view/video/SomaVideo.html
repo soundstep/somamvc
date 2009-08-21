@@ -1,0 +1,861 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
+<meta content="SomaVideo,com.soma.view.video.SomaVideo,LOG_ERRORS,bufferLength,bufferPercentage,bufferTime,bytesLoaded,bytesTotal,creator,duration,enableAutoResizeOnMetaData,haskeyframes,hasmetadata,heightVideoSource,isPlaying,keyframes,lastkeyframelocation,lastkeyframetimestamp,loop,metaDataObject,metadatacreator,netConnection,pan,preloadingPercentage,smoothing,sound,stream,time,url,video,videodatarate,volume,widthVideoSource,xmpDataObject,dispose,info,pause,play,resume,seek,setSource,stop" name="keywords">
+<title>com.soma.view.video.SomaVideo</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SomaVideo - Soundstep | Soma';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../index-list.html')" href="../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../index.html?com/soma/view/video/SomaVideo.html&amp;com/soma/view/video/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SomaVideo</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SomaVideo"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.view.video</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SomaVideo</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SomaVideo <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+</table>
+<p></p>
+  <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     SomaVideo is created to display a simple video without any controller or skins (play, volume, etc), you can access to the most basic actions on a video such as play, pause, stop, volume and so on.
+     <div class='listing'><pre>
+var video:SomaVideo = new SomaVideo("video/video.flv");
+video.addEventListener(SomaVideoEvent.METADATA_UPDATE, metadataHandler);
+video.addEventListener(SomaVideoEvent.PLAYHEAD_UPDATE, playheadHandler);
+addChild(video);
+
+private function metadataHandler(e:SomaVideoEvent):void {
+    trace(e.player.duration);
+}
+
+private function playheadHandler(e:SomaVideoEvent):void {
+    trace(e.player.time);
+}
+     </pre></div>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../video/SomaVideo.html" target="">SomaVideo</a>
+<br>
+<a href="../video/SomaVideoPlayer.html" target="">SomaVideoPlayer</a>
+<br>
+<a href="events/SomaVideoEvent.html" target="">SomaVideoEvent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bufferLength">bufferLength</a> : Number<div class="summaryTableDescription">[read-only] Get the length in seconds of the buffer, the "buffer length" will reach the "buffer time" before playing the video, you can get the information on a SomaVideoEvent.BUFFERING_START,  SomaVideoEvent.BUFFERING_PROGRESS and  SomaVideoEvent.BUFFERING_COMPLETE event.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bufferPercentage">bufferPercentage</a> : Number<div class="summaryTableDescription">[read-only] Get the percentage of the buffer (seconds loaded), the "buffer length" will reach the "buffer time" before playing the video, you can get the information on a SomaVideoEvent.BUFFERING_START,  SomaVideoEvent.BUFFERING_PROGRESS and  SomaVideoEvent.BUFFERING_COMPLETE event.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bufferTime">bufferTime</a> : Number<div class="summaryTableDescription"> Buffer value in seconds, the default (flash built-in default of the NetStream class) is 0.1 (tenth of a second).</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bytesLoaded">bytesLoaded</a> : Number<div class="summaryTableDescription">[read-only] Get the bytes loaded of the video (preloading), you can get the information on a SomaVideoEvent.PRELOADING_START,  SomaVideoEvent.PRELOADING_PROGRESS and  SomaVideoEvent.PRELOADING_COMPLETE event.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bytesTotal">bytesTotal</a> : Number<div class="summaryTableDescription">[read-only] Get the bytes total that the video will preload, you can get the information on a SomaVideoEvent.PRELOADING_START,  SomaVideoEvent.PRELOADING_PROGRESS and  SomaVideoEvent.PRELOADING_COMPLETE event.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#creator">creator</a> : String<div class="summaryTableDescription">[read-only] Get the creator, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#duration">duration</a> : Number<div class="summaryTableDescription">[read-only] Get the time length (seconds) of the video, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#enableAutoResizeOnMetaData">enableAutoResizeOnMetaData</a> : Boolean<div class="summaryTableDescription"> Whether or not the Video instance (not the SomaVideo intance) will be resized when the metadata are received, default is true.<br/><br/>
+   Note: enabled or disabled will not change anything if you specified a size to the SomaVideo instance.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#haskeyframes">haskeyframes</a> : Boolean<div class="summaryTableDescription">[read-only] Whether or not the video has keyframes, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#hasmetadata">hasmetadata</a> : Boolean<div class="summaryTableDescription">[read-only] Whether or not the video has metadata, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#heightVideoSource">heightVideoSource</a> : Number<div class="summaryTableDescription">[read-only] Get the original height of the video, only available after that an event SomaVideoEvent.XMPDATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isPlaying">isPlaying</a> : Boolean<div class="summaryTableDescription">[read-only] Whether or not the video is currently playing.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#keyframes">keyframes</a> : Object<div class="summaryTableDescription">[read-only] Get the video keyframes, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lastkeyframelocation">lastkeyframelocation</a> : String<div class="summaryTableDescription">[read-only] Get the last key frame location, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lastkeyframetimestamp">lastkeyframetimestamp</a> : Number<div class="summaryTableDescription">[read-only] Get the last keyframe timestamp, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#LOG_ERRORS">LOG_ERRORS</a> : Boolean = true<div class="summaryTableDescription">[static] Indicates that the NetStatusEvent errors will be traced in the console (default true).</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loop">loop</a> : Boolean<div class="summaryTableDescription"> Specifies whether the video will replay on its own when it reaches the end.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#metadatacreator">metadatacreator</a> : String<div class="summaryTableDescription">[read-only] Get the metadata creator, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#metaDataObject">metaDataObject</a> : Object<div class="summaryTableDescription">[read-only] Get the metadata object received, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#netConnection">netConnection</a> : NetConnection<div class="summaryTableDescription">[read-only] Get the NetConnection instance of the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#pan">pan</a> : Number<div class="summaryTableDescription"> Pan (panning) of the video, the range is -1 (for left) to 1 (for right) and the default is 0.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#preloadingPercentage">preloadingPercentage</a> : Number<div class="summaryTableDescription">[read-only] Get the percentage of the video that is preloaded (0 to 100), you can get the information on a SomaVideoEvent.PRELOADING_START,  SomaVideoEvent.PRELOADING_PROGRESS and  SomaVideoEvent.PRELOADING_COMPLETE event.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#smoothing">smoothing</a> : Boolean<div class="summaryTableDescription"> Specifies whether the video should be smoothed (interpolated) when it is scaled.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#sound">sound</a> : SoundTransform<div class="summaryTableDescription"> SoundTransform instance used for the volume and panning </div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#stream">stream</a> : NetStream<div class="summaryTableDescription">[read-only] Get the NetStream instance of the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#time">time</a> : Number<div class="summaryTableDescription">[read-only] Get the current position of the playhead.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#url">url</a> : String<div class="summaryTableDescription">[read-only] Get the url of the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#video">video</a> : Video<div class="summaryTableDescription">[read-only] Get the Video instance used to display the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#videodatarate">videodatarate</a> : Number<div class="summaryTableDescription">[read-only] Get the video data rate (kbps), only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#volume">volume</a> : Number<div class="summaryTableDescription"> Volume of the video, the range is 0 to 1 and the default is 1.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#widthVideoSource">widthVideoSource</a> : Number<div class="summaryTableDescription">[read-only] Get the original width of the video, only available after that an event SomaVideoEvent.XMPDATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#xmpDataObject">xmpDataObject</a> : Object<div class="summaryTableDescription">[read-only] Get the XMP data object received, only available after that an event SomaVideoEvent.XMPDATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SomaVideo()">SomaVideo</a>(url:String)</div>
+<div class="summaryTableDescription"> Creates a SomaVideo Instance.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispose()">dispose</a>():void</div>
+<div class="summaryTableDescription"> Call this method when you dispose a SomaVideoPlayer to remove children, event listeners or whatever that needs to be destroyed to free the memory (make the instance elligible to the Garbage Collection).</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#info()">info</a>():String</div>
+<div class="summaryTableDescription"> Get information about the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#pause()">pause</a>():void</div>
+<div class="summaryTableDescription"> Pause the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#play()">play</a>():void</div>
+<div class="summaryTableDescription"> Play the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#resume()">resume</a>():void</div>
+<div class="summaryTableDescription"> Resume the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#seek()">seek</a>(offset:Number):void</div>
+<div class="summaryTableDescription"> Move the video playhead to a (approximate) time.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setSource()">setSource</a>(url:String):void</div>
+<div class="summaryTableDescription"> Set the source to play.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stop()">stop</a>():void</div>
+<div class="summaryTableDescription"> Stop the video.</div>
+</td><td class="summaryTableOwnerCol">SomaVideo</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="bufferLength"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bufferLength</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bufferLength:Number</code>&nbsp;&nbsp;[read-only]<p> Get the length in seconds of the buffer, the "buffer length" will reach the "buffer time" before playing the video, you can get the information on a SomaVideoEvent.BUFFERING_START,  SomaVideoEvent.BUFFERING_PROGRESS and  SomaVideoEvent.BUFFERING_COMPLETE event.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bufferLength():Number</code>
+<br>
+</div>
+<a name="bufferPercentage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bufferPercentage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bufferPercentage:Number</code>&nbsp;&nbsp;[read-only]<p> Get the percentage of the buffer (seconds loaded), the "buffer length" will reach the "buffer time" before playing the video, you can get the information on a SomaVideoEvent.BUFFERING_START,  SomaVideoEvent.BUFFERING_PROGRESS and  SomaVideoEvent.BUFFERING_COMPLETE event.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bufferPercentage():Number</code>
+<br>
+</div>
+<a name="bufferTime"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bufferTime</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bufferTime:Number</code>&nbsp;&nbsp;[read-write]<p> Buffer value in seconds, the default (flash built-in default of the NetStream class) is 0.1 (tenth of a second). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bufferTime():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bufferTime(value:Number):void</code>
+<br>
+</div>
+<a name="bytesLoaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bytesLoaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bytesLoaded:Number</code>&nbsp;&nbsp;[read-only]<p> Get the bytes loaded of the video (preloading), you can get the information on a SomaVideoEvent.PRELOADING_START,  SomaVideoEvent.PRELOADING_PROGRESS and  SomaVideoEvent.PRELOADING_COMPLETE event.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bytesLoaded():Number</code>
+<br>
+</div>
+<a name="bytesTotal"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bytesTotal</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bytesTotal:Number</code>&nbsp;&nbsp;[read-only]<p> Get the bytes total that the video will preload, you can get the information on a SomaVideoEvent.PRELOADING_START,  SomaVideoEvent.PRELOADING_PROGRESS and  SomaVideoEvent.PRELOADING_COMPLETE event.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bytesTotal():Number</code>
+<br>
+</div>
+<a name="creator"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">creator</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>creator:String</code>&nbsp;&nbsp;[read-only]<p> Get the creator, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get creator():String</code>
+<br>
+</div>
+<a name="duration"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">duration</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>duration:Number</code>&nbsp;&nbsp;[read-only]<p> Get the time length (seconds) of the video, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get duration():Number</code>
+<br>
+</div>
+<a name="enableAutoResizeOnMetaData"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enableAutoResizeOnMetaData</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>enableAutoResizeOnMetaData:Boolean</code>&nbsp;&nbsp;[read-write]<p> Whether or not the Video instance (not the SomaVideo intance) will be resized when the metadata are received, default is true.<br/><br/>
+   Note: enabled or disabled will not change anything if you specified a size to the SomaVideo instance.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get enableAutoResizeOnMetaData():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set enableAutoResizeOnMetaData(value:Boolean):void</code>
+<br>
+</div>
+<a name="haskeyframes"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">haskeyframes</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>haskeyframes:Boolean</code>&nbsp;&nbsp;[read-only]<p> Whether or not the video has keyframes, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get haskeyframes():Boolean</code>
+<br>
+</div>
+<a name="hasmetadata"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasmetadata</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>hasmetadata:Boolean</code>&nbsp;&nbsp;[read-only]<p> Whether or not the video has metadata, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get hasmetadata():Boolean</code>
+<br>
+</div>
+<a name="heightVideoSource"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">heightVideoSource</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>heightVideoSource:Number</code>&nbsp;&nbsp;[read-only]<p> Get the original height of the video, only available after that an event SomaVideoEvent.XMPDATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get heightVideoSource():Number</code>
+<br>
+</div>
+<a name="isPlaying"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isPlaying</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isPlaying:Boolean</code>&nbsp;&nbsp;[read-only]<p> Whether or not the video is currently playing.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isPlaying():Boolean</code>
+<br>
+</div>
+<a name="keyframes"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">keyframes</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>keyframes:Object</code>&nbsp;&nbsp;[read-only]<p> Get the video keyframes, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get keyframes():Object</code>
+<br>
+</div>
+<a name="lastkeyframelocation"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lastkeyframelocation</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>lastkeyframelocation:String</code>&nbsp;&nbsp;[read-only]<p> Get the last key frame location, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get lastkeyframelocation():String</code>
+<br>
+</div>
+<a name="lastkeyframetimestamp"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lastkeyframetimestamp</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>lastkeyframetimestamp:Number</code>&nbsp;&nbsp;[read-only]<p> Get the last keyframe timestamp, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get lastkeyframetimestamp():Number</code>
+<br>
+</div>
+<a name="LOG_ERRORS"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LOG_ERRORS</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var LOG_ERRORS:Boolean = true</code><p> Indicates that the NetStatusEvent errors will be traced in the console (default true). </p></div>
+<a name="loop"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loop</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loop:Boolean</code>&nbsp;&nbsp;[read-write]<p> Specifies whether the video will replay on its own when it reaches the end. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loop():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set loop(value:Boolean):void</code>
+<br>
+</div>
+<a name="metadatacreator"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">metadatacreator</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>metadatacreator:String</code>&nbsp;&nbsp;[read-only]<p> Get the metadata creator, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get metadatacreator():String</code>
+<br>
+</div>
+<a name="metaDataObject"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">metaDataObject</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>metaDataObject:Object</code>&nbsp;&nbsp;[read-only]<p> Get the metadata object received, only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get metaDataObject():Object</code>
+<br>
+</div>
+<a name="netConnection"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">netConnection</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>netConnection:NetConnection</code>&nbsp;&nbsp;[read-only]<p> Get the NetConnection instance of the video.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get netConnection():NetConnection</code>
+<br>
+</div>
+<a name="pan"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pan</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>pan:Number</code>&nbsp;&nbsp;[read-write]<p> Pan (panning) of the video, the range is -1 (for left) to 1 (for right) and the default is 0. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get pan():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set pan(value:Number):void</code>
+<br>
+</div>
+<a name="preloadingPercentage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">preloadingPercentage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>preloadingPercentage:Number</code>&nbsp;&nbsp;[read-only]<p> Get the percentage of the video that is preloaded (0 to 100), you can get the information on a SomaVideoEvent.PRELOADING_START,  SomaVideoEvent.PRELOADING_PROGRESS and  SomaVideoEvent.PRELOADING_COMPLETE event.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get preloadingPercentage():Number</code>
+<br>
+</div>
+<a name="smoothing"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">smoothing</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>smoothing:Boolean</code>&nbsp;&nbsp;[read-write]<p> Specifies whether the video should be smoothed (interpolated) when it is scaled. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get smoothing():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set smoothing(value:Boolean):void</code>
+<br>
+</div>
+<a name="sound"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sound</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>sound:SoundTransform</code>&nbsp;&nbsp;[read-write]<p> SoundTransform instance used for the volume and panning </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get sound():SoundTransform</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set sound(value:SoundTransform):void</code>
+<br>
+</div>
+<a name="stream"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stream</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>stream:NetStream</code>&nbsp;&nbsp;[read-only]<p> Get the NetStream instance of the video.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get stream():NetStream</code>
+<br>
+</div>
+<a name="time"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">time</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>time:Number</code>&nbsp;&nbsp;[read-only]<p> Get the current position of the playhead.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get time():Number</code>
+<br>
+</div>
+<a name="url"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">url</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>url:String</code>&nbsp;&nbsp;[read-only]<p> Get the url of the video.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get url():String</code>
+<br>
+</div>
+<a name="video"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">video</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>video:Video</code>&nbsp;&nbsp;[read-only]<p> Get the Video instance used to display the video. 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get video():Video</code>
+<br>
+</div>
+<a name="videodatarate"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">videodatarate</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>videodatarate:Number</code>&nbsp;&nbsp;[read-only]<p> Get the video data rate (kbps), only available after that an event SomaVideoEvent.METADATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get videodatarate():Number</code>
+<br>
+</div>
+<a name="volume"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volume</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>volume:Number</code>&nbsp;&nbsp;[read-write]<p> Volume of the video, the range is 0 to 1 and the default is 1. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get volume():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set volume(value:Number):void</code>
+<br>
+</div>
+<a name="widthVideoSource"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">widthVideoSource</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>widthVideoSource:Number</code>&nbsp;&nbsp;[read-only]<p> Get the original width of the video, only available after that an event SomaVideoEvent.XMPDATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get widthVideoSource():Number</code>
+<br>
+</div>
+<a name="xmpDataObject"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xmpDataObject</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>xmpDataObject:Object</code>&nbsp;&nbsp;[read-only]<p> Get the XMP data object received, only available after that an event SomaVideoEvent.XMPDATA_UPDATE (or SomaVideoEvent.ORIGINAL_SIZE_UPDATED) has been dispatched.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get xmpDataObject():Object</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SomaVideo()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SomaVideo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SomaVideo(url:String)</code><p> Creates a SomaVideo Instance. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; A String (URL) of the video to play.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="dispose()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispose</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function dispose():void</code><p> Call this method when you dispose a SomaVideoPlayer to remove children, event listeners or whatever that needs to be destroyed to free the memory (make the instance elligible to the Garbage Collection). </p></div>
+<a name="info()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">info</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function info():String</code><p> Get information about the video. 
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; A String.
+   </td>
+</tr>
+</table>
+</div>
+<a name="pause()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pause</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function pause():void</code><p> Pause the video. </p></div>
+<a name="play()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">play</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function play():void</code><p> Play the video. </p></div>
+<a name="resume()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resume</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function resume():void</code><p> Resume the video. </p></div>
+<a name="seek()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">seek</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function seek(offset:Number):void</code><p> Move the video playhead to a (approximate) time. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">offset</span>:Number</code> &mdash; The approximate time value, in seconds, to move to in a video file. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="setSource()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setSource</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setSource(url:String):void</code><p> Set the source to play.
+   <div class='listing'><pre>
+var video:SomaVideo = new SomaVideo("video.flv");
+video.setSource("othervideo.flv");
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; A String (URL).
+   </td>
+</tr>
+</table>
+</div>
+<a name="stop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stop():void</code><p> Stop the video. </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

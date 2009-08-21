@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>utils::QueueLoaderEvent</title>
+<link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">QueueLoaderEvent  : public   class</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">14/01/2009 17:24:27</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">14/01/2009 17:24:27</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">romuald</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{E8A97FB8-7BBD-427a-9087-7044CF743226}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA12.html">utils</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">&lt;p&gt;Custom Event Class for QueueLoader&lt;br/&gt;&lt;/p&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Attribute</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Number</i><br /><strong>&nbsp;&nbsp;bandwidth</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Array</i><br /><strong>&nbsp;&nbsp;bmArray</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Number</i><br /><strong>&nbsp;&nbsp;bytesLoaded</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> -1<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Number</i><br /><strong>&nbsp;&nbsp;bytesTotal</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> -1<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public int</i><br /><strong>&nbsp;&nbsp;count</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Object</i><br /><strong>&nbsp;&nbsp;dataObj</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> null<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public var</i><br /><strong>&nbsp;&nbsp;file</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public int</i><br /><strong>&nbsp;&nbsp;filetype</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Number</i><br /><strong>&nbsp;&nbsp;height</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static String</i><br /><strong>&nbsp;&nbsp;ITEM_COMPLETE</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "itemComplete"<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static String</i><br /><strong>&nbsp;&nbsp;ITEM_ERROR</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "itemError"<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static String</i><br /><strong>&nbsp;&nbsp;ITEM_PROGRESS</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "itemProgress"<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static String</i><br /><strong>&nbsp;&nbsp;ITEM_START</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "itemStart"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Event types
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public int</i><br /><strong>&nbsp;&nbsp;length</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public int</i><br /><strong>&nbsp;&nbsp;max</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public String</i><br /><strong>&nbsp;&nbsp;message</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> ""<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public String</i><br /><strong>&nbsp;&nbsp;path</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Number</i><br /><strong>&nbsp;&nbsp;percentage</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> 0<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static String</i><br /><strong>&nbsp;&nbsp;QUEUE_COMPLETE</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "queueComplete"<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static String</i><br /><strong>&nbsp;&nbsp;QUEUE_PROGRESS</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "queueProgress"<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static String</i><br /><strong>&nbsp;&nbsp;QUEUE_START</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "queueStart"<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Number</i><br /><strong>&nbsp;&nbsp;queuepercentage</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> 0<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public var</i><br /><strong>&nbsp;&nbsp;targ</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Public properties
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public String</i><br /><strong>&nbsp;&nbsp;title</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> ""<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public Number</i><br /><strong>&nbsp;&nbsp;width</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+			</tr>
+		</table>
+</div><div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Operation</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>QueueLoaderEvent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{82855F9E-70DE-4148-8BE1-15798627AB42}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{82855F9E-70DE-4148-8BE1-15798627AB42}" border="0" />type: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{82855F9E-70DE-4148-8BE1-15798627AB42}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{82855F9E-70DE-4148-8BE1-15798627AB42}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{82855F9E-70DE-4148-8BE1-15798627AB42}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{82855F9E-70DE-4148-8BE1-15798627AB42}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{770FC25D-1A73-41be-BA41-E46AF746D9BE}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{770FC25D-1A73-41be-BA41-E46AF746D9BE}" border="0" />targ: var</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{770FC25D-1A73-41be-BA41-E46AF746D9BE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{770FC25D-1A73-41be-BA41-E46AF746D9BE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{770FC25D-1A73-41be-BA41-E46AF746D9BE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{770FC25D-1A73-41be-BA41-E46AF746D9BE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{41799533-0B14-4763-838F-7927809F7892}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{41799533-0B14-4763-838F-7927809F7892}" border="0" />file: var</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{41799533-0B14-4763-838F-7927809F7892}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{41799533-0B14-4763-838F-7927809F7892}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{41799533-0B14-4763-838F-7927809F7892}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{41799533-0B14-4763-838F-7927809F7892}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{68609BF3-D6FB-4ec2-91C4-C5191B01868F}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{68609BF3-D6FB-4ec2-91C4-C5191B01868F}" border="0" />path: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{68609BF3-D6FB-4ec2-91C4-C5191B01868F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>""</td>
+						</tr>
+						<tr id="param{68609BF3-D6FB-4ec2-91C4-C5191B01868F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{68609BF3-D6FB-4ec2-91C4-C5191B01868F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{68609BF3-D6FB-4ec2-91C4-C5191B01868F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{00992B07-0EE0-4ff1-8B5D-12120FB92A2B}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{00992B07-0EE0-4ff1-8B5D-12120FB92A2B}" border="0" />title: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{00992B07-0EE0-4ff1-8B5D-12120FB92A2B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>""</td>
+						</tr>
+						<tr id="param{00992B07-0EE0-4ff1-8B5D-12120FB92A2B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{00992B07-0EE0-4ff1-8B5D-12120FB92A2B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{00992B07-0EE0-4ff1-8B5D-12120FB92A2B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{47738CEE-DA7D-4b98-98B4-14870A514F7A}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{47738CEE-DA7D-4b98-98B4-14870A514F7A}" border="0" />filetype: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{47738CEE-DA7D-4b98-98B4-14870A514F7A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>1</td>
+						</tr>
+						<tr id="param{47738CEE-DA7D-4b98-98B4-14870A514F7A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{47738CEE-DA7D-4b98-98B4-14870A514F7A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{47738CEE-DA7D-4b98-98B4-14870A514F7A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{5FFC7CE6-1ECD-48b4-AB1C-18167E4FC73E}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{5FFC7CE6-1ECD-48b4-AB1C-18167E4FC73E}" border="0" />bytesLoaded: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{5FFC7CE6-1ECD-48b4-AB1C-18167E4FC73E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>-1</td>
+						</tr>
+						<tr id="param{5FFC7CE6-1ECD-48b4-AB1C-18167E4FC73E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{5FFC7CE6-1ECD-48b4-AB1C-18167E4FC73E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5FFC7CE6-1ECD-48b4-AB1C-18167E4FC73E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{8025D04A-9390-4bd4-8EA8-EE70433F73E1}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{8025D04A-9390-4bd4-8EA8-EE70433F73E1}" border="0" />bytesTotal: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8025D04A-9390-4bd4-8EA8-EE70433F73E1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>-1</td>
+						</tr>
+						<tr id="param{8025D04A-9390-4bd4-8EA8-EE70433F73E1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8025D04A-9390-4bd4-8EA8-EE70433F73E1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8025D04A-9390-4bd4-8EA8-EE70433F73E1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{FE63A3D0-6636-46b5-842E-7AD2AAD0F194}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{FE63A3D0-6636-46b5-842E-7AD2AAD0F194}" border="0" />percentage: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FE63A3D0-6636-46b5-842E-7AD2AAD0F194}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>-1</td>
+						</tr>
+						<tr id="param{FE63A3D0-6636-46b5-842E-7AD2AAD0F194}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FE63A3D0-6636-46b5-842E-7AD2AAD0F194}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FE63A3D0-6636-46b5-842E-7AD2AAD0F194}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{94F56046-70C1-4377-B315-A0E803F587B2}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{94F56046-70C1-4377-B315-A0E803F587B2}" border="0" />queuepercentage: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{94F56046-70C1-4377-B315-A0E803F587B2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>0</td>
+						</tr>
+						<tr id="param{94F56046-70C1-4377-B315-A0E803F587B2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{94F56046-70C1-4377-B315-A0E803F587B2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{94F56046-70C1-4377-B315-A0E803F587B2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{FC8B97A8-155C-4b71-8C7C-2718CDCA7AF4}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{FC8B97A8-155C-4b71-8C7C-2718CDCA7AF4}" border="0" />width: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FC8B97A8-155C-4b71-8C7C-2718CDCA7AF4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>0</td>
+						</tr>
+						<tr id="param{FC8B97A8-155C-4b71-8C7C-2718CDCA7AF4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FC8B97A8-155C-4b71-8C7C-2718CDCA7AF4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FC8B97A8-155C-4b71-8C7C-2718CDCA7AF4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{3D818A4C-C365-4751-9595-C8A58E00BF8D}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{3D818A4C-C365-4751-9595-C8A58E00BF8D}" border="0" />height: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3D818A4C-C365-4751-9595-C8A58E00BF8D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>0</td>
+						</tr>
+						<tr id="param{3D818A4C-C365-4751-9595-C8A58E00BF8D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3D818A4C-C365-4751-9595-C8A58E00BF8D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3D818A4C-C365-4751-9595-C8A58E00BF8D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{472B3D19-2B82-4cee-9EB3-9E76E20253E4}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{472B3D19-2B82-4cee-9EB3-9E76E20253E4}" border="0" />message: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{472B3D19-2B82-4cee-9EB3-9E76E20253E4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>""</td>
+						</tr>
+						<tr id="param{472B3D19-2B82-4cee-9EB3-9E76E20253E4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{472B3D19-2B82-4cee-9EB3-9E76E20253E4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{472B3D19-2B82-4cee-9EB3-9E76E20253E4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{BD415762-64B1-469c-86E3-F0A4CA71D38F}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{BD415762-64B1-469c-86E3-F0A4CA71D38F}" border="0" />count: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{BD415762-64B1-469c-86E3-F0A4CA71D38F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>0</td>
+						</tr>
+						<tr id="param{BD415762-64B1-469c-86E3-F0A4CA71D38F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{BD415762-64B1-469c-86E3-F0A4CA71D38F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BD415762-64B1-469c-86E3-F0A4CA71D38F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{719519F2-4000-4a11-BAAF-AF6D8F390E28}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{719519F2-4000-4a11-BAAF-AF6D8F390E28}" border="0" />length: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{719519F2-4000-4a11-BAAF-AF6D8F390E28}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>0</td>
+						</tr>
+						<tr id="param{719519F2-4000-4a11-BAAF-AF6D8F390E28}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{719519F2-4000-4a11-BAAF-AF6D8F390E28}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{719519F2-4000-4a11-BAAF-AF6D8F390E28}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{630AC561-90F1-4100-A01F-B34D0C6D46BC}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{630AC561-90F1-4100-A01F-B34D0C6D46BC}" border="0" />max: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{630AC561-90F1-4100-A01F-B34D0C6D46BC}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>0</td>
+						</tr>
+						<tr id="param{630AC561-90F1-4100-A01F-B34D0C6D46BC}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{630AC561-90F1-4100-A01F-B34D0C6D46BC}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{630AC561-90F1-4100-A01F-B34D0C6D46BC}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{379B5E96-DB2C-49cd-9BA6-F07EC6730B6B}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{379B5E96-DB2C-49cd-9BA6-F07EC6730B6B}" border="0" />bmArray: Array</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{379B5E96-DB2C-49cd-9BA6-F07EC6730B6B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>null</td>
+						</tr>
+						<tr id="param{379B5E96-DB2C-49cd-9BA6-F07EC6730B6B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{379B5E96-DB2C-49cd-9BA6-F07EC6730B6B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{379B5E96-DB2C-49cd-9BA6-F07EC6730B6B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2C8864FF-CFFD-4e28-B1D4-E5B251CCEC99}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{2C8864FF-CFFD-4e28-B1D4-E5B251CCEC99}" border="0" />dataObj: Object</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2C8864FF-CFFD-4e28-B1D4-E5B251CCEC99}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>null</td>
+						</tr>
+						<tr id="param{2C8864FF-CFFD-4e28-B1D4-E5B251CCEC99}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2C8864FF-CFFD-4e28-B1D4-E5B251CCEC99}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2C8864FF-CFFD-4e28-B1D4-E5B251CCEC99}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{5CDC1C87-7A36-4a5d-8AE1-76F9890921B1}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{5CDC1C87-7A36-4a5d-8AE1-76F9890921B1}" border="0" />bandwidth: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{5CDC1C87-7A36-4a5d-8AE1-76F9890921B1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>0</td>
+						</tr>
+						<tr id="param{5CDC1C87-7A36-4a5d-8AE1-76F9890921B1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{5CDC1C87-7A36-4a5d-8AE1-76F9890921B1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5CDC1C87-7A36-4a5d-8AE1-76F9890921B1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{1FC2A130-56DE-456e-A2C0-0F4228EDA5BC}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{1FC2A130-56DE-456e-A2C0-0F4228EDA5BC}" border="0" />bubbles: Boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1FC2A130-56DE-456e-A2C0-0F4228EDA5BC}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>false</td>
+						</tr>
+						<tr id="param{1FC2A130-56DE-456e-A2C0-0F4228EDA5BC}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1FC2A130-56DE-456e-A2C0-0F4228EDA5BC}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1FC2A130-56DE-456e-A2C0-0F4228EDA5BC}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{7A6C5384-62EE-4a6c-B592-04E3462A930A}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{7A6C5384-62EE-4a6c-B592-04E3462A930A}" border="0" />cancelable: Boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7A6C5384-62EE-4a6c-B592-04E3462A930A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>false</td>
+						</tr>
+						<tr id="param{7A6C5384-62EE-4a6c-B592-04E3462A930A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7A6C5384-62EE-4a6c-B592-04E3462A930A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7A6C5384-62EE-4a6c-B592-04E3462A930A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):var
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+
+		</table>
+</div>	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

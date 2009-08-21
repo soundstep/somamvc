@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site backgroundAlpha=".7" backgroundColor="000000" height="500" horizontalCenter="0" layout="fixed" verticalCenter="0" width="800">
+    <!-- backgrounds -->
+    <backgrounds>
+        <bitmap alignX="center" alignY="center" visible="false" external="true" file="bg0.jpg" id="Background 1" path="images/backgrounds/" ratio="ratio_out"/>
+        <bitmap alignX="center" alignY="center" visible="false" external="true" file="bg1.jpg" id="Background 2" path="images/backgrounds/" ratio="ratio_out"/>
+        <bitmap alignX="center" alignY="center" visible="false" external="true" file="bg2.jpg" id="Background 3" path="images/backgrounds/" ratio="ratio_out"/>
+        <bitmap alignX="center" alignY="center" visible="false" external="true" file="bg3.jpg" id="Background 4" path="images/backgrounds/" ratio="ratio_out"/>
+        <bitmap alignX="center" alignY="center" visible="false" external="true" file="bg4.jpg" id="Background 5" path="images/backgrounds/" ratio="ratio_out"/>
+    </backgrounds>
+    <!-- home -->
+    <page background="Background 1" id="home" type="CanvasPage" urlfriendly="home">
+        <title><![CDATA[Welcome to Soma Protest]]></title>
+        <content>
+            <textfield id="intro">
+			<![CDATA[
+				<p>Soma Protest is a site-demo to explain you how Soma (AS3 MVC Framework) is working. Soma Protest has been built with Soma and it is not only getting you started, it also provides you sources to understand how I'm using Soma. The Soma Protest sources are available on the <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">Soma Page</a> on my blog.<br/></p>
+				<p>Soma Protest will be updated and I will add sections for any new feature.<br/></p>
+				<p>You can find support, report bugs or ask new features on the <a href="http://www.soundstep.com/forum/" target="_blank">Soundstep forums</a>.<br/></p>
+				<p><a href="./#/somaui/">SomaUI</a> is a software that is generating sources: the draft of a Flash site based on Soma, ready to use and be taken to a further development. Available for Windows, Mac and Linux, you can download it on the <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI page</a> on my blog.<br/></p>
+				<p>Happy Development.<br/></p>
+				<p>Romuald</p>
+			]]>
+			</textfield>
+        </content>
+    </page>
+	<!-- a site in 2 min -->
+    <page background="Background 1" id="site2min" type="CanvasPage" urlfriendly="site-in-2-minutes">
+        <title><![CDATA[A site in 2 minutes]]></title>
+        <content>
+            <textfield id="intro">
+			<![CDATA[
+				<p>A site can be ready to be taken to further development in 2 minutes by following these steps:<br/></p>
+				<textformat indent="30">
+					<p>1. Launch <a href="./#/somaui/">SomaUI.</a></p>
+					<p>2. Create and set a new project.</p>
+					<p>3. Paste this <a href="data/xml-examples/BasicSite.txt" target="_blank">XML Site Definition template</a> in the XML editor.</p>
+					<p>4. Export the site.<br/></p>
+				</textformat>
+				<p>You can now start to develop a site on a solid structure without caring about it. You just have to open the class of a page generated and start to code!</p>
+			]]>
+			</textfield>
+        </content>
+    </page>
+    <!-- soma basics -->
+    <page background="Background 1" id="somaBasics" type="CanvasPage" urlfriendly="basics">
+        <title><![CDATA[Soma Basics]]></title>
+        <content>
+            <textfield id="intro">
+			<![CDATA[
+				<p>Soma is a MVC (<a href="http://en.wikipedia.org/wiki/Model-view-controller" target="_blank">Model-View-Controller</a>) framework, but there is a detail very important to understand:<br/></p>
+				<p>Soma is not ONLY a MVC Framework.<br/></p>
+				<p>Soma has been built to "work" for you, to handle common development you need in most of the website you're building, such as deep-linking, loading, backgrounds, page management, content management, assets, loader, loading, menu, contextual menu, structure, styles, templates, transitions, etc...<br/></p>
+				<p>Those are all internally built in Soma, centralized and ready to use. The framework will handle most of those redundant and annoying development and give a body (or a skeleton) to work with.<br/></p>
+				<p>I like to call Soma an invisible framework, as you can fully use the MVC way even used in its internal building, or completely avoid it and build your site your way. In other words, you dont need to know how a MVC Framework works to use Soma.<br/></p>
+				<p>Soma does not have a new "design philosophy" but has been built upon the heart of another MVC framework: <a href="http://opensource.adobe.com/wiki/display/cairngorm/" target="_blank">Cairngorm</a>. Soma could have been built upon any other MVC framework, such as the largely used <a href="http://puremvc.org/" target="_blank">PureMVC</a>.<br/></p>
+				<p>I've made this choice because I want Soma to be "easy-accessed" and, in my opinion, PureMVC is harder to get into compared to Cairngorm. PureMVC is not only an Actionscript framework, and even if Cairngorm is originally a Flex framework, I believe its syntax, event-based system and "design philosophy" are closer to what a Flash user could expect. When I say Flash user, I mean also actionscript developer beginner, not only seasoned developers. And again, this is only an opinion, a choice had to be made.<br/></p>
+				<p>To make everyone happy, I intend in the future to give the ability to Soma users to have a second version based on pureMVC or better, a way use Soma like a plugin on PureMVC, making easy to update Soma or PureMVC.<br/></p>
+				<p>Soma is sharing only some parts with Cairngorm (only few files changed to work with Flash): the event dispatcher sytem and syntax, the command system, the controller system and the error system. The "Soma heart" might changed one day in a major release if I find or write something that I think is better for the Soma users. Cairngorm has a "service part" to handle Flash remoting with commands, I also might one day add a Soma built-in services manager.<br/></p>
+				<p>You can now visit this site and understand how Soma works. Don't forget, to make your life easier, you also have a tool to generate a good draft to work on: <a href="./#/somaui/">SomaUI</a></p>
+			]]>
+			</textfield>
+        </content>
+        <page background="Background 1" id="startSoma" type="StartSoma" urlfriendly="start-soma">
+            <title><![CDATA[Start Soma]]></title>
+            <content>
+                <textfield id="intro">
+				<![CDATA[
+					<p>To start Soma (initialization), it will take only one line in your Main class (Document Class).<br/></p>
+					<p>To be able to do that, Soma needs 4 requirements:<br/></p>
+					<textformat indent="30">
+						<p>The Document Class</p>
+						<p>The <a href="./#/basics/start-soma/xml/">XML site definition</a> (XML file)</p>
+						<p>The <a href="./#/basics/start-soma/config/">Config file</a> (Actionscript file)</p>
+						<p>The <a href="./#/basics/start-soma/transitions/">Transitions file</a> (Actionscript file)<br/></p>
+					</textformat>
+					<p class="code">Soma.getInstance().start(this, "data/site.xml", new Config(), new Transitions());<br/></p>
+					<p>Soma is initializing all the managers and variables needed to make the system working properly, and Soma is doing it in two times. The first part before the loading of the XML, and the second part after:<br/></p>
+					<textformat indent="30">
+						<p>1. Soma start</p>
+						<p>2. initialize managers and create containers</p>
+						<p>3. give order to ContentManager to load the XML Site Definition</p>
+						<p>4. dispatch ContentEvent.LOADED (from ContentManager)</p>
+						<p>5. initialize managers that needed to have the content loaded</p>
+						<p>6. dispatch ContentEvent.INITIALIZED<br/></p>
+					</textformat>
+					<p>It is important to understand that Soma could be called an "empty layout manager", it is made to work with any kind of design. Soma is creating empty sprites that will be filled with the user settings (XML and code). For example, a background Sprite that will contains the backgrounds set in the XML Site Definition, or a page Sprite that will contains all your pages. Even the pages created are empty Sprite, the page manager decide what, when and how to show those pages.<br/></p>
+					<p>During this initialization process, Soma creates the containers needed, see the structure created:</p>
+				]]>
+				</textfield>
+				<bitmap id="somaContainers" external="true" path="images/assets/" file="containers.png"/>
+				 <textfield id="text1">
+				<![CDATA[
+					<p>You can access them with the following syntax:<br/></p>
+					<textformat indent="30">
+						<p>The Document Class: <span class="code">Soma.getInstance().ui</span></p>
+						<p>The backgrounds container: <span class="code">Soma.getInstance().background.backgrounds</span></p>
+						<p>The site container: <span class="code">Soma.getInstance().container</span></p>
+						<p>The pages container: <span class="code">Soma.getInstance().page.pages</span></p>
+						<p>Your Menu class: <span class="code">Soma.getInstance().menu.menu</span></p>
+						<p>Your Loading class: <span class="code">Soma.getInstance().loader.loading</span></p>
+					</textformat>
+				]]>
+				</textfield>
+            </content>
+            <page background="Background 1" id="reqXML" type="CanvasPage" urlfriendly="xml">
+                <title><![CDATA[XML site definition]]></title>
+                <content>
+                    <textfield id="intro">
+					<![CDATA[
+						<p>Soma is working hand-to-hand to what I call a "XML Site Definition", this XML is describing the structure of your site. Even more than only structure, you can describe content and behavior (positioning with <a href="./#/basics/baseui/">BaseUI</a>).<br/></p>
+						<p>You can decide how you want to load your content, you can include it in this XML (can be useful for language management or <a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank">SEO</a>), or only put the required nodes inside.<br/></p>
+						<p>If you use <a href="./#/somaui/">SomaUI</a>, you can load a "site template" to see how look an XML Site Definition. In this <a href="http://www.soundstep.com/blog/tutorials/somaui/getting-started/" target="_blank">SomaUI Getting Started tutorial</a>, you can find out where are the templates.<br/></p>
+						<p>See the <a href="data/site.xml" target="_blank">Soma Protest XML Site Definition</a>.<br/></p>
+						<p>You can find how to build this file in the <a href="./#/xml/">XML Site Definition page</a>.</p>
+					]]>
+					</textfield>
+                </content>
+            </page>
+            <page background="Background 1" id="reqConfig" type="CanvasPage" urlfriendly="config">
+                <title><![CDATA[Config file]]></title>
+                <content>
+                    <textfield id="intro">
+					<![CDATA[
+						<p>Soma needs a Config class file that is initialized when Soma start. I give here the details but if you dont want to do it by hand, you can generate a site using <a href="./#/somaui/">SomaUI</a>, a proper Config file will also be generated in the project package (example: <span class="code">com.myproject.Config.as</span>).<br/></p>
+						<p>This config file must implements <span class="code">com.soma.interfaces.IConfig</span>.<br/></p>
+						<p>Implementing IConfig will force you to have the following methods in your Config class:<br/></p>
+						<ul>
+							<li class="code">function init():void;</li>
+							<li class="code">function get siteName():String;</li>
+							<li class="code">function get defaultPage():String;</li>
+							<li class="code">function get loadingClass():String;</li>
+							<li class="code">function get menuClass():String;</li>
+							<li class="code">function getClass(className:String):Class;</li>
+							<li class="code">function get stylesheet():StyleSheet; (DEPRECATED, see <a href="./#/stylesheet/">Stylesheet page)</a><br/></li>
+						</ul>
+						<p>init is the function needed to initialized the Config file, you will need it to setup the project config variables (siteName, defaultPage, loadingClass, menuClass, and a function used to get classes: getClass).<br/></p>
+						<p>When Soma is initialized, the config class is accessible using <span class="code">Soma.getInstance().config</span>. It will return you an IConfig type, so if you add new properties and methods, you will need to cast it to your own. Let's say you called your Config class "MyConfig", you'll access to it this way:<br/></p>
+						<textformat indent="30"><p class="code">MyConfig(Soma.getInstance().config).myProperty<br/></p></textformat>
+						<p>There are 2 classes that are handled "externally" by Soma as it is usually too specific to be part of a framework. It means you will have to build your own: the menu class and the loading class. Using <a href="./#/somaui/">SomaUI</a> will provide you 2 basic menu and loading class you can use to start to develop and also as example.<br/></p>
+						<p>The siteName is the name of your project and will be used in the browser title bar.</p>
+						<p>The defaultPage is the page that Soma will open the first time, it can be a Home Page for example.</p>
+						<p>The loadingClass is the name of the class that will show a progress (<a href="./#/basics/external-classes/">more details</a>).</p>
+						<p>The menuClass is the name of your main menu class (<a href="./#/basics/external-classes/">more details</a>).</p>
+						<p>The stylesheet is an inline stylesheet (DEPRECATED as Soma has now a full <a href="./#/stylesheet/">Stylesheet</a> support).</p>
+						<p>The method getClass is returning a "imported Class" (<a href="./#/basics/class-import/">more details</a>).<br/></p>
+						<p>Here is the <a href="../source/front-end/src/com/somaprotest/Config.as" target="_blank">Soma Protest Config file</a> (<span class="code">/source/front-end/src/com/somaprotest/Config.as</span>).</p>
+					]]>
+					</textfield>
+                </content>
+            </page>
+            <page background="Background 1" id="reqTransitions" type="CanvasPage" urlfriendly="transitions">
+                <title><![CDATA[Transitions proxy]]></title>
+                <content>
+                    <textfield id="intro">
+					<![CDATA[
+						<p>Soma handles transitions via a TransitionManager but does not include a tween library. That's why Soma needs a transition proxy when it starts. You can use whatever tween library you prefer.<br/></p>
+						<p>Using <a href="./#/somaui/">SomaUI</a> will generate a Transition proxy class to work with the library <a href="http://code.google.com/p/tweener/" target="_blank">Tweener</a>.<br/></p>
+						<p>You can find more details about the <a href="./#/basics/commands/transitions/">Transition commands</a> and <a href="./#/basics/shortcuts/somatween/">SomaTween</a> on these pages.<br/></p>
+						<p>A transition file must implements <span class="code">com.soma.interfaces.ITransition</span>.<br/></p>
+						<p>Implementing ITransition will force you to have the following methods in your Transition class:<br/></p>
+						<ul>
+							<li class="code">function execute(item:Object, id:String = null, transition:TransitionVO = null):void;</li>
+							<li class="code">function stop(item:Object):void;</li>
+							<li class="code">function stopAll():void;<br/></li>
+						</ul>
+						<p>When Soma is initialized, the user transition class is accessible using <span class="code">Soma.getInstance().userTransition</span>. It will return you an ITransition type, so if you add new properties and methods, you will need to cast it to your own. Let's say you called your Config class "MyTransition", you'll access to it this way:<br/></p>
+						<textformat indent="30"><p class="code">MyTransition(Soma.getInstance().transition).myProperty<br/></p></textformat>
+						<p>The execute function will start a tween with your tween library.</p>
+						<p>The stop function will stop the tween of a target.</p>
+						<p>The stop function will stop all the tweens running.<br/></p>
+						<p>Here is the <a href="../source/front-end/src/com/somaprotest/Transitions.as" target="_blank">Soma Protest Transitions file</a> that is working with the <a href="http://code.google.com/p/tweener/" target="_blank">Tweener library</a>.</p>
+						<p><span class="code">/source/front-end/src/com/somaprotest/Transitions.as</span>.<br/></p>
+						<p class="bold">Change a transitions proxy class<br/></p>
+						<p>SomaUI by default export a site working with the <a href="http://code.google.com/p/tweener/" target="_target">Tweener library</a>, this can be changed. I wrote other transitions proxy files for <a href="http://blog.greensock.com/tweenmaxas3/" target="_blank">TweenMax</a> and <a href="http://gskinner.com/libraries/gtween/" target="_blank">GTween</a>, available in the Soma source on the <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI page</a> on my blog or in the SVN.<br/></p>
+						<p>Even if it is a requirement to start Soma, the use of SomaTween in your development is optional. Soma centralize transitions via a TransitionsManager, SomaTween and a transitions proxies file. It makes you able to easily debug tween issues, disable time and delay for the whole site or do whatever you need in this Transitions class, but it is up to you to use SomaTween or not.<br/></p>
+						<p>If you are using other tween libraries, you can of course write your own Transitions class. I can guide you if help is needed.<br/></p>
+						<p>To change a tween library in a site generated by SomaUI:<br/></p>
+						<textformat indent="30">
+							<p>1. add the tween library sources in your source folder (ex: /source/front-end/src/)</p>
+							<p>2. replace the Transitions.as class used by Soma (ex: /source/front-end/src/com/mysite/Transitions.as)</p>
+							<p>3. edit the new Transitions.as, line 1, change the package (ex: package com.mysite)<br/></p>
+						</textformat>
+						<p>To change change the SomaUI sources and export the site with the Transitions proxy and the tween library you prefer:<br/></p>
+						<textformat indent="30">
+							<p>1. in the SomaUI folder /SomaUI/framework/static-source/source/front-end/src</p>
+							<p>remove the caurina folder (Tweener) and add the sources of the tween library you wish<br/></p>
+							<p>2. in the SomaUI folder /SomaUI/framework/user-source</p>
+							<p>replace the Transitions.as class by the one corresponding to your tween library</p>
+							<p>edit the file and replace the package name by <span class="code">#SOMAUI#-USER_PACKAGE-#SOMAUI#</span>, to get:</p>
+							<p class="code">package #SOMAUI#-USER_PACKAGE-#SOMAUI# {<br/></p>
+						</textformat>
+						<p>SomaUI is then ready to export sites using the tween library of your choice.<br/></p>
+					]]>
+					</textfield>
+                </content>
+            </page>
+        </page>
+        <page background="Background 1" id="access" type="CanvasPage" urlfriendly="access">
+            <title><![CDATA[How to access to Soma]]></title>
+            <content>
+                 <textfield id="intro">
+					<![CDATA[
+						<p>Access to Soma, or "talk to Soma", is done through a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">Singleton pattern</a>:<br/></p>
+						<textformat indent="30">
+							<p class="code">import com.soma.Soma</p>
+							<p class="code">Soma.getInstance()<br/></p>
+						</textformat>
+						<p>You can access to a list of managers:<br/></p>
+						<textformat indent="30">
+							<p><span class="code">Soma.getInstance().background</span> (BackgroundManager)</p>
+							<p><span class="code">Soma.getInstance().content</span> (ContentManager)</p>
+							<p><span class="code">Soma.getInstance().loader</span> (global LoaderManager)</p>
+							<p><span class="code">Soma.getInstance().menu</span> (MenuManager)</p>
+							<p><span class="code">Soma.getInstance().page</span> (PageManager)</p>
+							<p><span class="code">Soma.getInstance().style</span> (StyleManager)</p>
+							<p><span class="code">Soma.getInstance().template</span> (TemplateManager)</p>
+							<p><span class="code">Soma.getInstance().transition</span> (TransitionManager)</p>
+							<p><span class="code">Soma.getInstance().userTransition</span> (user transition proxy)</p>
+							<p><span class="code">Soma.getInstance().config</span> (user config file)</p>
+							<p><span class="code">Soma.getInstance().container</span> (Sprite that contains the site)</p>
+							<p><span class="code">Soma.getInstance().ui</span> (Document Class)</p>
+							<p><span class="code">Soma.getInstance().baseUI</span> (global BaseUI)</p>
+							<p><span class="code">Soma.getInstance().referenceBaseUI</span> (reference of the global BaseUI)</p>
+							<p><span class="code">Soma.getInstance().currentLanguage</span> (current language)</p>
+						</textformat>
+					]]>
+					</textfield>
+            </content>
+        </page>
+        <page background="Background 1" id="commands" type="CanvasPage" urlfriendly="commands">
+            <title><![CDATA[Soma Commands]]></title>
+            <content>
+                <textfield id="intro">
+				<![CDATA[
+					<p>A MVC Framework has <a href="http://en.wikipedia.org/wiki/Command_pattern" target="_blank">commands</a> to "talk" to the framework, to tell the framework to execute pieces of code from internal events or user events.<br/></p>
+					<p>Usually a MVC Framework does not provides anything but a "design philosophy" but Soma has built-in commands ready to use. You will obviously be able to create your own <a href="./#/custom-mvc/">custom commands</a>.<br/></p>
+					<p>A command is nothing more than an event dispatched and "intercepted" by the framework to activate actions. The Soma Event super class (Cairngorm like) makes you able to dispatch the event itself. Here is an example of the creation of a PageEvent dispatching itself to show a page in Soma:<br/></p>
+					<textformat indent="30">
+						<p class="code">new PageEvent(PageEvent.SHOW_PAGE, "myPageID").dispatch();<br/></p>
+					</textformat>
+					<p>You can see the dispatch method at the end of the syntax, it is nothing more than a shortcut to dispatch it.<br/></p>
+					<p>Through the next pages, you'll see the Soma internal commands available and be able to see them in action.</p>
+				]]>
+				</textfield>
+            </content>
+			<page background="Background 1" id="cmdBackground" type="CmdBackground" urlfriendly="background">
+				<title><![CDATA[Background Command]]></title>
+				<content>
+					<textfield id="intro">
+					<![CDATA[
+						<p>Soma can show or hide backgrounds in each pages if needed, you can set everything in the XML site Definition and Soma will take care about loading and referencing. See the <a href="./#/xml/">XML site Definition page</a> for more details.<br/></p>
+						<p>You can use background commands to show or hide a background from your code using the following syntax:<br/></p>
+						<textformat indent="30">
+							<p class="code">import com.soma.events.BackgroundEvent;</p>
+							<p class="code">new BackgroundEvent(BackgroundEvent.SHOW, "myBackgroundID").dispatch();</p>
+							<p class="code">new BackgroundEvent(BackgroundEvent.HIDE, "myBackgroundID").dispatch();<br/></p>
+						</textformat>
+						<p>The BackgroundEvent parameter is the attribute id of the background node in the XML Site Definition. Try the following Background commands:</p>
+					]]>
+					</textfield>
+					<textfield id="text1">
+					<![CDATA[
+						<p>You can access to the current background using <span class="code">Soma.getInstance().background.currentBackground</span></p>
+					]]>
+					</textfield>
+					<textfield id="text2">
+					<![CDATA[
+						<p>You can hide the background using <span class="code">new BackgroundEvent(BackgroundEvent.HIDE).dispatch();</span></p>
+					]]>
+					</textfield>
+				</content>
+			</page>
+			<page background="Background 1" id="cmdLoader" type="CmdLoader" urlfriendly="loader">
+				<title><![CDATA[Loader Command]]></title>
+				<content>
+					 <textfield id="intro">
+					<![CDATA[
+						<p>Even if this might change in the future (I might rewrite my own loader library), Soma is using an external library to handle the loading: <a href="http://code.google.com/p/queueloader-as3/" target="_blank">Queueloader</a>. It doesn't mean you have to use it, Soma is very flexible and you can load external content in the way you prefer.<br/></p>
+						<p>Soma has a global LoaderManager initialized you can use to load anything. You can access it this way:<br/></p>
+						<textformat indent="30"><p class="code">Soma.getInstance().loader<br/></p></textformat>
+						<p>You can can create a new LoaderManager instance is you need:<br/></p>
+						<textformat indent="30">
+							<p class="code">import com.soma.model.LoaderManager;</p>
+							<p class="code">var loader:LoaderManager = new LoaderManager();<br/></p>
+						</textformat>
+						<p>You can register a loading class to display the progress: <span class="code">loader.addLoading("MyLoadingClass")</span>.</p>
+						<p>See the <a href="./#/basics/external-classes/">external classes page</a> for more details.<br/></p>
+						<p>You can add external content in the loader queue (even while it is already loading) and start to load them using commands. Here are the commands available:<br/></p>
+						<textformat indent="30">
+							<p class="code">new LoaderEvent(LoaderEvent.ADD_ITEM, loader, loaderVO).dispatch();</p>
+							<p class="code">new LoaderEvent(LoaderEvent.START_LOADING, loader).dispatch();</p>
+							<p class="code">new LoaderEvent(LoaderEvent.STOP_LOADING, loader).dispatch();<br/></p>
+						</textformat>
+						<p>You can access to the Queueloader instance this way: <span class="code">Soma.getInstance().loader.queue</span></p>
+						<p>To use the "add item" command you have to create an instance of the LoaderItemVO, see the <a href="./#/basics/value-objects/">Value Objects page</a> for more details.<br/></p>
+						<p>Here is an example using the Soma global loader:<br/></p>
+					]]>
+					</textfield>
+					<textfield id="text1">
+					<![CDATA[
+						<p>Try the following Loader commands:</p>
+					]]>
+					</textfield>
+				</content>
+			</page>
+            <page background="Background 1" id="cmdMenu" type="CmdMenu" urlfriendly="menu">
+                <title><![CDATA[Menu commands]]></title>
+                <content>
+                    <textfield id="intro">
+					<![CDATA[
+						<p>The menu is an <a href="./#/basics/external-classes/">external class</a>, and has only only one command to change the state of the menu.<br/></p>
+						<p>The parameter is the attribute id of the page node in the XML Site Definition you want to reach. Try the following command to randomly change the state of the menu:</p>
+					]]>
+					</textfield>
+                </content>
+            </page>
+            <page background="Background 1" id="cmdPage" type="CanvasPage" urlfriendly="page">
+                <title><![CDATA[Page commands]]></title>
+                <content>
+                    <textfield id="intro">
+					<![CDATA[
+						<p>The page manager in Soma is undoubtly the most complicated manager, though becoming simple via the page commands. To show a page in Soma you just have to know the page id you want to show. The parameter of the following commands is the attribute id of the page node in the <a href="./#/xml/">XML Site Definition</a>.<br/></p>
+						<p>To understand how the pages are working in Soma, see the <a href="./#/page-system/">Page System page</a> for more details.<br/></p>
+						<p>Command to show a page in Soma:<br/></p>
+						<textformat indent="30">
+							<p class="code">new PageEvent(PageEvent.SHOW_PAGE, "myPageID").dispatch();<br/></p>
+						</textformat>
+						<p>Here is a command to show an "external link" in Soma:<br/></p>
+						<textformat indent="30">
+							<p class="code">new PageEvent(PageEvent.SHOW_EXTERNAL_LINK, "myExternalLink").dispatch();<br/></p>
+						</textformat>
+					]]>
+					</textfield>
+                </content>
+            </page>
+            <page background="Background 1" id="cmdTransitions" type="CanvasPage" urlfriendly="transitions">
+                <title><![CDATA[Transitions commands]]></title>
+                <content>
+                     <textfield id="intro">
+					<![CDATA[
+						<p>Soma has a Transition system and centralize all of them in one place. Again, as a lot of things in Soma, if you're not happy with, you don't have to use it. This system makes you able you to use any tween library and probably be able to switch between them if you have a proper <a href="./#/basics/start-soma/transitions/">Transition proxy file</a>.<br/></p>
+						<p>We will see the commands we can use here, but you might never use them with the following syntax. Instead you will use a shortcut (<a href="./#/basics/shortcuts/">more details</a>)</a>. The Shortcut makes the syntax very easy to write and very close to the existing tween library syntax: <a href="./#/basics/shortcuts/somatween/">SomaTween</a>.<br/></p>
+						<p>The Transition concept is building a Object that can be used with any tween library, as they share commons parameters: a target and an object that is describing the tween. <a href="./#/somaui/">SomaUI</a> will generate a Transition proxy for the Tweener library, but you can write a proxy (or get when I will write others) for any tween library.<br/></p>
+						<p>To start a transition, you use the Transition command and all it needs is: a target, an id and a TransitionVO (see the <a href="./#/basics/value-objects/">Value Objects page</a> for more details.). Here is an example:<br/></p>
+						<textformat indent="30">
+							<p class="code">var tvo:TransitionVO = new TransitionVO("myTransitionID", {time:1, alpha:1});</p>
+							<p class="code">new TransitionEvent(TransitionEvent.START, target, tvo.id, tvo).dispatch();<br/></p>
+						</textformat>
+						<p>This transition will be sent to your Transition proxy file and be applied to your tweener library via the execute function. It means you could write you own syntax for the tween object, also add new crazy properties and parse them in the Transition proxy to get the result you want.<br/></p>
+						<p>Beside the user Transition proxy (<span class="code">Soma.getInstance().userTransition</span>), Soma has also a TransitionManager (<span class="code">Soma.getInstance().transition</span>). This manager is the class that will send your command to your Transition proxy and also will make you able to add and remove Transition object for re-use.<br/></p>
+						<p>Here is how to add (need a TransitionVO) and remove (need an id) a transition to the TransitionManager:<br/></p>
+						<textformat indent="30">
+							<p class="code">var tvo:TransitionVO = new TransitionVO("myTransitionID", {time:1, alpha:1});</p>
+							<p class="code">new TransitionEvent(TransitionEvent.ADD, null, null, tvo).dispatch();</p>
+							<p class="code">new TransitionEvent(TransitionEvent.REMOVE, null, "myTransitionID").dispatch();</p>
+							<p class="code">new TransitionEvent(TransitionEvent.REMOVE_ALL).dispatch();<br/></p>
+						</textformat>
+						<p>When a transition is added to the TransitionManager, you can re-use it using the transition id:<br/></p>
+						<textformat indent="30">
+							<p class="code">new TransitionEvent(TransitionEvent.START, target, "myTransitionID").dispatch();<br/></p>
+						</textformat>
+						<p>You can stop a transition or all the transitions using the following commands:<br/></p>
+						<textformat indent="30">
+							<p class="code">new TransitionEvent(TransitionEvent.STOP, target).dispatch();</p>
+							<p class="code">new TransitionEvent(TransitionEvent.STOP_ALL).dispatch();<br/></p>
+						</textformat>
+						<p>Soma is also internally using transitions, to show the backgrounds and the pages (default behavior). If you need, you can change the default behaviors before starting Soma by accessing to the TransitionManager.<br/></p>
+						<p>The Transition commands syntax are not easy to use, that's why <a href="./#/basics/shortcuts/somatween/">SomaTween</a> has been built. A SomaTween is much easier and looks like this:<br/></p>
+						<textformat indent="30">
+							<p class="code">SomaTween.start(target, null, {time:1, alpha:1});</p>
+						</textformat>
+					]]>
+					</textfield>
+                </content>
+            </page>
+        </page>
+        <page background="Background 1" id="events" type="CanvasPage" urlfriendly="events">
+            <title><![CDATA[Soma Events]]></title>
+            <content>
+                <textfield id="intro">
+					<![CDATA[
+						<textformat indent="0">
+							<p>The events in Soma are centralized in <span class="code">Soma.getInstance()</span>. It means to "listen to Soma", you can add event listeners straight to <span class="code">Soma.getInstance()</span>, here is a list of events you can listen to:<br/></p>
+						</textformat>
+						<textformat indent="30">
+							<p class="code">import com.soma.events.*;<br/></p>
+							<p class="code">Soma.getInstance().addEventListener(ContentEvent.LOADED, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(ContentEvent.INITIALIZED, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(BackgroundEvent.SHOW, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(BackgroundEvent.HIDE, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(MenuEvent.FORCE_OPEN_MENU, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(PageEvent.SHOW_PAGE, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(PageEvent.PAGE_STARTED, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(PageEvent.PAGE_DISPLAYED, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(PageEvent.PAGE_REMOVED, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(PageEvent.SHOW_EXTERNAL_LINK, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(PageEvent.GET_EXCLUDED_PAGE, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(PageEvent.GET_EXCLUDED_PAGE_PARENT, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(TemplateEvent.TEMPLATE_DISPLAYED, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(TemplateEvent.TEMPLATE_REMOVED, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(LoaderEvent.ADD_ITEM, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(LoaderEvent.START_LOADING, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(LoaderEvent.STOP_LOADING, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(TransitionEvent.ADD, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(TransitionEvent.REMOVE, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(TransitionEvent.REMOVE_ALL, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(TransitionEvent.START, listenHandler);</p>
+							<p class="code">Soma.getInstance().addEventListener(TransitionEvent.STARTED, listenHandler);<br/></p>
+							<p class="code">Soma.getInstance().addEventListener(StyleSheetEvent.LOADED, listenHandler);<br/></p>
+							<p class="code">private function listenHandler(e:Event):void {</p>
+						</textfomat>
+						<textformat indent="45">
+							<p class="code">trace(e.type, " = ", e);</p>
+						</textfomat>
+						<textformat indent="30">
+							<p class="code">}<br/></p>
+						</textfomat>
+						<textformat indent="0">
+							<p class="bold">Tips:<br/></p>
+							<p>If you need to, you can stop any Soma event by listening to it and then using <span class="code">event.stopImmediatePropagation();</span><br/></p>
+							<p>For some of them, example: PageEvent.PAGE_STARTED, you can use <span class="code">e.preventDefault();</span></p>
+						</textformat>
+					]]>
+					</textfield>
+            </content>
+        </page>
+        <page background="Background 1" id="externalClasses" type="CanvasPage" urlfriendly="external-classes">
+            <title><![CDATA[External Classes]]></title>
+            <content>
+                <textfield id="intro">
+				<![CDATA[
+					<p>Soma has what I call "external classes", the menu and the loading (display loading progress). They are external of the framework because usually too specific in terms of behavior but also design.<br/></p>
+					<p>However, Soma is working with these 2 classes and instantiate them the way it does with the pages and templates. In the <a href="./#/basics/start-soma/config/">Config file</a> you need to reference their name to make the framework able to instantiate them. You also need to <a href="./#/basics/class-import/">force the import</a> of these classes.<br/></p>
+					<p><a href="./#/somaui/">SomaUI</a> will generate a BasicLoading and BasicMenu to be able to start to develop with something. You can develop your own classes and change the reference in the Config file. As the menu can be based on the <a href="./#/xml/">XML Site Definition</a>, you can easily re-use it in another site.<br/></p>
+					<p>The framework access to them with there 2 properties of the Config file:<br/></p>
+					<textformat indent="30">
+						<p class="code">function get menuClass():String</p>
+						<p class="code">function get loadingClass():String;<br/></p>
+					</textformat>
+					<p class="bold">Menu class<br/></p>
+					<p>To build you own menu class, you must extend <span class="code">com.soma.view.Menu</span> and implements <span class="code">com.soma.interfaces.IMenu</span>.<br/></p>
+					<p>The interface IMenu has only one function to implement:<br/></p>
+					<textformat indent="30">
+						<p class="code">function forceMenu(id:String):void;<br/></p>
+					</textformat>
+					<p>This function will be called by the <a href="./#/basics/commands/menu/">Menu command</a>, and the only parameter is the id of the new page. You can then update your menu to the new state.<br/></p>
+					<p class="bold">Loading class<br/></p>
+					<p>To build you own loading class, you must extend <span class="code">com.soma.view.Loading</span> and implements <span class="code">com.soma.interfaces.ILoading</span> and <span class="code">com.soma.interfaces.IDisplayable</span>.<br/></p>
+					<p>The interface ILoading has only one function to implement:<br/></p>
+					<textformat indent="30">
+						<p class="code">function progress(e:QueueLoaderEvent):void;<br/></p>
+					</textformat>
+					<p>The interface IDisplayable has two functions to implement:<br/></p>
+					<textformat indent="30">
+						<p class="code">function show():void;</p>
+						<p class="code">function hide():void;<br/></p>
+					</textformat>
+					<p>The default loading class (you can have many loading class), referenced in the Config file, is used by the global <a href="./#/basics/commands/loader/">LoaderManager</a>. A loading class can be added to a LoaderManager to display the progress by using the LoaderManager method: <span class="code">myLoader.addLoading("myLoadingClass")</span>. The LoaderManager will send a QueueloaderEvent to the progress function required by the interface ILoading.<br/></p>
+					<p>You can use the property "queuepercentage" (number 0 to 1) of the QueueloaderEvent to display a progress.<br/></p>
+					<p>The show and hide functions required by the interface IDisplayable are to display the loading class when the progress starts and hide it when done. A default behavior with alpha is set in the super class Loading and can overidden to change it.</p>
+				]]>
+				</textfield>
+            </content>
+        </page>
+        <page background="Background 1" id="extendSoma" type="ExtendSoma" urlfriendly="extend">
+            <title><![CDATA[Extend Soma]]></title>
+            <content>
+                <textfield id="intro">
+				<![CDATA[
+					<p>The Singleton class Soma is initializing the framework as well as order the ContentManager to load the <a href="./#/xml">XML Site Definition</a>. It is also the gate to talk to the framework.<br/></p>
+					<p>If you need to alter its behavior, you can extend the Soma class and override the methods you need.<br/></p>
+					<p>You can find below an example how to extend Soma and find a more detailed explanation about <a href="http://www.soundstep.com/blog/2008/11/01/extend-a-singleton/" target="_blank">extending a Singleton</a> on my blog.</p>
+				]]>
+				</textfield>
+                <textfield id="text1">
+				<![CDATA[
+					<p>The two following syntax will not make any difference and you now have the freedom to alter the Soma initialization process.<br/></p>
+					<textformat indent="30">
+						<p class="code">Soma.getInstance()</p>
+						<p class="code">SomaExtended.getInstance()<br/></p>
+					</textformat>
+				]]>
+				</textfield>
+            </content>
+        </page>
+        <page background="Background 1" id="classimport" type="CanvasPage" urlfriendly="class-import">
+            <title><![CDATA[Classes imported]]></title>
+            <content>
+                <textfield id="intro">
+				<![CDATA[
+					<p>Several classes are dynamically instantiated from a String in Soma, using <span class="code">flash.utils.getDefinitionByName</span>, or <span class="code">flash.net.registerClassAlias</span> and <span class="code">flash.net.getClassByAlias</span>, such as pages, templates and the 2 external classes handled by Soma (menu and loading).<br/></p>
+					<p>Unfortunately, the compiler is not importing the classes instantiated that way, even if you import them in the code. The classes will be imported when they will be explicitly used. If they're not imported at compile-time, instantiate them will generate a run-time error.<br/></p>
+					<p>The two easy and accessible solutions I know are write <span class="code">public var myClass:MyClass = null</span> somewhere in the code. Not very useful if you have a lot, the second solution is create a SWC with FlexBuilder (or compile with compc), add the classes in the library and use the argument include-libraries with the compiler.<br/></p>
+					<p>Until I find something better, that's why those classes (pages, templates, loading, menu) must be referenced in the <a href="./#/basics/start-soma/config/">Soma Config file</a>.<br/></p>
+					<p>See the <a href="../source/front-end/src/com/somaprotest/Config.as" target="_blank">Soma Protest Config file</a> (<span class="code">/source/front-end/src/com/somaprotest/Config.as</span>).</p>
+				]]>
+				</textfield>
+            </content>
+        </page>
+        <page background="Background 1" id="valueobjects" type="CanvasPage" urlfriendly="value-objects">
+            <title><![CDATA[Value Objects]]></title>
+            <content>
+                <textfield id="intro">
+				<![CDATA[
+					<p>Value Object, aka DTO (Data Transfer Object), are a common things in languages and frameworks. In Soma, two Value Object classes are used for the Loader commands and the Transition commands. A Value Object is usually very a simple class that is describing a content.<br/></p>
+					<p>Here is a description of these two classes:<br/></p>
+					<textformat indent="30">
+						<p class="code">com.soma.vo.LoaderItemVO<br/></p>
+						<p><span class="code">file:String</span> file that will be loaded by he LoaderManager</p>
+						<p><span class="code">container:DisplayObject</span> container that will receive the item loaded.</p>
+						<p><span class="code">objectInfo:Object</span> <a href="http://code.google.com/p/queueloader-as3/" target="_blank">Queueloader</a> Object, ex: <span class="code">{title:"image", smoothing:true}</span>.<br/></p>
+						<p class="code">com.soma.vo.TransitionVO<br/></p>
+						<p><span class="code">id:String</span> id of the transition.</p>
+						<p><span class="code">vars:Object</span> object that describe the transition, ex: <span class="code">{time:1, alpha:1}</span>.</p>
+					</textformat>
+				]]>
+				</textfield>
+            </content>
+        </page>
+        <page background="Background 1" id="shortcuts" type="CanvasPage" urlfriendly="shortcuts">
+            <title><![CDATA[Shortcuts]]></title>
+            <content>
+                <textfield id="intro">
+				<![CDATA[
+					<p>A Shortcut in Soma is a shorter and easier syntax to use the commands.<br/></p>
+					<p>This is relatively new to Soma and only one Shortcut has been built yet, the Shortcut for the transition commands: <a href="./#/basics/shortcuts/somatween/">SomaTween</a>.<br/></p>
+					<p>I'll probably built other Shortcuts for the page, background, loader and menu commands.</p>
+				]]>
+				</textfield>
+            </content>
+            <page background="Background 1" id="somaTween" type="SomaTweenPage" urlfriendly="somatween">
+                <title><![CDATA[SomaTween]]></title>
+                <content>
+                    <textfield id="intro">
+					<![CDATA[
+						<p>It is important to understand that even if the SomaTween syntax looks like the most common tween library, SomaTween is not a tween library at all.<br/></p>
+						<p>SomaTween and the transition system are proxies, and plugged to a real tween library, if you use <a href="./#/somaui/">SomaUI</a> to generate a site, a Transition proxy is generated for the <a href="http://code.google.com/p/tweener/" target="_blank">Tweener library</a>.<br/></p>
+						<p>See the <a href="./#/basics/start-soma/transitions/">Transitions proxy file page</a> for more details.<br/></p>
+						<p>It means using SomaTween is using the tween library, Here a SomaTween syntax example:<br/></p>
+						<textformat indent="30">
+							<p class="code">SomaTween.start(target, null, {time:1, alpha:1});<br/></p>
+						</textformat>
+						<p>With SomaTween you can save a transition to re-use it later (from anywhere in the code), the last parameter is telling the TransitionManager to save the TransitionVO:<br/></p>
+						<textformat indent="30">
+							<p class="code">SomaTween.start(target, "myTransitionID", {time:1, alpha:1}, true);<br/></p>
+						</textformat>
+						<p>And then re-use it:<br/></p>
+						<textformat indent="30">
+							<p class="code">SomaTween.start(target, "myTransitionID");<br/></p>
+						</textformat>
+						<p>You can also tween an Array of target:<br/></p>
+						<textformat indent="30">
+							<p class="code">SomaTween.start([target1, target2], null, {time:1, alpha:1});<br/></p>
+						</textformat>
+						<p>When the properties of the TransitionVO are parsed in the Transition proxy, you can check your own properties and apply them to your tween library. For example you want a property to tween the alpha and the scale in the same time. You can use an "alphaScale" property and give to the tween what it needs in the Transition proxy.<br/></p>
+						<textformat indent="30">
+							<p class="code">SomaTween.start(target, null, {alphaScale:1});<br/></p>
+						</textformat>
+						<p>Here are the syntax to stop one transition or all the transitions:<br/></p>
+						<textformat indent="30">
+							<p class="code">SomaTween.stop(target);</p>
+							<p class="code">SomaTween.stopAll();<br/></p>
+						</textformat>
+						<p>The advantage to use SomaTween and the transition system instead of using directly your tween library is centralization. Like any event, the transition events can be stopped before the propagation (<span class="code">event.stopImmediatePropagation()</span>).<br/></p>
+						<p>It also means, as I wrote in the Transition proxy for Tweener that SomaUI is generating, you can disable the time and delay of the all transitions passing in the proxy in one time, and be able to see your site with no time animation (or very short one). It can speed up some developement when you have to wait while you test and debug. The properties to set to false in the Transition proxy for Tweener are Transitions.TIME_ON and Transitions.DELAY_ON.</p>
+					]]>
+					</textfield>
+					<textfield id="text1">
+					<![CDATA[
+						<p>Here is the <a href="../source/front-end/src/com/somaprotest/Transitions.as" target="_blank">Soma Protest Transitions file</a> that is working with the <a href="http://code.google.com/p/tweener/" target="_blank">Tweener library</a> (/source/front-end/src/com/somaprotest/Transitions.as).<br/></p>
+						<p>Transitions proxy files for <a href="http://blog.greensock.com/tweenmaxas3/" target="_blank">TweenMax</a> and <a href="http://gskinner.com/libraries/gtween/" target="_blank">GTween</a> can be found in the Soma source (zip or SVN) on the <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI page</a> on my blog.</p>
+					]]>
+					</textfield>
+                </content>
+            </page>
+        </page>
+    </page>
+    <!-- custom MVC -->
+    <page background="Background 1" id="customMVC" type="CustomMVC" urlfriendly="custom-mvc">
+        <title><![CDATA[Custom MVC]]></title>
+        <content>
+            <textfield id="intro">
+			<![CDATA[
+				<p>I've implemented an Alert Modal Window in Soma Protest to show how you can build your own controller, models and views. This Alert will show a message and disable Soma Protest, with a close button to come back to the normal state.<br/></p>
+				<p>In a further release I will implement services with Flash Remoting and build a Login demonstration.<br/></p>
+				<p>Click here to see the Alert window:</p>
+			]]>
+			</textfield>
+            <textfield id="text1">
+			<![CDATA[
+				<p class="bold">Controller<br/></p>
+				<p>The first step is creating a Soma Protest controller class. You can decide where you will add the models, controllers, views and events packages, but for Soma Protest I've added them in a <span class="code">com.somaprotest.core</span> package.</p>
+				<p>In this package I've created a control package and add a controller class that is extending <span class="code">com.soma.control.FrontController</span>. See the class <a href="../source/front-end/src/com/somaprotest/core/control/SomaProtestController.as" target="_blank">SomaProtestController</a>.<br/></p>
+				<p>You need to initialize this controller. I could just call <span class="code">SomaProtestController.init()</span> in the Main Document Class but to make a better integration with Soma, I've created a <a href="http://en.wikipedia.org/wiki/Singleton_pattern" target="_blank">Singleton</a> SomaExtended that is extending Soma. I override the init function to add a state variable and the initController to initialize SomaProtestController. See the class <a href="../source/front-end/src/com/somaprotest/core/model/SomaExtended.as" target="_blank">SomaExtended</a>.<br/></p>
+				<p class="bold">Event<br/></p>
+				<p>The next step is creating an AlertEvent (in the <span class="code">com.somaprotest.core.events</span> package) that has and 2 types, SHOW_ALERT and HIDE_ALERT. See the class <a href="../source/front-end/src/com/somaprotest/core/events/AlertEvent.as" target="_blank">AlertEvent</a>.<br/></p>
+				<p>The event will take a parameter that is a AlertVO class (<a href="./#/basics/value-objects/">Value Object</a>), I've created it in a <span class="code">com.somaprotest.core.vo</span> package. The AlertVO class takes 2 parameters, the title and the message of the Alert window. See the class <a href="../source/front-end/src/com/somaprotest/core/vo/AlertVO.as" target="_blank">AlertVO</a>.<br/></p>
+				<p class="bold">Command<br/></p>
+				<p>I've created the class AlertCommand in a <span class="code">com.somaprotest.core.commands</span> package. This class will receive the command and add or remove the Alert window from a display list. I've decided to add the Alert to <span class="code">SomaExtended.getInstance().ui</span> (the Soma Protest Document Class). See the class <a href="../source/front-end/src/com/somaprotest/core/commands/AlertCommand.as" target="_blank">AlertCommand</a>.<br/></p>
+				<p class="bold">Alert window<br/></p>
+				<p>The last step is creating the Alert Window. I've extended a Sprite and created the class Alert in a <span class="code">com.somaprotest.core.view</span> package. It is a simple class where I build a background, a border, a close button and 2 TextField for the title and the message. I also disable the Soma Protest site when the Alert is created and enable when the Alert is removed. See the class <a href="../source/front-end/src/com/somaprotest/core/view/Alert.as" target="_blank">Alert</a>.<br/></p>
+				<p>The Alert window can be created from anywhere in the code like this:<br/></p>
+				<textformat indent="30">
+					<p class="code">var alertVO:AlertVO = new AlertVO("Information", "My message");</p>
+					<p class="code">new AlertEvent(AlertEvent.SHOW_ALERT, alertVO).dispatch();<br/></p>
+				</textformat>
+				<p>And hidden like this:<br/></p>
+				<textformat indent="30">
+					<p class="code">new AlertEvent(AlertEvent.HIDE_ALERT).dispatch();<br/></p>
+				</textformat>
+				<p>Click here to see the Alert window:</p>
+			]]>
+			</textfield>
+			<textfield id="alertMessage">
+			<![CDATA[
+				<p>This is an Alert message example. This Alert is a modal window as SomaProtest is no longer accessible until you close this Alert or move to another page.</p>
+			]]>
+			</textfield>
+        </content>
+    </page>
+	<!-- page system -->
+	<page background="Background 1" id="pageSystem" type="PageSystem" urlfriendly="page-system">
+		<title><![CDATA[Page System]]></title>
+		<content>
+			<textfield id="intro">
+			<![CDATA[
+				<p>The purposes of the page system are to make the deep-linking working (using the library <a href="http://www.asual.com/swfaddress/" target="_blank">SWFAddress</a>), but also show a list of pages with animation between them. You need a proper XML to make the PageManager working as intended, see the <a href="./#/xml/">XML Site Definition</a>.<br/></p>
+				<p>When the PageManager has to show a page, it will find the page node with the attribute id in the XML Site Definition and get the attribute type in the node. At this moment a PageEvent.PAGE_STARTED event is dispatched. The type attribute is nothing more than an actionscript Class. The PageManager will dynamically instantiate this page class (using the getClass function of the <a href="./#/basics/start-soma/config/">Config file</a>) and then add it to the display list of the page container.<br/></p>
+				<p>The pages called are added in the page sprite container display list (see the <a href="./basics/start-soma/">Soma start page</a> for more details about the containers) and removed from it when you leave the page.<br/></p>
+				<p><a href="./#/somaui/">SomaUI</a> can generate everything you need when you have a proper XML Site Definition, but here is what you have to do to create a page by hand:<br/></p>
+				<textformat indent="30">
+					<p>1. create a page node in the XML Site Definition.</p>
+					<p>2. force the <a href="./#/basics/class-import/">class import</a> in the Config file by adding its class name.</p>
+					<p>3. create a new class that extends <span class="code">com.soma.view.Page</span> and implements <span class="code">com.soma.interfaces.IRemovable</span><br/></p>
+				</textformat>
+				<p>Some properties will be automatically set when a page is instantiated:<br/></p>
+				<textformat indent="30">
+					<p><u>id</u>: id of the page (id attribute value of the page node).</p>
+					<p><u>pageXML</u>: xml of the page.</p>
+					<p><u>baseUI</u>: a <a href="./#/baseui/">BaseUI</a> instance for the page is created.</p>
+					<p><u>template</u>: template class name, if the page node contain a content node and a template attribute.</p>
+					<p><u>content</u>: nodes children (XMLList), if the page node contains a content node.</p>
+					<p><u>type</u>: type of the page (type attribute value of the page node).</p>
+					<p><u>depth</u>: depth of the page, (depth attribute value of the page node).<br/></p>
+				</textformat>
+				<p class="bold">The showing process<br/></p>
+				<p>When a page is added to the display list, an init function is called, that's where the page starts. The init function role is initializing the page variables, then the page calls the start function. The start function role is showing the page with animation (transition), the super class Page default behavior is showing the whole page with an alpha. When the animation is done, the page dispatch a PageEvent.PAGE_DISPLAYED event and calls the function startContent. When startContent is called, you know that the page is fully displayed and visible on the screen.<br/></p>
+				<p>Let's repeat the process:<br/></p>
+				<textformat indent="30">
+					<p>1. a command ask the PageManager to show a page.</p>
+					<p>2. PageEvent.PAGE_STARTED is dispatched.</p>
+					<p>3. The Page class is instantiated and added to the page container.</p>
+					<p>4. init function is called when added to the display list and initialize variables.</p>
+					<p>5. start function is called and start transitions to show the page.</p>
+					<p>6. at the end of the transition, PageEvent.PAGE_DISPLAYED is dispatched.</p>
+					<p>7. startContent is called, it is the end of the showing process.<br/></p>
+				</textformat>
+				<p>You can choose in your page subclass to override the init or start function to alter the default behavior. For example, in most of the soma pages, I override the init function to build the content (based on the XML) before the page shows using the default behavior.<br/></p>
+				<p class="bold">The hiding process<br/></p>
+				<p>When a page is already displayed, before showing another page, the PageManager is calling the remove function of the current page. This function role is hiding the page with transition, the default behavior of the super class Page is hiding the whole page using alpha. When the transition is done, the dispose function is called. The role of the dispose function is providing you a place where to clear the page and remove elements to be <a href="http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)" target="_blank">garbage collected</a>. For example, to remove the listeners created, remove the children, remove the video, dispose the Bitmapdata, etc.<br/></p>
+				<p>Let's repeat the process:<br/></p>
+				<textformat indent="30">
+					<p>1. a command ask the PageManager to show a page.</p>
+					<p>2. remove function called by the PageManager.</p>
+					<p>3. the remove function hide the page with a transition.</p>
+					<p>4. the dispose function is called when the remove transitions are done.</p>
+					<p>5. PageEvent.PAGE_REMOVED is dispatched, this is the end of the hiding process</p>
+					<p>6. the PageManager receives the PageEvent.PAGE_REMOVED event and starts the showing process.<br/></p>
+				</textformat>
+			]]>
+			</textfield>
+			<bitmap id="pageShowing" external="true" path="images/assets/" file="pageshowing.png"/>
+		</content>
+		<page background="Background 1" id="pageDepth" type="PageDepth" urlfriendly="depth">
+			<title><![CDATA[Page with Depth]]></title>
+			<content>
+				<textfield id="intro">
+				<![CDATA[
+					<p>You can use a depth attribute in the page node of your <a href="./#/xml/">XML Site Definition</a>. It will affect how the PageManager show the pages.<br/></p>
+					<p>Let's take an example: your current page is a page depth 2 on a branch 1 of the XML, and you show a page with the same depth but in another branch. Before each of these 2 pages depth 2, you have a page depth 1 and a page depth 0. The PageManager will hide and show the pages this way:</p>
+				]]>
+				</textfield>
+				<bitmap id="pageDepthImage" external="true" path="images/assets/" file="pagedepth.png"/>
+				<textfield id="text1">
+				<![CDATA[
+					<p>To see see a demo, click on the children of this page in the menu (this page is depth 0) and see below:</p>
+				]]>
+				</textfield>
+			</content>
+			<page background="Background 1" id="page1" type="PageEmpty" urlfriendly="page1" depth="1" template="TemplateParser">
+				<title><![CDATA[Page 1 (depth 1)]]></title>
+				<content>
+					<textfield id="title" style="title" top="380" left="170" width="580">Page 1 Title (depth 1)</textfield>
+					<textfield id="text2" style="body" top="395" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+				</content>
+				<page background="Background 1" id="page11" type="PageEmpty" urlfriendly="page11" depth="2" template="TemplateParser">
+					<title><![CDATA[Page 11 (depth 2)]]></title>
+					<content>
+						<textfield id="title" style="title" top="420" left="170" width="580">Page 11 Title (depth 2)</textfield>
+						<textfield id="text2" style="body" top="435" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+					</content>
+					<page background="Background 1" id="page111" type="PageEmpty" urlfriendly="page111" depth="3" template="TemplateParser">
+						<title><![CDATA[Page 111 (depth 3)]]></title>
+						<content>
+							<textfield id="title" style="title" top="460" left="170" width="580">Page 111 Title (depth 3)</textfield>
+							<textfield id="text2" style="body" top="475" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+						</content>
+					</page>
+					<page background="Background 1" id="page112" type="PageEmpty" urlfriendly="page112" depth="3" template="TemplateParser">
+						<title><![CDATA[Page 112 (depth 3)]]></title>
+						<content>
+							<textfield id="title" style="title" top="460" left="170" width="580">Page 112 Title (depth 3)</textfield>
+							<textfield id="text2" style="body" top="475" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+						</content>
+					</page>
+				</page>
+				<page background="Background 1" id="page12" type="PageEmpty" urlfriendly="page12" depth="2" template="TemplateParser">
+					<title><![CDATA[Page 12 (depth 2)]]></title>
+					<content>
+						<textfield id="title" style="title" top="420" left="170" width="580">Page 12 Title (depth 2)</textfield>
+						<textfield id="text2" style="body" top="435" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+					</content>
+					<page background="Background 1" id="page121" type="PageEmpty" urlfriendly="page121" depth="3" template="TemplateParser">
+						<title><![CDATA[Page 121 (depth 3)]]></title>
+						<content>
+							<textfield id="title" style="title" top="460" left="170" width="580">Page 121 Title (depth 3)</textfield>
+							<textfield id="text2" style="body" top="475" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+						</content>
+					</page>
+					<page background="Background 1" id="page122" type="PageEmpty" urlfriendly="page122" depth="3" template="TemplateParser">
+						<title><![CDATA[Page 122 (depth 3)]]></title>
+						<content>
+							<textfield id="title" style="title" top="460" left="170" width="580">Page 122 Title (depth 3)</textfield>
+							<textfield id="text2" style="body" top="475" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+						</content>
+					</page>
+				</page>
+			</page>
+			<page background="Background 1" id="page2" type="PageEmpty" urlfriendly="page2" depth="1" template="TemplateParser">
+				<title><![CDATA[Page 2 (depth 1)]]></title>
+				<content>
+					<textfield id="title" style="title" top="380" left="170" width="580">Page 2 Title (depth 1)</textfield>
+					<textfield id="text2" style="body" top="395" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+				</content>
+				<page background="Background 1" id="page21" type="PageEmpty" urlfriendly="page21" depth="2" template="TemplateParser">
+					<title><![CDATA[Page 21 (depth 2)]]></title>
+					<content>
+						<textfield id="title" style="title" top="420" left="170" width="580">Page 21 Title (depth 2)</textfield>
+						<textfield id="text2" style="body" top="435" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+					</content>
+					<page background="Background 1" id="page211" type="PageEmpty" urlfriendly="page211" depth="3" template="TemplateParser">
+						<title><![CDATA[Page 211 (depth 3)]]></title>
+						<content>
+							<textfield id="title" style="title" top="460" left="170" width="580">Page 211 Title (depth 3)</textfield>
+							<textfield id="text2" style="body" top="475" left="170" width="580"><![CDATA[Nam quis clita suavitate ea, mel at quodsi nominati, et possit reprimique pri. Quem electram prodesset ea pri...]]></textfield>
+						</content>
+					</page>
+				</page>
+			</page>
+		</page>
+		<page background="Background 1" id="pageExcluded" type="CanvasPage" urlfriendly="excluded">
+			<title><![CDATA[Page Excluded]]></title>
+			<content>
+				<textfield id="intro">
+				<![CDATA[
+					<p>Everything you want to appear in the URL must be a page, even if sometimes it is not really a page. Page excluded will help you set a "url state" when the url will target not a page but a state in your page. To understand, let's take an example.<br/></p>
+					<p>You have a portfolio showing a bunch of images and you want to be able to send a user to a specific image using the URL. It means you'll probably need a URL like this:<br/></p>
+					<textformat indent="30">
+						<p class="code">www.site.com/#/portfolio/1/</p>
+						<p class="code">www.site.com/#/portfolio/2/</p>
+						<p class="code">www.site.com/#/portfolio/3/<br/></p>
+					</textformat>
+					<p>The way to achieve this with Soma is using the attribute "exclude" and set it to true in the page node of your <a href="./#/xml/">XML Site Definition</a>. For instance the picture of the portfolio will become a real page node, making the page system and the deep-linking working. You probably also don't want to show these pages in your menu.<br/></p>
+					<p>This is called a "page excluded" in the Soma page system. To show to a "page excluded", you use the same syntax:<br/></p>
+					<textformat indent="30">
+						<p class="code">new PageEvent(PageEvent.SHOW_PAGE, "myPortfolioPicture").dispatch();<br/></p>
+					</textformat>
+					<p>This command will tell the PageManager not to remove the current page and not to show and instantiate a new one. Instead the PageManager will dispatch a <span class="code">PageEvent.GET_EXCLUDED_PAGE</span>. You can listen to this event and make your page reacting as you expect. In this example, we would select a specific image in the portfolio.<br/></p>
+					<p>The PageManager will also dispatch a <span class="code">PageEvent.GET_EXCLUDED_PAGE_PARENT</span> when it finds a page with children excluded. This can be used to reset a page, in our example we can use it to unselect all the images.<br/></p>
+					<p>See the example <a href="./#/page-system/excluded/demo/">PageExcluded demo</a>.</p>
+				]]>
+				</textfield>
+			</content>
+			<page background="Background 1" id="pageExcludedDemo" type="PageExcludedDemo" urlfriendly="demo">
+				<title><![CDATA[Page Excluded demo]]></title>
+				<content>
+					<textfield id="intro">
+					<![CDATA[
+						<p>Select images and the see the deep-linking working, pressing the back and forward button on your browser will update the state of the page.<br/></p>
+					]]>
+					</textfield>
+				</content>
+				<page id="image0" urlfriendly="1" file="images/assets/asset0.jpg" exclude="true" />
+				<page id="image1" urlfriendly="2" file="images/assets/asset1.jpg" exclude="true" />
+				<page id="image2" urlfriendly="3" file="images/assets/asset2.jpg" exclude="true" />
+				<page id="image3" urlfriendly="4" file="images/assets/asset3.jpg" exclude="true" />
+				<page id="image4" urlfriendly="5" file="images/assets/asset4.jpg" exclude="true" />
+			</page>
+		</page>
+		<page background="Background 1" id="pageExternal" type="CanvasPage" urlfriendly="external">
+			<title><![CDATA[Page External]]></title>
+			<content>
+				<textfield id="intro">
+				<![CDATA[
+					<p>You can add a external attribute in the page node and set it to true in your <a href="./#/xml/">XML Site Definition</a>. Instead of instantiate a page class, the PageManager will load a SWF file with the value of the type attribute. To load a SWF file "MyMovie.swf", you have to set the type attribute value with "MyMovie" and have the movie near the "Main.swf". You can add a path attribute to your page node if your SWF is in some other place.<br/></p>
+					<p>You can choose to make youR external SWF working with the Soma framework or be only a simple Flash movie that won't access to the framework. If you decide to have an external page that extends a Sprite and that is not accessing to the framework, you might have difficulties to correctly remove and dispose the elements you instantiate inside.<br/></p>
+					<p>I advice that the Document Class of your external movie extends <span class="code">com.soma.view.Page</span> and implements <span class="code">com.soma.interface.IRemovable</span>. You can built the Document Class as a normal page, the remove and dispose function of your Document Class will be called by the PageManager, making you able to handle transitions to show and hide the page, and also dispose and correctly remove the elements from your page.<br/></p>
+					<p><u>NOTE:</u> For a external page that is using the <a href="./#/xml/">XML Site Definition</a>, you need to explicitely set the id of the page in the init function of your Document Class and before the super.init() call (example in the link below). The id of the page class is the id of the page node.<br/></p>
+					<p>To make the developement of external movies easier, you can initialize Soma when you compile the external movie, in a condition that is checking if Soma has been already initialized or not. This will make you able to compile the external movie, use Soma and see the whole site without recompiling the main movie. See the code example in the link below (or use <a href="./#/somaui/">SomaUI</a> to export external pages).<br/></p>
+					<p>See the <a href="./#/page-system/external/demo/">external page demo</a>.<br/></p>
+				]]>
+				</textfield>
+				
+			</content>
+			<!-- a path attribute can be used for an external page -->
+			<page background="Background 1" id="externalSWF" type="ExternalSWF" urlfriendly="demo" external="true">
+				<title><![CDATA[Page External demo]]></title>
+				<content>
+					<textfield id="intro">
+					<![CDATA[
+						<p>This page is an External SWF loaded by the PageManager.<br/></p>
+						<p>The content you can see here is coming from the same <a href="./#/xml/">XML Site Definition</a> as the Main Movie.<br/></p>
+						<p>The id property of the page has been explicitely set, and a for an easier developement, Soma is initialized in case you compile the external movie (the condition can be removed, it is optional). The only requirement for an external page is the id.<br/></p>
+						<p>See the <a href="../source/front-end/src/com/somaprotest/pages/ExternalSWF.as" target="_blank">Document class of the External Movie</a></p>
+						<p class="code">/source/front-end/src/com/somaprotest/pages/ExternalSWF.as<br/></p>
+						<p>init overriden function of an external page:</p>
+					]]>
+					</textfield>
+				</content>
+			</page>
+		</page>
+	</page>
+    <!-- stylesheets -->
+    <page background="Background 1" id="stylesheet" type="Stylesheet" urlfriendly="stylesheet">
+        <title><![CDATA[Stylesheets]]></title>
+		<content>
+			<textfield id="intro">
+			<![CDATA[
+				<p>Soma has a powerful way to handle texts and styles with the class <span class="code">com.soma.view.SomaText</span> and external extended stylesheets.<br/></p>
+				<p class="bold">Extended Stylesheet<br/></p>
+				<p>The stylesheets you can handle with Soma are common CSS files with extra capabilities. See the list of <a href="./#/stylesheet/css-properties/">CSS properties</a> you can use in your Stylesheet.<br/></p>
+				<p>You can load a global stylesheet using this syntax before starting Soma:<br/></p>
+				<textformat indent="30">
+					<p class="code">Soma.getInstance().registerGloBalStyleSheet("css/flash_global.css");<br/></p>
+				</textformat>
+				<p>You can access it with the StyleManager using:<br/></p>
+				<textformat indent="30">
+					<p class="code">Soma.getInstance().styles.getGlobalStyleSheet();<br/></p>
+				</textformat>
+				<p>Using the StyleManager, you can add as many Stylesheets as you want and easily load them via the loadStyleSheet method of the StyleManager (a <span class="code">StyleSheetEvent.LOADED</span> event will be dispatched):<br/></p>
+				<textformat indent="30">
+					<p class="code">SomaExtended.getInstance().styles.loadStyleSheet("skin", "css/flash_skin.css");<br/></p>
+				</textformat>
+				<p>See the <a href="css/flash_global.css" target="_blank">Soma Protest Stylesheet</a> (<span class="code">/www/css/flash_global.css</span>).<br/></p>
+				<p class="bold">SomaText<br/></p>
+				<p>SomaText is a class that is extending the TextField Flash built-in class: <span class="code">com.soma.view.SomaText</span><br/></p>
+				<p>The SomaText constructor can take 4 optionals parameters:<br/></p>
+				<ul>
+					<li>the text of the TextField.</li>
+					<li>the style name from the Stylesheet (without dot).</li>
+					<li>the Stylesheet target (if none is passed, the global Stylesheet will be used).</li>
+					<li>a properties object that can be aplied on the TextField.<br/></li>
+				</ul>
+				<p>SomaText can be used in 2 ways, as a label with only style applied or as a more complicated text with html tags. Here are some syntax examples:<br/></p>
+			]]>
+			</textfield>
+			<textfield id="text1">
+			<![CDATA[
+				<p>These are only syntax examples with the constructor, you have access to any TextField properties as SomaText is extending it (consider it a TextField class with some extra). You can also set most of the TextField and TextFormat properties in the Stylesheet if you prefer have them set externally.<br/></p>
+				<p>SomaText has default TextField properties values, not to set the same properties on all the TextField you are creating. They can be set at the beginning of the project (in the Config file for example). Here is a list of the default properties you can set:<br/></p>
+				<textformat indent="30">
+					<p class="code">SomaText.DEFAULT_TYPE</p>
+					<p class="code">SomaText.DEFAULT_EMBED_FONT</p>
+					<p class="code">SomaText.DEFAULT_ANTIALIAS</p>
+					<p class="code">SomaText.DEFAULT_AUTOSIZE</p>
+					<p class="code">SomaText.DEFAULT_MULTILINE</p>
+					<p class="code">SomaText.DEFAULT_WORDWRAP</p>
+					<p class="code">SomaText.DEFAULT_SELECTABLE</p>
+					<p class="code">SomaText.DEFAULT_CONDENSE_WHITE</p>
+					<p class="code">SomaText.DEFAULT_MOUSEWHEEL_ENABLED</p>
+					<p class="code">SomaText.DEFAULT_DOUBLECLICK_ENABLED</p>
+					<p class="code">SomaText.DEFAULT_GRIDFITTYPE</p>
+					<p class="code">SomaText.DEFAULT_RICHTEXT_CLIPBOARD_ENABLED<br/></p>
+				</textformat>
+				<p>SomaText has some extra functionalities:<br/></p>
+				<textformat indent="30">
+					<p><span class="code">setStyle</span> method, set a style from a stylesheet.</p>
+					<p><span class="code">style</span> method (read only), get the style used on the SomaText instance.</p>
+					<p><span class="code">resetToDefault</span> method, remove style and stylesheet to default values.</p>
+					<p><span class="code">setProperties</span> method, set TextField properties by passing an object.</p>
+					<p><span class="code">trace(somaTextInstance)</span> trace a full description and values of the TextField and defaultTextFormat values.<br/></p>
+				</textformat>
+				<p>NOTE: The old class used to handle TextField (<span class="code">com.soma.view.Text</span>) is still in Soma for conveniency if you were using it, but be aware that this class will disappear in a further release.</p>
+			]]>
+			</textfield>
+		</content>
+	    <page background="Background 1" id="cssProperties" type="CanvasPage" urlfriendly="css-properties">
+	        <title><![CDATA[CSS properties]]></title>
+			<content>
+				<textfield id="intro">
+				<![CDATA[
+					<p>You can use the following list of CSS properties with SomaText in your Stylesheet, most of the properties are not flash built-in and will work only with SomaText.<br/></p>
+					<p>The TextField properties will apply on the whole TextField and The TextFormat properties can be applied on specific parts of the text using HTML tags<br/></p>
+					<p class="bold">TextField properties access<br/></p>
+					<p><span class="code">alpha: 50;</span> (alpha) 0-100</p>
+					<p><span class="code">always-show-selection: true;</span> (alwaysShowSelection) true-false</p>
+					<p><span class="code">anti-alias-type: advanced;</span> (antiAliasType) normal-advanced</p>
+					<p><span class="code">auto-size: left;</span> (autoSize) center-none-left-right</p>
+					<p><span class="code">background: true;</span> (background) true-false</p>
+					<p><span class="code">background-color: #CCCCCC;</span> (backgroundColor) color value</p>
+					<p><span class="code">blend-mode: multiply;</span> (blendMode) add-alpha-darken-difference-erase...</p>
+					<p><span class="code">border: true;</span> (border) true-false</p>
+					<p><span class="code">border-color: #CCCCCC;</span> (borderColor) color value</p>
+					<p><span class="code">cache-as-bitmap: true;</span> (cacheAsBitmap) true-false</p>
+					<p><span class="code">condense-white: true;</span> (condenseWhite) true-false</p>
+					<p><span class="code">display-as-password: true;</span> (displayAsPassword) true-false</p>
+					<p><span class="code">double-click-enabled: true;</span> (doubleClickEnabled) true-false</p>
+					<p><span class="code">embed-fonts: true;</span> (embedFonts) true-false</p>
+					<p><span class="code">grid-fit-type: pixel;</span> (gridFitType) none-pixel-subpixel</p>
+					<p><span class="code">height: 40;</span> (height) pixel value</p>
+					<p><span class="code">max-chars: 10;</span> (maxChars) number of character</p>
+					<p><span class="code">mouse-enabled: true;</span> (mouseEnabled) true-false</p>
+					<p><span class="code">mouse-wheel-enabled: true;</span> (mouseWheelEnabled) true-false</p>
+					<p><span class="code">multiline: true;</span> (multiline) true-false</p>
+					<p><span class="code">name: myTextField;</span> (name) string value</p>
+					<p><span class="code">restrict: 0-9;</span> (restrict) regExp, ex: "A-Z 0-9", "^a-z", "\\-\\^", "A-Z^Q", "\u0020-\u007E"</p>
+					<p><span class="code">rotation: 30;</span> (rotation) pixel value</p>
+					<p><span class="code">scaleX: 300;</span> (scaleX) pixel value</p>
+					<p><span class="code">scaleY: 300;</span> (scaleY) pixel value</p>
+					<p><span class="code">scrollH: 30;</span> (scrollH) pixel value</p>
+					<p><span class="code">scrollV: 30;</span> (scrollV) pixel value</p>
+					<p><span class="code">selectable: true;</span> (selectable) true-false</p>
+					<p><span class="code">sharpness: 50;</span> (sharpness) -200 to 200;</p>
+					<p><span class="code">tab-enabled: true;</span> (tabEnabled) true-false</p>
+					<p><span class="code">tab-index: 1;</span> (tabIndex) int value</p>
+					<p><span class="code">thickness: 50;</span> (thickness) -200 to 200;</p>
+					<p><span class="code">use-rich-text-clipboard: true;</span> (useRichTextClipboard) true-false</p>
+					<p><span class="code">visible: true;</span> (visible) true-false</p>
+					<p><span class="code">width: 300;</span> (width) pixel value</p>
+					<p><span class="code">word-wrap: true;</span> (wordWrap) pixel value<br/></p>
+					<p class="bold">TextFormat properties access<br/></p>
+					<p><span class="code">color: #FF0000;</span> (color) color value</p>
+					<p><span class="code">display: block;</span> inline-block-and none</p>
+					<p><span class="code">font-family: "Arial, _sans";</span> (font) list of fonts (mono: _typewriter, sans-serif: _sans, serif: _serif)</p>
+					<p><span class="code">font-size: 10;</span> (size) pixel value</p>
+					<p><span class="code">font-style: italic;</span> (italic) normal-italic</p>
+					<p><span class="code">font-weight: bold;</span> (bold) normal-bold</p>
+					<p><span class="code">kerning: true;</span> (kerning) true-false</p>
+					<p><span class="code">leading: 4;</span> (leading) pixel value</p>
+					<p><span class="code">letter-spacing: 4;</span> (letterSpacing) pixel value</p>
+					<p><span class="code">margin-left: 30;</span> (leftMargin) pixel value</p>
+					<p><span class="code">margin-right: 30;</span> (rightMargin) pixel value</p>
+					<p><span class="code">text-align: right;</span> (align) left-right-center-justify</p>
+					<p><span class="code">text-decoration: underline;</span> (underline) underline-none</p>
+					<p><span class="code">text-indent: 30;</span> (blockIndent) pixel value<br/></p>
+				]]>
+				</textfield>
+			</content>
+		</page>
+	</page>
+    <!-- xml -->
+    <page background="Background 1" id="templateSystem" type="TemplateSystem" urlfriendly="template-system">
+        <title><![CDATA[Template System]]></title>
+		<content>
+			<textfield id="intro">
+			<![CDATA[
+				<p>Having a page class for each page node can be useful when you have a specific content to show that is not coming from the <a href="./#/xml/">XML Site Definition</a>. To be completely free and not to rewrite the same code for all your pages, using templates will help you.<br/></p>
+				<p>For example, you can have in all your pages the same structure, or at least a part of it: let's say a title, a subtitle and an intro, and then have a specific content. Rewriting the same code to handle these 3 elements in each pages wouldn't be really efficient.<br/></p>
+				<p>The first thing you need to do is apply the template to the page by adding the template attribute to the page node (<span class="code">template="MyTemplate"</span>).<br/></p>
+				<p>Much like the page system, the Page super class will find this attribute and instantiate a class from the value. Like the type value in the page node, the template is an actionscript class, the value must be capitalized and you must have an actionscript class matching this value. You also must <a href="./#/basics/class-import/">import the class</a> in the Config file.<br/></p>
+				<p><a href="./#/somaui/">SomaUI</a> can generate the template classes when you add them in the XML.<br/></p>
+				<p>The template class must extend <span class="code">com.soma.view.Template</span>, must implements <span class="code">com.soma.interfaces.ITemplateable</span> and <span class="code">com.soma.interfaces.IRemovable</span>.<br/></p>
+				<p>The constructor will take 2 parameters, the page and the container target (the display list where the elements of the template will be added, it can be the page itself).<br/></p>
+				<p>Some properties will be automatically set when a template is instantiated:<br/></p>
+				<textformat indent="30">
+					<p><u>page</u>: the page that has created the template.</p>
+					<p><u>containerTarget</u>: The container where the element will be added to the display list (can be the page).</p>
+					<p><u>elementList</u>: an Array containing the list of the elements founds in the XML (if you use a content node).</p>
+					<p><u>hasExternalAsset</u>: an Boolean that will be set to true if an element has been found with an external attribute.<br/></p>
+				</textformat>
+				<p class="bold">The showing process<br/></p>
+				<p>In the <a href="./#/page-system/">page system</a>, the template is created in the start function of the Page super class. The page will instantiate the template and calls the start function of the template. You can override the protected function startTemplate to create your common elements.<br/></p>
+				<p>When the elements are created, the template will call the show function to display them. You can override the protected function showTemplate to display the elements.<br/></p>
+				<p>At the end of the process, you must call the function endDisplay of the super class, this function will dispatch <span class="code">TemplateEvent.TEMPLATE_DISPLAYED</span>. The function templateDisplayed of the page will be called, it is the end of the template showing process.<br/></p>
+				<p>Let's repeat the process:<br/></p>
+				<textformat indent="30">
+					<p>1. start function of the page class, a template attribute has been found.</p>
+					<p>2. the page class instantiate the template class.</p>
+					<p>3. the start function of the template class is called and calls the protected function startTemplate.</p>
+					<p>4. when the elements are created (or loaded), the template calls the show function.</p>
+					<p>5. the show function calls the protected function showTemplate to show the elements with a transition.</p>
+					<p>6. when the elements are displayed, <span class="code">TemplateEvent.TEMPLATE_DISPLAYED</span> is dispatched.</p>
+					<p>7. the templateDisplayed function of the page is called, it is the end of the showing process.<br/></p>
+				</textformat>
+				<p>The dispatch of the <span class="code">TemplateEvent.TEMPLATE_DISPLAYED</span> will allow the page to continue or build other elements or dispatch <span class="code">PageEvent.PAGE_DISPLAYED</span>.<br/></p>
+				<p class="bold">The hiding process<br/></p>
+				<p>When the remove function of the page is called by the <a href="./#/page-system/">page system</a>, if a template has been instantiated, the page calls the remove function of the template. Much like the page, the remove will allow you to hide and remove your elements. At the end of this process, the dispose function is called.<br/></p>
+				<p>The dispose function of the Template super class will dispatch <span class="code">TemplateEvent.TEMPLATE_REMOVED</span>. The function templateRemoved of the page will be called, it is the end of the template hiding process.</p>
+				<p>Let's repeat the process:<br/></p>
+				<textformat indent="30">
+					<p>1. the remove function of the page class calls the remove function of the template class.</p>
+					<p>2. the elements of the template and removed with a transition.</p>
+					<p>3. the dispose function is called and dispatch <span class="code">TemplateEvent.TEMPLATE_REMOVED</span>.</p>
+					<p>4. the templateRemoved function of the page is called, it is the end of the hiding process.<br/></p>
+				</textformat>
+			]]>
+			</textfield>
+			<bitmap id="templateShowing" external="true" path="images/assets/" file="templateshowing.png"/>
+		</content>
+		<page background="Background 1" id="tplExample1" type="TplExample1" urlfriendly="example1" template="TemplateExample">
+			<title><![CDATA[Template Example 1]]></title>
+			<content>
+				<textfield id="title"><![CDATA[<p>Title Template Example 1<br/></p>]]></textfield>
+				<textfield id="subtitle"><![CDATA[<p>Subtitle Template Example 1<br/></p>]]></textfield>
+				<bitmap id="image" external="true" path="images/assets/" file="asset0.jpg"/>
+				<textfield id="intro"><![CDATA[<p>This page uses the template: TemplateExample. The title and subtitle above and this paragraph are part of the template, they are buit and showed in the template class.<br/></p>]]></textfield>
+				<textfield id="text1"><![CDATA[<p>This paragraph is specific to the page class, it is not part of the template. It is built in the page class at the end of the template process.<br/></p>]]></textfield>
+			</content>
+		</page>
+		<page background="Background 1" id="tplExample2" type="TplExample2" urlfriendly="example2" template="TemplateExample">
+			<title><![CDATA[Template Example 2]]></title>
+			<content>
+				<textfield id="title"><![CDATA[<p>Title Template Example 2<br/></p>]]></textfield>
+				<textfield id="subtitle"><![CDATA[<p>Subtitle Template Example 2<br/></p>]]></textfield>
+				<bitmap id="image" external="true" path="images/assets/" file="asset1.jpg"/>
+				<textfield id="intro"><![CDATA[<p>This page uses the template: TemplateExample. The title and subtitle above and this paragraph are part of the template, they are buit and showed in the template class.<br/></p>]]></textfield>
+				<textfield id="text1"><![CDATA[<p>This paragraph is specific to the page class, it is not part of the template. It is built in the page class at the end of the template process.<br/></p>]]></textfield>
+			</content>
+		</page>
+		<page background="Background 1" id="tplParser" type="PageEmpty" urlfriendly="parser" template="TemplateParser">
+			<title><![CDATA[Template Parser]]></title>
+			<content>
+				<textfield id="title" style="title" top="20" left="170"><![CDATA[<p>Title Template Parser<br/></p>]]></textfield>
+				<textfield id="subtitle" style="title" top="40" left="170"><![CDATA[<p>Subtitle Template Parser 2<br/></p>]]></textfield>
+				<textfield id="intro" style="body" top="60" left="170" width="400" multiline="true" wordWrap="true" selectable="true" useStyleSheet="true">
+				<![CDATA[
+					<p>The TemplateParser is parsing the elements found in the content node to display them. In the <a href="./#/xml/">XML Site Definition page</a> (content node section), you can see what kind of elements you can use for the TemplateParser.<br/></p>
+					<p><a href="data/xml-examples/pagetplparser.txt" target="_blank">Nodes you can use with a TemplateParser</a><br/></p>
+					<p>You can set the positions straight in the XML, but also <a href="./#/baseui/">BaseUI</a> properties (such as top, right, bottom, verticalCenter, width with percent value, etc), and Flash built-in class properties (blendMode, visible, alpha, etc).<br/></p>
+					<p>The image at the top right corner is a jpg loaded, with a BlendMode Darken set in the XML. The 2 images below are Bitmap from the Library of your Flash Movie or from a SWC library, also with BlendMode set in the XML. The picture at the bottom is a MovieClip with percent width and percent height values.<br/></p>
+					<p>Here is the <a href="../source/front-end/src/com/somaprotest/templates/TemplateParser.as" target="_blank">TemplateParser</a></p>
+					<p class="code">/source/front-end/src/com/somaprotest/templates/TemplateParser.as</p>
+				]]>
+				</textfield>
+				<bitmap id="externalBitmap" right="20" top="20" external="true" path="images/assets/" file="asset0.jpg" scaleX=".4" scaleY=".4" blendMode="darken"/>
+				<bitmap id="bitmap1FromLibrary" linkage="Asset1" verticalCenter="0" right="20" scaleX=".4" scaleY=".4" blendMode="hardlight"/>
+				<bitmap id="bitmap2FromLibrary" linkage="Asset1" bottom="20" right="20" scaleX=".4" scaleY=".4" blendMode="screen"/>
+				<movieclip id="movieclipFromLibrary" linkage="Asset2" bottom="20" left="170" width="33%" height="33%"/>
+			</content>
+		</page>
+	</page>
+    <!-- xml -->
+    <page background="Background 1" id="xmlSite" type="CanvasPage" urlfriendly="xml">
+        <title><![CDATA[XML Site Definition]]></title>
+        <content>
+            <textfield id="intro">
+			<![CDATA[
+				<p>The XML Site Definition is an important part in Soma and can be used in many different ways. The XML will mainly describe the structure of your site, but also the content if you decide to include it. If you use <a href="./#/somaui/">SomaUI</a>, you can load some site templates, they can be a good start to build your own XML:<br/></p>
+				<textformat indent="30">
+					<p><a href="data/site.xml" target="_blank">Soma Protest XML</a></p>
+					<p><a href="data/xml-examples/BasicSite.txt" target="_blank">BasicSite</a></p>
+					<p><a href="data/xml-examples/BasicSiteExternal.txt" target="_blank">BasicSiteExternal</a></p>
+					<p><a href="data/xml-examples/BasicSiteLiquid.txt" target="_blank">BasicSiteLiquid</a></p>
+					<p><a href="data/xml-examples/BasicSiteNoType.txt" target="_blank">BasicSiteNoType</a><br/></p>
+				</textformat>
+				<p class="bold">The root node<br/></p>
+				<p>The root node of the XML is <span class="code">&lt;site&gt;&lt;/site&gt;</span> and you can set the kind of layout you want to use: <a href="data/xml-examples/site-fixed.txt" target="_blank">fixed</a> or <a href="data/xml-examples/site-liquid.txt" target="_blank">liquid</a>. When you choose a fixed site, you can use <a href="./#/baseui/">BaseUI</a> properties in the site node to set the position. If you dont want any background for the fixed area, just set the backgroundAlpha property to 0.</span></p>
+				<p>The site node can composed by pages and backgrounds.<br/></p>
+				<p class="bold">The page node<br/></p>
+				<p>The page node will describe the structure, every state you want to appear in the URL must be a page node. A page node must contain a title node and can contain other page nodes or content node.<br/></p>
+				<p>The rules of the page node are:<br/></p>
+				<ul>
+					<li>A page node must have a unique "id" attribute.</li>
+					<li>A page node must contain a title node.<br/></li>
+				</ul>
+				<p><u>Attribute id:</u><br/>The id of a page node is the parameter used in Soma when you want to show pages or menu states. The id can be whatever you want: a name, a number, etc.<br/></p>
+				<p><u>Attribute urlfriendly:</u><br/>The urlfriendly is what will appear in the url of the browser, it must be without space, special characters and following the <a href="http://en.wikipedia.org/wiki/URL_normalization" target="_blank">URL normalization.</a><br/></p>
+				<p><u>Node Title:</u><br/>The title node is a name used for example in the contextual menu, the title bar of the browser and the menu generating with <a href="./#/somaui/">SomaUI</a>. It can contains special character or anything that can be shown with your font.<br/></p>
+				<p>Here are two basic example of pages nodes: a <a href="data/xml-examples/pagenode1.txt" target="_blank">simple page node example</a> on one level and a <a href="data/xml-examples/pagenode2.txt" target="_blank">page node example on more levels</a>.<br/></p>
+				<p><u>Type attribute:</u><br/>The page node can contain a type attribute, this will be the name of a page actionscript class that will instantiated by the PageManager. You will have one almost all the time to show something, but you can avoid it for example if you want to have the page appearing in the menu but not show a page when the user click on it. The name must be capitalized and you must have an actionscript class with the same name in your sources, see the <a href="./#/page-system/">page system</a> for more details.<br/></p>
+				<p><a href="data/xml-examples/pagenodetype.txt" target="_blank">Example with types</a><br/></p>
+				<p><u>Attribute template:</u><br/>This attribute is the name of a template actionscript class that will be instantiated by the Page super class. The node must have a type attribute (a page class) to work. The page will find it and automatically apply this template to your page, see the <a href="./#/template-system/">template system</a> for more details.<br/></p>
+				<p><a href="data/xml-examples/pagetemplate.txt" target="_blank">Example with template</a><br/></p>
+				<p><u>Attribute depth:</u><br/>This attribute is taking a number (default 0 if you dont have this attribute in the node) and can be compared to the depth of the page instantiated by the PageManager. See the <a href="./#/page-system/depth/">page with depth system</a> for more details.<br/></p>
+				<p><a href="data/xml-examples/pagedepth1.txt" target="_blank">Example with depths</a><br/></p>
+				<p><u>Attribute exclude:</u><br/>This attribute is taking a boolean (default false if you dont have this attribute in the node). A page excluded must have a page parent with a type. See the <a href="./#/page-system/excluded/">page excluded system</a> for more details.<br/></p>
+				<p><a href="data/xml-examples/pageexcluded1.txt" target="_blank">Example with page excluded</a><br/></p>
+				<p><u>Attribute external:</u><br/>This attribute is taking a boolean (default false if you dont have this attribute in the node). A external page must have a type, and is an external SWF. The PageManager, instead of instantiated a new page class, will load an external SWF that have the same name. See the <a href="./#/page-system/external/">page external system</a> for more details.<br/></p>
+				<p><a href="data/xml-examples/pageexternal1.txt" target="_blank">Example with external pages</a><br/></p>
+				<p><u>Attribute path:</u><br/>This attribute can be used when you set an external attribute to true to load a SWF file as a page. This attribute is the path of your Movie. If the PageManager doesn't find a path attribute, it will attempt to load the Movie at the root of the deploy folder (www). See the <a href="./#/page-system/external/">page external system</a> for more details.<br/></p>
+				<p><a href="data/xml-examples/pageexternal2.txt" target="_blank">Example with external pages and path</a><br/></p>
+				<p><u>Attribute background:</u><br/>This attribute is taking the id of the child of the backgrounds node (if backgrounds have been set). This attribute will tell the PageManager that a background must be shown for this specific page. See below how to set a backgrounds node.<br/></p>
+				<p><a href="data/xml-examples/pagebackgrounds.txt" target="_blank">Example with backgrounds</a><br/></p>
+				<p class="bold">The content node<br/></p>
+				<p>The content node can contain the description of your content. You can add any kind of nodes in the content node, but if you want to use the TemplateParser that is generated by <a href="./#/somaui/">SomaUI</a> (with the site templates provided), here is an example:<br/></p>
+				<p><a href="data/xml-examples/pagetplparser.txt" target="_blank">Nodes you can use with a TemplateParser</a><br/></p>
+				<p>The 3 nodes you can use with a TemplateParser are: textfield, movieclip and bitmap (loaded or from a library). These nodes are parsed by the TemplateParser, it means you can use <a href="./#/baseui/">BaseUI</a> properties. You can also use Flash built-in properties, for example a multiline property on a textfield node, or a blendMode on a movieclip node, any properties that are "parsable" from a string. For example, you can't use a property that needs an Array, but any property that needs a Boolean, a Number or a String will be parsed and applied.<br/></p>
+				<p>Other nodes will be built to work with the template parser in future release.<br/></p>
+				<p class="bold">The backgrounds node<br/></p>
+				<p>If you need backgrounds in your site, you can use the BackgroundManager. You have to create a create a backgrounds node and add some children that can be bitmap (loaded or from a library) or movieclip node. As the content node, you can use, in a movieclip and bitmap node, <a href="./#/baseui/">BaseUI</a> properties and built-in Flash properties.<br/></p>
+				<p>A children of a backgrounds node need at least a id attribute that can use in a page node.<br/></p>
+				<p><a href="data/xml-examples/pagebackgrounds.txt" target="_blank">Example with backgrounds</a><br/></p>
+				<p class="bold">Tips:<br/></p>
+				<p>When you need to find something in the XML anywhere in you code, you can access to the XML using <span class="code">Soma.getInstance().content.data</span> and use an E4X filter (<a href="http://www.kirupa.com/developer/flashcs3/using_xml_as3_pg1.htm" target="_blank">AS3 XML tutorial</a>). Here is an example:<br/></p>
+				<p>Find a page node with the id:<br/></p>
+				<textformat indent="30">
+					<p class="code">Soma.getInstance().content.data..*.(name() == "page" && @id == "myTargetID")[0];<br/></p>
+				</textformat>
+			]]>
+			</textfield>
+        </content>
+    </page>
+    <page background="Background 1" id="layoutBaseUI" type="CanvasPage" urlfriendly="baseui">
+        <title><![CDATA[BaseUI integration]]></title>
+        <content>
+            <textfield id="intro">
+			<![CDATA[
+				<p>The layout manager <a href="http://www.soundstep.com/blog/downloads/baseui/" target="_blank">BaseUI</a> is part of Soma. Of course, like almost everything in Soma, if you're not happy with, you don't have to use it.<br/></p>
+				<p>There's a global BaseUI instance accessible using <span class="code">Soma.getInstance().baseUI</span>, and a BaseUI instance for each page accessible with a baseUI property.<br/></p>
+				<p>BaseUI is also part of the <a href="./#/xml/">XML Site Definition</a>, BaseUI properties can be used in the root node for a fixed layout, in the children of a backgrounds node and in the nodes that can be used by the <a href="./#/template-system/parser/">TemplateParser</a>.<br/></p>
+				<p>The sources, demo, tutorials and documentation are available on the <a href="http://www.soundstep.com/blog/downloads/baseui/" target="_blank">BaseUI page</a> on my blog.</p>
+			]]>
+			</textfield>
+        </content>
+    </page>
+    <page background="Background 1" id="somaUI" type="CanvasPage" urlfriendly="somaui">
+        <title><![CDATA[SomaUI]]></title>
+        <content>
+            <textfield id="intro">
+			<![CDATA[
+				<p>SomaUI is a software I built to generate the draft of a Soma-based Flash site, it is available for Windows, Mac and Linux.<br/></p>
+				<p>SomaUI can be a great help to start a site, as it is generating all the sources and files you need to develop and deploy your site. Some site templates are provided if you want to test them or to start with them to write your own XML Site Definition. The site templates are working with the <a href="./#/template-system/parser/">TemplateParser</a>.<br/></p>
+				<p>You can find a tutorial <a href="http://www.soundstep.com/blog/tutorials/somaui/getting-started/" target="_blank">Getting started</a>, and you can download it from the <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI page</a> on my blog.</p>
+			]]>
+			</textfield>
+        </content>
+    </page>
+</site>

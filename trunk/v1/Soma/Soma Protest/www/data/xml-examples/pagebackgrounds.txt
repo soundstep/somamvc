@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site>
+	<backgrounds>
+		<movieclip id="background0" linkage="Background0" cacheAsBitmap="true" top="0" bottom="0" left="0" right="0" visible="false"/>
+		<bitmap id="background1" linkage="Background1" cacheAsBitmap="true" ratio="ratio_out" alignX="center" alignY="center" visible="false"/>
+		<bitmap id="background2" external="true" path="images/backgrounds/" file="background.jpg" cacheAsBitmap="true" ratio="ratio_out" alignX="center" alignY="center" alpha="0"/>
+	</backgrounds>
+	<page id="Page1" urlfriendly="page1" type="Page1" background="background0">
+		<title><![CDATA[My Page 1]]></title>
+	</page>
+	<page id="Page2" urlfriendly="page2" type="Page2" background="background2">
+		<title><![CDATA[My Page 2]]></title>
+	</page>
+	<page id="Page3" urlfriendly="page3" type="Page3" background="background3">
+		<title><![CDATA[My Page 3]]></title>
+	</page>
+</site>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+  <backgrounds>
+    <image id="background image" file="http://www.soundstep.com/blog/source/somaui/demo/background.jpg" ratio="ratio_out" alignX="right" alignY="bottom"/>
+  </backgrounds>
+  <base>
+    <text id="footer" bottom="20" x="20" style="body"><![CDATA[© <a href="http://www.soundstep.com" target="_blank">Soundstep</a> 2009]]></text>
+    <text id="footer links" style="body" right="20" bottom="20"><![CDATA[<a href="http://www.soundstep.com/blog/" target="_blank">Soundstep Blog</a> | <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a> | <a href="http://www.soundstep.com/somaprotest/" target="_blank">SomaProtest</a> | <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Documentation</a> | <a href="http://www.soundstep.com/" target="_blank">Sources</a>]]></text>
+    <image id="logo image" file="http://www.soundstep.com/blog/source/somaui/demo/logo.png" top="30" right="30"/>
+  </base>
+  <page id="home" type="Home" urlfriendly="home" background="background image">
+    <title><![CDATA[Welcome]]></title>
+    <content>
+      <text id="home title" style="title" x="130" y="25"><![CDATA[Welcome]]></text>
+      <image id="home image" file="http://www.soundstep.com/blog/source/somaui/demo/home.jpg" x="133" y="110"/>
+      <text id="home quote" style="body" width="400" multiline="true" wordWrap="true" x="465" y="110"><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="Arial" SIZE="48" COLOR="#FF6600" LETTERSPACING="0" KERNING="0">&quot;<FONT SIZE="24" COLOR="#663300">One can have no smaller or greater mastery than mastery of oneself.</FONT>&quot;</FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="Arial" SIZE="11" COLOR="#666666" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="Arial" SIZE="11" COLOR="#666666" LETTERSPACING="0" KERNING="0"></FONT></P></TEXTFORMAT><TEXTFORMAT LEADING="2"><P ALIGN="RIGHT"><FONT FACE="Arial" SIZE="16" COLOR="#666666" LETTERSPACING="0" KERNING="0"><I>Leonardo Da Vinci</I></FONT></P></TEXTFORMAT>]]></text>
+      <text id="home text" style="body" multiline="true" wordWrap="true" width="500" x="132" y="380"><![CDATA[<p><b>Computer art</b> is any <a href="http://en.wikipedia.org/wiki/Art" title="Art">art</a> in which <a href="http://en.wikipedia.org/wiki/Computer" title="Computer">computers</a> played a role in production or display of the artwork. Such art can be an image, sound, animation, <a href="http://en.wikipedia.org/wiki/Video" title="Video">video</a>, <a href="http://en.wikipedia.org/wiki/CD-ROM" title="CD-ROM">CD-ROM</a>, <a href="http://en.wikipedia.org/wiki/DVD-ROM" title="DVD-ROM" class="mw-redirect">DVD-ROM</a>, <a href="http://en.wikipedia.org/wiki/Videogame" title="Videogame" class="mw-redirect">videogame</a>, <a href="http://en.wikipedia.org/wiki/Web_site" title="Web site" class="mw-redirect">web site</a>, <a href="http://en.wikipedia.org/wiki/Algorithm" title="Algorithm">algorithm</a>, <a href="http://en.wikipedia.org/wiki/Performance" title="Performance">performance</a> or gallery installation. Many traditional disciplines are now integrating <a href="http://en.wikipedia.org/wiki/Digital" title="Digital">digital</a> technologies and, as a result, the lines between traditional works of art and new media works created using computers has been blurred. For instance, an artist may combine traditional <a href="http://en.wikipedia.org/wiki/Painting" title="Painting">painting</a> with <a href="http://en.wikipedia.org/wiki/Algorithm_art" title="Algorithm art" class="mw-redirect">algorithm art</a> and other digital techniques. As a result, defining computer art by its end product can thus be difficult. Computer art is by its nature evolutionary since changes in technology and <a href="http://en.wikipedia.org/wiki/Software" title="Software" class="mw-redirect">software</a> directly affect what is possible. Notable artists in this vein include James Faure Walker, <a href="http://en.wikipedia.org/wiki/Manfred_Mohr" title="Manfred Mohr">Manfred Mohr</a>, <a href="http://en.wikipedia.org/wiki/Ronald_Davis" title="Ronald Davis">Ronald Davis</a>, <a href="http://en.wikipedia.org/wiki/Joseph_Nechvatal" title="Joseph Nechvatal">Joseph Nechvatal</a>, Matthias Groebel, <a href="http://en.wikipedia.org/wiki/George_Grie" title="George Grie">George Grie</a>, <a href="http://en.wikipedia.org/wiki/Olga_Kisseleva" title="Olga Kisseleva">Olga Kisseleva</a>, <a href="http://en.wikipedia.org/wiki/John_Lansdown" title="John Lansdown">John Lansdown</a> and Perry Welman.</p>]]></text>
+    </content>
+  </page>
+  <page id="portfolio" type="Portfolio" urlfriendly="portfolio" background="background image">
+    <title><![CDATA[Portfolio]]></title>
+    <content>
+      <text id="portfolio intro" x="130" y="70" style="body" multiline="true" wordWrap="true" width="370"><![CDATA[Art is the process or product of deliberately arranging elements in a way that appeals to the senses or emotions. It encompasses a diverse range of human activities, creations, and modes of expression, including music and literature. The meaning of art is explored in a branch of philosophy known as aesthetics.]]></text>
+      <text id="portfolio title" x="130" y="25" style="title"><![CDATA[Portfolio]]></text>
+      <image id="thumb1" file="http://www.soundstep.com/blog/source/somaui/demo/thumb1.jpg" x="130" y="160"/>
+      <image id="thumb2" file="http://www.soundstep.com/blog/source/somaui/demo/thumb2.jpg" x="300" y="160"/>
+      <image id="thumb3" file="http://www.soundstep.com/blog/source/somaui/demo/thumb3.jpg" x="470" y="160"/>
+      <image id="thumb4" file="http://www.soundstep.com/blog/source/somaui/demo/thumb4.jpg" x="640" y="160"/>
+      <image id="thumb5" file="http://www.soundstep.com/blog/source/somaui/demo/thumb5.jpg" x="130" y="270"/>
+      <image id="thumb6" file="http://www.soundstep.com/blog/source/somaui/demo/thumb6.jpg" x="300" y="270"/>
+      <image id="thumb7" file="http://www.soundstep.com/blog/source/somaui/demo/thumb7.jpg" x="470" y="270"/>
+      <image id="thumb8" file="http://www.soundstep.com/blog/source/somaui/demo/thumb8.jpg" x="640" y="270"/>
+      <image id="thumb9" file="http://www.soundstep.com/blog/source/somaui/demo/thumb9.jpg" x="130" y="380"/>
+      <image id="thumb10" file="http://www.soundstep.com/blog/source/somaui/demo/thumb10.jpg" x="300" y="380"/>
+      <image id="thumb11" file="http://www.soundstep.com/blog/source/somaui/demo/thumb11.jpg" x="470" y="380"/>
+      <image id="thumb12" file="http://www.soundstep.com/blog/source/somaui/demo/thumb12.jpg" x="640" y="380"/>
+    </content>
+  </page>
+  <page id="Video" type="VideoPage" urlfriendly="video" background="background image">
+    <title><![CDATA[Video]]></title>
+    <content>
+      <text id="video title" x="130" y="25" style="title"><![CDATA[Video]]></text>
+      <text id="video intro" x="130" y="70" style="body" multiline="true" wordWrap="true" width="450"><![CDATA[Automation is the use of control systems (such as numerical control, programmable logic control, and other industrial control systems), in concert with other applications of information technology (such as computer-aided technologies [CAD, CAM, CAx]), to control industrial machinery and processes, reducing the need for human intervention.]]></text>
+      <videoplayer id="video player" url="http://www.soundstep.com/source/somaui/demo/video.flv" horizontalCenter="0" verticalCenter="30" volume="0" loop="true" width="546" height="308"/>
+    </content>
+    <page id="Video Effect 1" type="VideoEffect" urlfriendly="effect1" background="background image" depth="1">
+      <title><![CDATA[Video Effect 1]]></title>
+      <content>
+        <image id="video effect 1" file="http://www.soundstep.com/blog/source/somaui/demo/color_blue.jpg" width="546" height="281" horizontalCenter="0" blendMode="difference" verticalCenter="17"/>
+        <text id="video effect 1 text" style="body" width="546" horizontalCenter="-3" verticalCenter="210" multiline="true" wordWrap="true"><![CDATA[<b>Blend modes</b> in digital image editing are used to determine how two Layers are blended into each other. The default blend mode in most applications is simply to hide the lower layer with whatever is present in the top layer.]]></text>
+      </content>
+    </page>
+    <page id="Video Effect 2" type="VideoEffect" urlfriendly="effect2" background="background image" depth="1">
+      <title><![CDATA[Video Effect 2]]></title>
+      <content>
+        <image id="video effect 2" file="http://www.soundstep.com/blog/source/somaui/demo/color_green.jpg" width="546" height="281" horizontalCenter="0" blendMode="difference" verticalCenter="17"/>
+        <text id="video effect 2 text" style="body" width="546" horizontalCenter="-3" verticalCenter="210" multiline="true" wordWrap="true"><![CDATA[<b>The currently most common</b> numerical representation of colors is the one used in RGB (red, green, blue) images, where three numbers (x, y, z) can take values between 0 and 255, each of them indicating how much red, green and blue the pixel contains.]]></text>
+      </content>
+    </page>
+  </page>
+  <page id="About Page" type="ABoutPage" urlfriendly="about" background="background image">
+    <title><![CDATA[About]]></title>
+    <content>
+      <text id="about title" x="130" y="25" style="title"><![CDATA[About]]></text>
+      <text id="about text rich" style="body" width="742" multiline="true" wordWrap="true" horizontalCenter="0" y="100"><![CDATA[<TEXTFORMAT LEADING="2"><P ALIGN="LEFT"><FONT FACE="Arial" SIZE="20" COLOR="#000000" LETTERSPACING="0" KERNING="0">In the <FONT COLOR="#006666">18th century</FONT> <FONT SIZE="11"><A HREF="http://en.wikipedia.org/wiki/John_Locke" TARGET="_blank"><U>John Locke</U></A> <FONT COLOR="#666666">proposed a model of the human mind in which ideas associate or resonate with one another in the mind. </FONT></FONT>In the <FONT COLOR="#009999">19th century</FONT>,<FONT SIZE="11"> <FONT COLOR="#330033">Romantic poets such as Coleridge and Shelley <FONT SIZE="14" COLOR="#000000">believed that inspiration came to a poet because the poet was <B>attuned to the (divine or mystical)</B> &quot;winds&quot;</FONT></FONT> <FONT COLOR="#666666">and because the soul of the poet was able to receive such visions. In the early 20th century, Sigmund Freud located inspiration</FONT> <FONT COLOR="#663300">in the inner psyche of the artist. Carl Gustav Jung&apos;s theory of inspiration suggests that an artist is one who was attuned to racial memory, </FONT>which encoded the archetypes of the human mind.</FONT></FONT></P></TEXTFORMAT>]]></text>
+      <text id="about column 1" width="200" style="body" horizontalCenter="-270" y="230" multiline="true" wordWrap="true"><![CDATA[Judgments of aesthetic value clearly rely on our ability to discriminate at a sensory level. Aesthetics examines our affective domain response to an object or phenomenon. Many see natural beauty folded within petals of a rose. Immanuel Kant, writing in 1790, observes of a man "If he says that canary wine is agreeable he is quite content if someone else corrects his terms and reminds him to say instead: It is agreeable to me," because "Everyone has his own (sense of) taste". ]]></text>
+      <text id="about column 3" width="200" style="body" horizontalCenter="270" y="230" multiline="true" wordWrap="true"><![CDATA[Viewer interpretations of beauty possess two concepts of value: aesthetics and taste. Aesthetics is the philosophical notion of beauty. Taste is a result of education and awareness of elite cultural values; therefore taste can be learned. Taste varies according to class, cultural background, and education. According to Kant beauty is objective and universal; thus certain things are beautiful to everyone. ]]></text>
+      <text id="about column 2" width="200" style="body" horizontalCenter="0" y="230" multiline="true" multline="true" wordWrap="true"><![CDATA[Aesthetic judgments usually go beyond sensory discrimination. For David Hume, delicacy of taste is not merely "the ability to detect all the ingredients in a composition", but also our sensitivity "to pains as well as pleasures, which escape the rest of mankind." (Essays Moral Political and Literary. Indianapolis, Literary Classics 5, 1987.) Thus, the sensory discrimination is linked to capacity for pleasure. ]]></text>
+      <text id="about text" style="body" multiline="true" wordWrap="true" y="420" width="742" horizontalCenter="0"><![CDATA[<p>Inspiration refers to an unconscious burst of creativity in an artistic, musical, or other intellectual endeavor such as the invention of a new scientific theory. Literally, the word means "breathed upon," and it has its origins in both Hellenism and Hebraism. Homer and Hesiod believed that inspiration derived from Gods such as the oracle of Delphi. Similarly, in the Ancient Norse religions, inspiration derives from the Gods. Inspiration is also a divine matter in Hebrew poetics. In the Book of Amos the prophet speaks of being overwhelmed by God's voice and compelled to speak. In Christianity, inspiration is a gift of the Holy Spirit.<br/></p>]]></text>
+    </content>
+  </page>
+</site>

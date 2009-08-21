@@ -1,0 +1,561 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="StyleManager,com.soma.model.StyleManager,GLOBAL_STYLESHEET_ID,addStyleSheet,cloneStyleSheet,getColor,getGlobalStyle,getGlobalStyleSheet,getStyle,getStyleSheet,getStyleSheetID,getTextFormat,loadStyleSheet,removeStyleSheet,setGlobalStyleSheet" name="keywords">
+<title>com.soma.model.StyleManager</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'StyleManager - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soma/model/StyleManager.html&amp;com/soma/model/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;StyleManager</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class StyleManager"); titleBar_setSubNav(true,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.model</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class StyleManager</td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     The StyleManager handles external stylesheets (css) and gives you an easy access to the styles.
+     The global stylesheet manager is accessible using:
+     <div class='listing'><pre>Soma.getInstance().styles</pre></div>
+     Before starting Soma, you can register a "global stylesheet" to the framework using (the css will be loaded during the initialization process):
+     <div class='listing'><pre>Soma.getInstance().registerGloBalStyleSheet("styles.css");</pre></div>
+     Other StyleSheets can easily be loaded using:
+     <div class='listing'><pre>
+Soma.getInstance().addEventListener(StyleSheetEvent.LOADED, eventHandler);
+Soma.getInstance().loadStyleSheet("myStyleSheetID", "css/custom.css");
+   </pre></div>
+   </p>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../events/StyleSheetEvent.html" target="">StyleSheetEvent</a>
+<br>
+<a href="../view/SomaText.html" target="">SomaText</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#StyleManager()">StyleManager</a>()</div>
+<div class="summaryTableDescription"> Creates an StyleManager instance </div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addStyleSheet()">addStyleSheet</a>(id:String, stylesheet:StyleSheet):void</div>
+<div class="summaryTableDescription">
+   Add a stylesheet to the StyleManager instance and register it with an id.</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#cloneStyleSheet()">cloneStyleSheet</a>(target:StyleSheet):StyleSheet</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getColor()">getColor</a>(style:String, stylesheet:StyleSheet = null):uint</div>
+<div class="summaryTableDescription">
+   Get a color from a stylesheet (the global stylesheet will be used if you don't pass any).</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getGlobalStyle()">getGlobalStyle</a>(style:String):Object</div>
+<div class="summaryTableDescription">
+   Get a style from the global stylesheet.</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getGlobalStyleSheet()">getGlobalStyleSheet</a>():StyleSheet</div>
+<div class="summaryTableDescription">
+   Get the global stylesheet instance registered (used by default with SomaText instances when a stylesheet is not specified).</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getStyle()">getStyle</a>(style:String, stylesheet:StyleSheet = null):Object</div>
+<div class="summaryTableDescription">
+   Get a style from a stylesheet (the global stylesheet will be used if you don't pass any).</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getStyleSheet()">getStyleSheet</a>(stylesheetID:String):StyleSheet</div>
+<div class="summaryTableDescription">
+   Get a stylesheet using its id.</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getStyleSheetID()">getStyleSheetID</a>(stylesheet:StyleSheet):String</div>
+<div class="summaryTableDescription">
+   Get the id of a stylesheet.</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getTextFormat()">getTextFormat</a>(style:String, stylesheet:StyleSheet = null):TextFormat</div>
+<div class="summaryTableDescription">
+   Get a color from a stylesheet (the global stylesheet will be used if you don't pass any).</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadStyleSheet()">loadStyleSheet</a>(id:String, url:String):void</div>
+<div class="summaryTableDescription">
+   Load a stylesheet and register it with an id.</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeStyleSheet()">removeStyleSheet</a>(stylesheetID:String):void</div>
+<div class="summaryTableDescription">
+   Remove a styleheet from the StyleManager instance using its id.</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setGlobalStyleSheet()">setGlobalStyleSheet</a>(stylesheet:StyleSheet):void</div>
+<div class="summaryTableDescription">
+   Set a stylesheet to be the "global stylesheet" (used by default with SomaText instances when a stylesheet is not specified).</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#GLOBAL_STYLESHEET_ID">GLOBAL_STYLESHEET_ID</a> : String = "global"<div class="summaryTableDescription">[static] id String of the global stylesheet.</div>
+</td><td class="summaryTableOwnerCol">StyleManager</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="StyleManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">StyleManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function StyleManager()</code><p> Creates an StyleManager instance </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addStyleSheet(id:String, stylesheet:StyleSheet):void</code><p>
+   Add a stylesheet to the StyleManager instance and register it with an id.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">id</span>:String</code> &mdash; id of the stylesheet.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> &mdash; A StyleSheet.
+   </td>
+</tr>
+</table>
+</div>
+<a name="cloneStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cloneStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function cloneStyleSheet(target:StyleSheet):StyleSheet</code><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:StyleSheet</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>StyleSheet</code></td>
+</tr>
+</table>
+</div>
+<a name="getColor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getColor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getColor(style:String, stylesheet:StyleSheet = null):uint</code><p>
+   Get a color from a stylesheet (the global stylesheet will be used if you don't pass any).
+   <div class='listing'><pre>
+var color:uint = Soma.getInstance().styles.getColor(".myStyle");
+trace(color.toString(16));
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">style</span>:String</code> &mdash; Name of the style.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> (default = <code>null</code>)<code></code> &mdash; StyleSheet instance.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>uint</code> &mdash; A uint value (color value).
+   </td>
+</tr>
+</table>
+</div>
+<a name="getGlobalStyle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getGlobalStyle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getGlobalStyle(style:String):Object</code><p>
+   Get a style from the global stylesheet.
+   <div class='listing'><pre>
+var obj:Object = Soma.getInstance().styles.getGlobalStyle(".myStyle");
+for (var i:String in obj) {
+ trace(i, obj[i])
+}
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">style</span>:String</code> &mdash; Name of the style.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; An object.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getGlobalStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getGlobalStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getGlobalStyleSheet():StyleSheet</code><p>
+   Get the global stylesheet instance registered (used by default with SomaText instances when a stylesheet is not specified).
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>StyleSheet</code> &mdash; A StyleSheet instance.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getStyle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getStyle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getStyle(style:String, stylesheet:StyleSheet = null):Object</code><p>
+   Get a style from a stylesheet (the global stylesheet will be used if you don't pass any).
+   <div class='listing'><pre>
+var obj:Object = Soma.getInstance().styles.getStyle(".myStyle", myStyleSheet);
+for (var i:String in obj) {
+ trace(i, obj[i])
+}
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">style</span>:String</code> &mdash; Name of the style.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; An object.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getStyleSheet(stylesheetID:String):StyleSheet</code><p>
+   Get a stylesheet using its id.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheetID</span>:String</code> &mdash; id of the stylesheet.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>StyleSheet</code> &mdash; A StyleSheet instance.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getStyleSheetID()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getStyleSheetID</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getStyleSheetID(stylesheet:StyleSheet):String</code><p>
+   Get the id of a stylesheet.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> &mdash; A StyleSheet instance.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; A String.
+   </td>
+</tr>
+</table>
+</div>
+<a name="getTextFormat()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getTextFormat</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getTextFormat(style:String, stylesheet:StyleSheet = null):TextFormat</code><p>
+   Get a color from a stylesheet (the global stylesheet will be used if you don't pass any).
+   <div class='listing'><pre>var tf:TextFormat = Soma.getInstance().styles.getTextFormat(".body");</pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">style</span>:String</code> &mdash; Name of the style.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> (default = <code>null</code>)<code></code> &mdash; StyleSheet instance.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>TextFormat</code> &mdash; A TextFormat instance.
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function loadStyleSheet(id:String, url:String):void</code><p>
+   Load a stylesheet and register it with an id.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">id</span>:String</code> &mdash; id of the stylesheet.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; URL of the css file.
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeStyleSheet(stylesheetID:String):void</code><p>
+   Remove a styleheet from the StyleManager instance using its id.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheetID</span>:String</code> &mdash; id of the stylesheet.
+   </td>
+</tr>
+</table>
+</div>
+<a name="setGlobalStyleSheet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setGlobalStyleSheet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setGlobalStyleSheet(stylesheet:StyleSheet):void</code><p>
+   Set a stylesheet to be the "global stylesheet" (used by default with SomaText instances when a stylesheet is not specified).
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">stylesheet</span>:StyleSheet</code> &mdash; A StyleSheet instance.
+   </td>
+</tr>
+</table>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="GLOBAL_STYLESHEET_ID"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">GLOBAL_STYLESHEET_ID</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const GLOBAL_STYLESHEET_ID:String = "global"</code><p> id String of the global stylesheet. </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

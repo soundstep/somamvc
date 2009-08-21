@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="BackgroundManager,com.soma.model.BackgroundManager,REPLAY_BACKGROUND_VIDEO,TRANSITION_EASING,TRANSITION_IN_TIME,TRANSITION_OUT_TIME,baseUI,container,currentBackground,loader,parser,dispose,getBackgroundByID,hide,show,start" name="keywords">
+<title>com.soma.model.BackgroundManager</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'BackgroundManager - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soma/model/BackgroundManager.html&amp;com/soma/model/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;BackgroundManager</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class BackgroundManager"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.model</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class BackgroundManager</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../interfaces/IDisposable.html">IDisposable</a></td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     The BackgroundManager handles backgrounds in a Sprite layer underneath the site and provides an easy way to load, display and hide backgrounds.
+     The backgrounds can automatically be loaded and/or instantiated from the XML Site Definition (nodes children of a backgrounds node).<br/><br/>
+     The global background manager instance is accessible using:
+     <div class='listing'><pre>Soma.getInstance().background</pre></div>
+     The backgrounds container (Sprite) is accessible using:
+     <div class='listing'><pre>Soma.getInstance().background.container</pre></div>
+     The current background displayed is accessible using:
+     <div class='listing'><pre>Soma.getInstance().background.currentBackground</pre></div>
+     The backgrounds supported are the the ones supported by the NodeParser class (see link below), they can be image, bitmap, movieclip, video or your own custom classes, here are some examples:
+     <div class='listing'><pre>
+&lt;video id="myVideo" url="video/video.flv" x="50" alpha=".5" verticalCenter="0" volume="0" /&gt;
+&lt;image id="myImage" file="image.png" scaleX=".5" scaleY=".5" blendMode="multiply" ratio="ratio_in"/&gt;
+&lt;bitmap id="myBitmap" linkage="AssetClassNameBitmap" x="170" y="170" blendMode="multiply" scaleX=".3" scaleY=".3"/&gt;
+&lt;movieclip id="myMovieClip" linkage="AssetClassNameMovieClip" x="170" y="280" scaleX=".3" scaleY=".3"/&gt;
+     </pre></div>
+     Soma provides commands to show and hide backgrounds using the attribute id of an asset node in the background node of the XML Site Definition.
+     <div class='listing'><pre>
+     new BackgroundEvent(BackgroundEvent.SHOW, "myBackgroundID").dispatch();
+     new BackgroundEvent(BackgroundEvent.HIDE, "myBackgroundID").dispatch();
+     </pre></div>
+     Two listeners can be added to Soma control the transitions (can be default prevented).
+     <div class='listing'><pre>
+  Soma.getInstance().addEventListener(BackgroundEvent.TRANSITION_IN, eventHandler);
+  Soma.getInstance().addEventListener(BackgroundEvent.TRANSITION_OUT, eventHandler);
+     </pre></div>
+     </p>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../events/BackgroundEvent.html" target="">BackgroundEvent</a>
+<br>
+<a href="../assets/NodeParser.html" target="">NodeParser</a>
+<br>
+<a href="../events/ParserEvent.html" target="">ParserEvent</a>
+<br>
+<a href="../loader/SomaLoader.html" target="">SomaLoader</a>
+<br>
+<a href="../loader/SomaLoaderEvent.html" target="">SomaLoaderEvent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#baseUI">baseUI</a> : <a href="../../soundstep/ui/BaseUI.html">BaseUI</a>
+<div class="summaryTableDescription">[read-only]
+   Get the BaseUI instance used if BaseUI properties have been found in the XML (such as ratio, alignX and so on).</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#container">container</a> : Sprite<div class="summaryTableDescription">[read-only]
+   Get the Sprite container that contains the backgrounds, this container is by default on the index 0 in the display list (added to the main class).</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#currentBackground">currentBackground</a> : DisplayObject<div class="summaryTableDescription">[read-only]
+   Get the current background displayed, returns a DisplayObject but you can cast the value returned to the proper type, example for a video node:
+      <div class='listing'><pre>&lt;video id="myVideo" url="video/video.flv" x="50" alpha=".5" verticalCenter="0" volume="0" /&gt;</pre></div>
+      <div class='listing'><pre>
+   var video:SomaVideo = Soma.getInstance().background.currentBackground as SomaVideo;
+   video.volume = .5;
+    </pre></div>
+    </div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loader">loader</a> : <a href="../loader/SomaLoader.html">SomaLoader</a>
+<div class="summaryTableDescription">[read-only]
+   Get the SomaLoader instance used to load the backgrounds.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parser">parser</a> : <a href="../assets/NodeParser.html">NodeParser</a>
+<div class="summaryTableDescription">[read-only]
+   Get the NodeParser instance used to parse the nodes and instantiate the backgrounds.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#REPLAY_BACKGROUND_VIDEO">REPLAY_BACKGROUND_VIDEO</a> : Boolean = true<div class="summaryTableDescription">[static] Default value whether or not a background video will be played from the start when displayed.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TRANSITION_EASING">TRANSITION_EASING</a> : Function<div class="summaryTableDescription">[static] Default easing equations used to hide and show the background.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TRANSITION_IN_TIME">TRANSITION_IN_TIME</a> : Number = 2<div class="summaryTableDescription">[static] Default time value in seconds used to show a background (alpha tween).</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TRANSITION_OUT_TIME">TRANSITION_OUT_TIME</a> : Number = 2<div class="summaryTableDescription">[static] Default time value in seconds used to hide a background (alpha tween).</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#BackgroundManager()">BackgroundManager</a>()</div>
+<div class="summaryTableDescription">
+   Creates a BackgroundManager instance, the global BackgroundManager instance is accessible using Soma.getInstance().background.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispose()">dispose</a>():void</div>
+<div class="summaryTableDescription"> Disposes the BackgroundManager instance.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getBackgroundByID()">getBackgroundByID</a>(id:String):DisplayObject</div>
+<div class="summaryTableDescription">
+   Get a background in the container using its attribute id from the XML node.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hide()">hide</a>():void</div>
+<div class="summaryTableDescription"> Method called from the BackgroundEvent.HIDE command to hide the current background displayed.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#show()">show</a>(id:String):void</div>
+<div class="summaryTableDescription"> Method called from the BackgroundEvent.SHOW command to show a background using its id from the XML node.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#start()">start</a>():void</div>
+<div class="summaryTableDescription"> Entry point of the BackgroundManager, it will create (and load) the backgrounds from the children nodes of the backgrounds node from the XML Site Definition.</div>
+</td><td class="summaryTableOwnerCol">BackgroundManager</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="baseUI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">baseUI</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>baseUI:<a href="../../soundstep/ui/BaseUI.html">BaseUI</a></code>&nbsp;&nbsp;[read-only]<p>
+   Get the BaseUI instance used if BaseUI properties have been found in the XML (such as ratio, alignX and so on).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get baseUI():<a href="../../soundstep/ui/BaseUI.html">BaseUI</a></code>
+<br>
+</div>
+<a name="container"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">container</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>container:Sprite</code>&nbsp;&nbsp;[read-only]<p>
+   Get the Sprite container that contains the backgrounds, this container is by default on the index 0 in the display list (added to the main class).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get container():Sprite</code>
+<br>
+</div>
+<a name="currentBackground"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">currentBackground</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>currentBackground:DisplayObject</code>&nbsp;&nbsp;[read-only]<p>
+   Get the current background displayed, returns a DisplayObject but you can cast the value returned to the proper type, example for a video node:
+      <div class='listing'><pre>&lt;video id="myVideo" url="video/video.flv" x="50" alpha=".5" verticalCenter="0" volume="0" /&gt;</pre></div>
+      <div class='listing'><pre>
+   var video:SomaVideo = Soma.getInstance().background.currentBackground as SomaVideo;
+   video.volume = .5;
+    </pre></div>
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get currentBackground():DisplayObject</code>
+<br>
+</div>
+<a name="loader"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loader</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loader:<a href="../loader/SomaLoader.html">SomaLoader</a></code>&nbsp;&nbsp;[read-only]<p>
+   Get the SomaLoader instance used to load the backgrounds.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loader():<a href="../loader/SomaLoader.html">SomaLoader</a></code>
+<br>
+</div>
+<a name="parser"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parser</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>parser:<a href="../assets/NodeParser.html">NodeParser</a></code>&nbsp;&nbsp;[read-only]<p>
+   Get the NodeParser instance used to parse the nodes and instantiate the backgrounds.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get parser():<a href="../assets/NodeParser.html">NodeParser</a></code>
+<br>
+</div>
+<a name="REPLAY_BACKGROUND_VIDEO"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">REPLAY_BACKGROUND_VIDEO</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var REPLAY_BACKGROUND_VIDEO:Boolean = true</code><p> Default value whether or not a background video will be played from the start when displayed. </p></div>
+<a name="TRANSITION_EASING"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_EASING</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var TRANSITION_EASING:Function</code><p> Default easing equations used to hide and show the background. </p></div>
+<a name="TRANSITION_IN_TIME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_IN_TIME</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var TRANSITION_IN_TIME:Number = 2</code><p> Default time value in seconds used to show a background (alpha tween). </p></div>
+<a name="TRANSITION_OUT_TIME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TRANSITION_OUT_TIME</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var TRANSITION_OUT_TIME:Number = 2</code><p> Default time value in seconds used to hide a background (alpha tween). </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="BackgroundManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BackgroundManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function BackgroundManager()</code><p>
+   Creates a BackgroundManager instance, the global BackgroundManager instance is accessible using Soma.getInstance().background.
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="dispose()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispose</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function dispose():void</code><p> Disposes the BackgroundManager instance. Removes listeners and destroys backgrounds, loader, parser and container. </p></div>
+<a name="getBackgroundByID()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getBackgroundByID</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getBackgroundByID(id:String):DisplayObject</code><p>
+   Get a background in the container using its attribute id from the XML node.
+    </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">id</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; A DisplayObject instance.
+   </td>
+</tr>
+</table>
+</div>
+<a name="hide()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hide</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hide():void</code><p> Method called from the BackgroundEvent.HIDE command to hide the current background displayed. </p></div>
+<a name="show()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">show</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function show(id:String):void</code><p> Method called from the BackgroundEvent.SHOW command to show a background using its id from the XML node.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">id</span>:String</code> &mdash; Attribute id of the XML node asset (in backgrounds node in the XML Site Definition).
+   </td>
+</tr>
+</table>
+</div>
+<a name="start()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function start():void</code><p> Entry point of the BackgroundManager, it will create (and load) the backgrounds from the children nodes of the backgrounds node from the XML Site Definition. </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

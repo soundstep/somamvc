@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>control::FrontController</title>
+<link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">FrontController  : public   class</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">14/01/2009 17:24:29</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">14/01/2009 17:24:29</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">romuald</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{D16C7CDE-344C-4440-89DD-586E96DCA764}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA39.html">control</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">&lt;p&gt;A base class for an application specific front controller, that is able to dispatch control following particular user gestures to appropriate command classes. &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; The Front Controller is the centralised request handling class in a Cairngorm application.&#160; Throughout the application architecture are scattered a number of CairngormEventDispatcher.getInstance().dispatchEvent( event ) method calls, that signal to the listening controller that a user gesture has occured.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; The role of the Front Controller is to first register all the different events that it is capable of handling against worker classes, called command classes.&#160; On hearing an application event, the Front Controller will look up its table of registered events, find the appropriate command for handling of the event, before dispatching control to the command by calling its execute() method.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; Commands are added to the front controller with a weak reference, meaning that when the command is garbage collected, the reference in the controller is also garbage collected.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; The Front Controller is a base-class that&#160; listen for events dispatched by CairngormEventDispatcher.&#160; In a Cairngorm application, the developer should create a class that extends the FrontController, and in the constructor of their application specific controller, they should make numerous calls to addCommand() to register all the expected events with application specific command classes.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; Consider a LoginController, that is the main controller for a Login application that has 2 user gestures - Login and Logout.&#160; The application will have 2 buttons, &quot;Login&quot; and &quot;Logout&quot; and in the click handler for each button, one of the following methods is executed:&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;pre&gt; public function doLogin() : void { var event : LoginEvent = new LoginEvent( username.text, password.text ); CairngormEventDispatcher.getInstance.dispatchEvent( event ); }&#160; public function doLogout() : void { var event : LogoutEvent = new LogoutEvent(); CairngormEventDispatcher.getInstance.dispatchEvent( event ); }&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/pre&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; We would create LoginController as follows:&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;pre&gt; class LoginController extends com.adobe.cairngorm.control.FrontController { public function LoginController() { initialiseCommands(); }&#160; public function initialiseCommands() : void { addCommand( LoginEvent.EVENT_LOGIN, LoginCommand ); addCommand( LogoutEvent.EVENT_LOGOUT, LogoutCommand ); }&#160; }&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/pre&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; In our concrete implementation of a FrontController, LoginController, we register the 2 events that are expected for broadcast - login and logout - using the addCommand() method of the parent FrontController class, to assign a command class to each event.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; Adding a new use-case to a Cairngorm application is as simple as registering the event against a command in the application Front Controller, and then creating the concrete command class.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt; The concrete implementation of the FrontController, LoginController, should be created once and once only (as we only want a single controller in our application architecture).&#160; Typically, in our main application, we would declare our FrontController child class as a tag, which should be placed above any tags which have a dependency on the FrontController&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;pre&gt; &lt;mx:Application&#160; xmlns:control=&quot;com.domain.project.control.LoginController&quot;&#160;&#160; ... &gt;&#160; &lt;control:LoginController id=&quot;controller&quot; /&gt;&#160; ... &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/pre&gt; &lt;br/&gt;&lt;/p&gt;&lt;p&gt;@see com.adobe.cairngorm.commands.ICommand&lt;br/&gt;&lt;/p&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Attribute</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow" valign="top"><i>protected static Dictionary</i><br /><strong>&nbsp;&nbsp;commands</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> new Dictionary()<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Dictionary of event name to command class mappings
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>
+		</table>
+</div><div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Operation</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow">
+					<i>public static</i><br />
+					<strong>addCommand</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{6DE62402-57C4-4089-BCF6-7045D458CFF1}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{6DE62402-57C4-4089-BCF6-7045D458CFF1}" border="0" />commandName: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6DE62402-57C4-4089-BCF6-7045D458CFF1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6DE62402-57C4-4089-BCF6-7045D458CFF1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6DE62402-57C4-4089-BCF6-7045D458CFF1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6DE62402-57C4-4089-BCF6-7045D458CFF1}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">The name of the event that will be broadcast by the when a particular user gesture occurs,  eg &quot;login&quot;</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{9760A1E5-4B47-42cb-8C60-A69417C127A2}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{9760A1E5-4B47-42cb-8C60-A69417C127A2}" border="0" />commandRef: Class</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9760A1E5-4B47-42cb-8C60-A69417C127A2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9760A1E5-4B47-42cb-8C60-A69417C127A2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9760A1E5-4B47-42cb-8C60-A69417C127A2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9760A1E5-4B47-42cb-8C60-A69417C127A2}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">An ICommand Class reference upon which execute() can be called when the Front Controller hears an event broadcast with commandName. Typically,  this argument is passed as &quot;LoginCommand&quot; or similar.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2BD6C54F-72F4-4fce-A87B-51E4A478F692}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{2BD6C54F-72F4-4fce-A87B-51E4A478F692}" border="0" />useWeakReference: Boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2BD6C54F-72F4-4fce-A87B-51E4A478F692}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>true</td>
+						</tr>
+						<tr id="param{2BD6C54F-72F4-4fce-A87B-51E4A478F692}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2BD6C54F-72F4-4fce-A87B-51E4A478F692}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2BD6C54F-72F4-4fce-A87B-51E4A478F692}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">A Boolean indicating whether the controller should added as a weak reference to the CairngormEventDispatcher,  meaning it will eligibile for garbage collection if it is unloaded from the main application.</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Registers a ICommand class with the Front Controller, against an event name and listens for events with that name. &lt;br /&gt;&lt;p&gt;When an event is broadcast that matches commandName, the ICommand class referred to by commandRef receives control of the application, by having its execute() method invoked.&lt;/p&gt; 
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>protected static</i><br />
+					<strong>executeCommand</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{90966593-0B5D-4dbd-B431-0AAE847BC428}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{90966593-0B5D-4dbd-B431-0AAE847BC428}" border="0" />event: <a href="EA41.html">CairngormEvent</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{90966593-0B5D-4dbd-B431-0AAE847BC428}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{90966593-0B5D-4dbd-B431-0AAE847BC428}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{90966593-0B5D-4dbd-B431-0AAE847BC428}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{90966593-0B5D-4dbd-B431-0AAE847BC428}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Executes the command
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>protected static</i><br />
+					<strong>getCommand</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{E99B01A5-0087-468d-B61E-7D85D742734D}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{E99B01A5-0087-468d-B61E-7D85D742734D}" border="0" />commandName: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E99B01A5-0087-468d-B61E-7D85D742734D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E99B01A5-0087-468d-B61E-7D85D742734D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E99B01A5-0087-468d-B61E-7D85D742734D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E99B01A5-0087-468d-B61E-7D85D742734D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):Class
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Returns the command class registered with the command name.
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public static</i><br />
+					<strong>removeCommand</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{90F6C5ED-52A0-4a55-8DF7-01B3974993A5}')" style="text-decoration: none; color: #000000;"><img src="../../../../images/plus03.gif" align="absmiddle" id="param{90F6C5ED-52A0-4a55-8DF7-01B3974993A5}" border="0" />commandName: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{90F6C5ED-52A0-4a55-8DF7-01B3974993A5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{90F6C5ED-52A0-4a55-8DF7-01B3974993A5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{90F6C5ED-52A0-4a55-8DF7-01B3974993A5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{90F6C5ED-52A0-4a55-8DF7-01B3974993A5}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">The name of the event that will be broadcast by the when a particular user gesture occurs,  eg &quot;login&quot;</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Deregisters an ICommand class with the given event name from the Front Controller 
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="15%" class="TableHeading">Type</td>
+					<td width="15%" class="TableHeading">Connection</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA44.html">SomaController</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
+					<td width="15%" class="TableRow" valign="top">Generalization</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

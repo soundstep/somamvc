@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("1.3.1:1", "", "commands", "EARoot/EA1/EA3/EA1/EA29.html", "175.png", "3", "0", "", "Logical diagram0","{6EC88924-1C44-4f93-976E-C90FC84650CD}");
+tocTab[tocTab.length] = new Array("1.3.1:2", "", "BackgroundCommand", "EARoot/EA1/EA3/EA1/EA31.html", "5.png", "13", "0", "", "Class0","{51F8C7B4-AEC5-4e8f-9182-69C8EDD9E0A2}");
+tocTab[tocTab.length] = new Array("1.3.1:3", "", "ContentCommand", "EARoot/EA1/EA3/EA1/EA32.html", "5.png", "14", "0", "", "Class0","{5DBD546A-A96D-4c85-9C0F-FDFA147C26C8}");
+tocTab[tocTab.length] = new Array("1.3.1:4", "", "LoaderCommand", "EARoot/EA1/EA3/EA1/EA33.html", "5.png", "15", "0", "", "Class0","{486F7EAB-17D9-4b57-B260-F0EAD00C1F09}");
+tocTab[tocTab.length] = new Array("1.3.1:5", "", "MenuCommand", "EARoot/EA1/EA3/EA1/EA34.html", "5.png", "16", "0", "", "Class0","{DD367D50-4DBF-41b8-A9D9-BDBFCE0CF003}");
+tocTab[tocTab.length] = new Array("1.3.1:6", "", "PageCommand", "EARoot/EA1/EA3/EA1/EA35.html", "5.png", "17", "0", "", "Class0","{7F3FA330-4FB1-4e72-A819-909344C16011}");
+tocTab[tocTab.length] = new Array("1.3.1:7", "", "SequenceCommand", "EARoot/EA1/EA3/EA1/EA36.html", "5.png", "18", "0", "", "Class0","{646A989D-518A-4165-B8B9-A11100053C36}");
+tocTab[tocTab.length] = new Array("1.3.1:8", "", "TemplateCommand", "EARoot/EA1/EA3/EA1/EA37.html", "5.png", "19", "0", "", "Class0","{07BBE7D7-3AF5-4572-9DF4-5CC521FF41CB}");
+tocTab[tocTab.length] = new Array("1.3.1:9", "", "TransitionCommand", "EARoot/EA1/EA3/EA1/EA38.html", "5.png", "20", "0", "", "Class0","{4AD7173F-339D-472c-89C5-DA53A0F09220}");
