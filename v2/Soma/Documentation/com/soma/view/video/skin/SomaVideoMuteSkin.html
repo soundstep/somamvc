@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../../print.css" type="text/css" media="print">
+<meta content="SomaVideoMuteSkin,com.soma.view.video.skin.SomaVideoMuteSkin,backgroundAlpha,backgroundColor,buttonAlpha,buttonColor,volumeButtonOff,volumeButtonOn,dispose,muteCallBack,registerPlayer" name="keywords">
+<title>com.soma.view.video.skin.SomaVideoMuteSkin</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SomaVideoMuteSkin - Soundstep | Soma';
+				var baseRef = '../../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../index-list.html')" href="../../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../../index.html?com/soma/view/video/skin/SomaVideoMuteSkin.html&amp;com/soma/view/video/skin/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SomaVideoMuteSkin</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SomaVideoMuteSkin"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.view.video.skin</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SomaVideoMuteSkin</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SomaVideoMuteSkin <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="ISomaVideoMuteSkin.html">ISomaVideoMuteSkin</a></td>
+</tr>
+</table>
+<p></p>
+  <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     Default control skin for a SomaVideoPlayer volume mute button, automatically instantiated by the SomaVideoControls class if you dont specify one in the SomaVideoPlayer instance.<br/><br/>
+     <b>How to add controls to the player</b><br/><br/>
+     The following code is reproducing how the default controls are added in the SomaVideoControls class (by default).
+     <div class='listing'><pre>
+var controls:SomaVideoControls = new SomaVideoControls();
+controls.addControl(new SomaVideoPlaySkin());
+controls.addControl(new SomaVideoTimeBarSkin());
+controls.addControl(new SomaVideoMuteSkin());
+controls.addControl(new SomaVideoFullscreenSkin());
+var player:SomaVideoPlayer = new SomaVideoPlayer("video/video.flv", controls);
+addChild(player);
+     </pre></div>
+     Now you know to add controls to the player, you can build your own volume mute skin. The base will be a DisplayObject class, such as Sprite, implementing ISomaVideoMuteSkin.<br/><br/>
+     <b>Custom Mute class</b>
+     <div class='listing'><pre>
+package {
+    import com.soma.view.video.SomaVideoPlayer;
+    import com.soma.view.video.skin.ISomaVideoMuteSkin;
+    
+    import flash.display.Sprite;
+    
+    public class CustomMuteSkin extends Sprite implements ISomaVideoMuteSkin {
+        
+        private var _player:SomaVideoPlayer;
+        
+        public function CustomMuteSkin() {
+            createSkinElements();
+        }
+        
+        private function createSkinElements():void {
+            // create mute buttons here and use:
+            // _player.volume = 0;
+            // _player.volume = 1;
+        }
+        
+        public function registerPlayer(player:SomaVideoPlayer):void {
+            _player = player;
+        }
+        
+        public function dispose():void {
+            // remove skin elements and events listeners for cleaning when the SomaVideoPlayer instance is disposed.
+        }
+        
+        public function muteCallBack(value:Boolean):void {
+            // here the controllers will indicate when the volume is on or off.
+            trace("Volume state: ", value);
+        }
+        
+    }
+}
+   </pre></div> 
+     Add the CustomMuteSkin to the SomaVideoControls instead of the default one:
+     <div class='listing'><pre>
+var controls:SomaVideoControls = new SomaVideoControls();
+controls.addControl(new CustomMuteSkin());
+var player:SomaVideoPlayer = new SomaVideoPlayer("video/video.flv", controls);
+addChild(player);
+     </pre></div>
+     <b>Get a skin</b><br/><br/>
+     <div class='listing'><pre>
+var player:SomaVideoPlayer = new SomaVideoPlayer("video/video.flv");
+addChild(player);
+var skin:SomaVideoMuteSkin = player.controls.getControl(SomaVideoMuteSkin) as SomaVideoMuteSkin;
+skin.backgroundColor = 0xFF0000;
+skin.backgroundAlpha = .5;
+     </pre></div>
+     See the <a href="controls/SomaVideoControls.html">SomaVideoControls</a> documentation to add or create your own controls.
+     </p>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../../video/SomaVideo.html" target="">SomaVideo</a>
+<br>
+<a href="../../video/SomaVideoPlayer.html" target="">SomaVideoPlayer</a>
+<br>
+<a href="../events/SomaVideoEvent.html" target="">SomaVideoEvent</a>
+<br>
+<a href="../controls/SomaVideoControls.html" target="">SomaVideoControls</a>
+<br>
+<a href="../skin/SomaVideoPlaySkin.html" target="">SomaVideoPlaySkin</a>
+<br>
+<a href="../skin/SomaVideoTimeBarSkin.html" target="">SomaVideoTimeBarSkin</a>
+<br>
+<a href="../skin/SomaVideoFullscreenSkin.html" target="">SomaVideoFullscreenSkin</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#backgroundAlpha">backgroundAlpha</a> : Number<div class="summaryTableDescription"> Specifies the background transparency of the skin (default alpha 0).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#backgroundColor">backgroundColor</a> : uint<div class="summaryTableDescription"> Specifies the background color of the skin (default is black).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#buttonAlpha">buttonAlpha</a> : Number<div class="summaryTableDescription"> Specifies the default transparency of the buttons (default alpha 1).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#buttonColor">buttonColor</a> : uint<div class="summaryTableDescription"> Specifies the default color of the buttons (default is white).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#volumeButtonOff">volumeButtonOff</a> : Sprite<div class="summaryTableDescription">[read-only] Get the volume off button.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#volumeButtonOn">volumeButtonOn</a> : Sprite<div class="summaryTableDescription">[read-only] Get the volume on button.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SomaVideoMuteSkin()">SomaVideoMuteSkin</a>()</div>
+<div class="summaryTableDescription"> Creates a SomaVideoMuteSkin instance.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispose()">dispose</a>():void</div>
+<div class="summaryTableDescription"> This method is internally called when you dispose a SomaVideoPlayer to remove children, the event listeners or whatever that needs to be destroyed to free the memory (make the instance elligible to the Garbage Collection).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#muteCallBack()">muteCallBack</a>(value:Boolean):void</div>
+<div class="summaryTableDescription"> Method that receives information from the MuteController.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#registerPlayer()">registerPlayer</a>(player:<a href="../SomaVideoPlayer.html">SomaVideoPlayer</a>):void</div>
+<div class="summaryTableDescription"> Register the SomaVideoPlayer instance that will be used with the skin class
+   </div>
+</td><td class="summaryTableOwnerCol">SomaVideoMuteSkin</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="backgroundAlpha"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">backgroundAlpha</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>backgroundAlpha:Number</code>&nbsp;&nbsp;[read-write]<p> Specifies the background transparency of the skin (default alpha 0). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get backgroundAlpha():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set backgroundAlpha(value:Number):void</code>
+<br>
+</div>
+<a name="backgroundColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">backgroundColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>backgroundColor:uint</code>&nbsp;&nbsp;[read-write]<p> Specifies the background color of the skin (default is black). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get backgroundColor():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set backgroundColor(value:uint):void</code>
+<br>
+</div>
+<a name="buttonAlpha"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">buttonAlpha</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>buttonAlpha:Number</code>&nbsp;&nbsp;[read-write]<p> Specifies the default transparency of the buttons (default alpha 1). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get buttonAlpha():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set buttonAlpha(value:Number):void</code>
+<br>
+</div>
+<a name="buttonColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">buttonColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>buttonColor:uint</code>&nbsp;&nbsp;[read-write]<p> Specifies the default color of the buttons (default is white). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get buttonColor():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set buttonColor(value:uint):void</code>
+<br>
+</div>
+<a name="volumeButtonOff"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volumeButtonOff</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>volumeButtonOff:Sprite</code>&nbsp;&nbsp;[read-only]<p> Get the volume off button.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get volumeButtonOff():Sprite</code>
+<br>
+</div>
+<a name="volumeButtonOn"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volumeButtonOn</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>volumeButtonOn:Sprite</code>&nbsp;&nbsp;[read-only]<p> Get the volume on button.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get volumeButtonOn():Sprite</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SomaVideoMuteSkin()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SomaVideoMuteSkin</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SomaVideoMuteSkin()</code><p> Creates a SomaVideoMuteSkin instance.  </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="dispose()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispose</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function dispose():void</code><p> This method is internally called when you dispose a SomaVideoPlayer to remove children, the event listeners or whatever that needs to be destroyed to free the memory (make the instance elligible to the Garbage Collection). </p></div>
+<a name="muteCallBack()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">muteCallBack</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function muteCallBack(value:Boolean):void</code><p> Method that receives information from the MuteController.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Boolean</code> &mdash; A Boolean indicating whether the volume is on or off.
+   </td>
+</tr>
+</table>
+</div>
+<a name="registerPlayer()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">registerPlayer</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function registerPlayer(player:<a href="../SomaVideoPlayer.html">SomaVideoPlayer</a>):void</code><p> Register the SomaVideoPlayer instance that will be used with the skin class
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">player</span>:<a href="../SomaVideoPlayer.html">SomaVideoPlayer</a></code> &mdash; A SomaVideoPlayer instance.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

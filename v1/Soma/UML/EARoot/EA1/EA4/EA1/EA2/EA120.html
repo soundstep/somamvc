@@ -1,0 +1,1031 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>layouts::TileUI</title>
+<link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">TileUI  : public   class</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">14/01/2009 17:24:41</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">14/01/2009 17:24:41</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">romuald</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{6EE9878A-C7FE-48b1-AE8A-D30A0BB552A5}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA114.html">layouts</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">&lt;p&gt;&lt;b&gt;Author:&lt;/b&gt; Romuald Quantin - &lt;a href=&quot;http://www.soundstep.com/&quot; target=&quot;_blank&quot;&gt;www.soundstep.com&lt;/a&gt;&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Class version:&lt;/b&gt; 3.0.2&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Actionscript version:&lt;/b&gt; 3.0&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Copyright:&lt;/b&gt; Creative Commons Attribution-ShareAlike 3.0 Unported License&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot; target=&quot;_blank&quot;&gt;http://creativecommons.org/licenses/by-sa/3.0/&lt;/a&gt;&lt;br /&gt; You can use BaseUI in any flash site, except to include/distribute it in another framework, application, template, component or structure that is meant to build, scaffold or generate source files.&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Date:&lt;/b&gt; 08-2008&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage:&lt;/b&gt;&lt;br /&gt; TileUI is a subclass of CanvasUI that lays out its children in a grid of equal-sized cells.&lt;br&gt; You can set additional properties like horizontalGap, verticalGap, direction and padding.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;@example&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;listing version=&quot;3.0&quot;&gt; var tile:TileUI = new TileUI(); addChildUI(tile); tile.direction = TileUI.DIRECTION_HORIZONTAL; tile.padding = new Padding(10, 10, 10, 10); tile.name = &quot;tile&quot;; tile.reference = this; tile.percentWidth = &quot;50%&quot;; tile.height = 200; tile.right = 20; tile.bottom = 20; tile.canvasAlpha = .4;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/listing&gt;&lt;br/&gt;&lt;/p&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Attribute</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_bufferX</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			value used to calculate the x position if the next line or row (depending of the direction)
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_bufferY</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			value used to calculate the y position if the next line or row (depending of the direction)
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_containerRedrawHeight</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			update the height of the container, force the scrollpane to handle correctly the padding
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_containerRedrawWidth</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			update the width of the container, force the scrollpane to handle correctly the padding
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Point</i><br /><strong>&nbsp;&nbsp;_currentPos</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			value used to calculate the x and y position in the container of the child added
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;_direction</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			direction of the children in the tile, horizontal or vertical
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_horizontalGap</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			horizontal space between each children
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="./EA1/EA125.html">Padding</a></i><br /><strong>&nbsp;&nbsp;_padding</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			space around the children
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_verticalGap</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			vertical space between each children
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;DIRECTION_HORIZONTAL</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "horizontal"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			static constant for the direction (property direction), the children are added horizontally
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;DIRECTION_VERTICAL</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "vertical"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			static constant for the direction (property direction), the children are added vertically
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>
+		</table>
+</div><div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Operation</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>addChild</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{744E8732-4933-4fdb-BEF9-9A655A166A26}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{744E8732-4933-4fdb-BEF9-9A655A166A26}" border="0" />child: DisplayObject</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{744E8732-4933-4fdb-BEF9-9A655A166A26}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{744E8732-4933-4fdb-BEF9-9A655A166A26}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{744E8732-4933-4fdb-BEF9-9A655A166A26}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{744E8732-4933-4fdb-BEF9-9A655A166A26}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">DisplayObject</div>
+</td>
+						</tr>
+					</table>
+):DisplayObject
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>override=true</td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Adds a child DisplayObject instance to this Tile container&lt;br /&gt;@return DisplayObject
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>addChildUI</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{8D1887BC-7C5C-42c3-9D9B-E25BC17B951D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{8D1887BC-7C5C-42c3-9D9B-E25BC17B951D}" border="0" />child: DisplayObject</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8D1887BC-7C5C-42c3-9D9B-E25BC17B951D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D1887BC-7C5C-42c3-9D9B-E25BC17B951D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8D1887BC-7C5C-42c3-9D9B-E25BC17B951D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D1887BC-7C5C-42c3-9D9B-E25BC17B951D}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">DisplayObject</div>
+</td>
+						</tr>
+					</table>
+):<a href="../EA108.html">ElementUI</a>
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>override=true</td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			create an ElementUI instance and add the child to the display list&lt;br /&gt;@return ElementUI
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>direction</strong>():String
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			direction of the children added in the tile, can be TileUI.DIRECTION_HORIZONTAL or TileUI.DIRECTION_VERTICAL
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>direction</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{22360D68-4DA1-4370-B367-63FBAAD5CA0F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{22360D68-4DA1-4370-B367-63FBAAD5CA0F}" border="0" />direction: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{22360D68-4DA1-4370-B367-63FBAAD5CA0F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{22360D68-4DA1-4370-B367-63FBAAD5CA0F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{22360D68-4DA1-4370-B367-63FBAAD5CA0F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{22360D68-4DA1-4370-B367-63FBAAD5CA0F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>horizontalGap</strong>():Number
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			horizontal space between each children
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>horizontalGap</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{AF09AF2D-338D-4b22-BA8E-4942B3E14751}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{AF09AF2D-338D-4b22-BA8E-4942B3E14751}" border="0" />horizontalGap: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AF09AF2D-338D-4b22-BA8E-4942B3E14751}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF09AF2D-338D-4b22-BA8E-4942B3E14751}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AF09AF2D-338D-4b22-BA8E-4942B3E14751}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF09AF2D-338D-4b22-BA8E-4942B3E14751}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>initTile</strong>():void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			initialize the variables of the tile
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>padding</strong>():<a href="./EA1/EA125.html">Padding</a>
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			space around the children
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>padding</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{F73B24E2-6CD1-477c-B444-8933D77639F4}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{F73B24E2-6CD1-477c-B444-8933D77639F4}" border="0" />padding: <a href="./EA1/EA125.html">Padding</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F73B24E2-6CD1-477c-B444-8933D77639F4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F73B24E2-6CD1-477c-B444-8933D77639F4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F73B24E2-6CD1-477c-B444-8933D77639F4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F73B24E2-6CD1-477c-B444-8933D77639F4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>redrawContainer</strong>():void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			redraw the container
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>refresh</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{9A99A799-E4FA-4d1e-8F24-3B1B635B61B1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{9A99A799-E4FA-4d1e-8F24-3B1B635B61B1}" border="0" />e: <a href="../EA1/EA113.html">BaseEventUI</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9A99A799-E4FA-4d1e-8F24-3B1B635B61B1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>null</td>
+						</tr>
+						<tr id="param{9A99A799-E4FA-4d1e-8F24-3B1B635B61B1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9A99A799-E4FA-4d1e-8F24-3B1B635B61B1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9A99A799-E4FA-4d1e-8F24-3B1B635B61B1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>override=true</td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			refresh the tile elements and its children position
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>resetStyle</strong>():void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			reset the _currentX, _currentY and buffers position value before recalculate the children position in the box
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>TileUI</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{DB0AB790-9CB7-4789-9044-2F3E2B4AB65A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{DB0AB790-9CB7-4789-9044-2F3E2B4AB65A}" border="0" />widthLayout: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DB0AB790-9CB7-4789-9044-2F3E2B4AB65A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>100</td>
+						</tr>
+						<tr id="param{DB0AB790-9CB7-4789-9044-2F3E2B4AB65A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DB0AB790-9CB7-4789-9044-2F3E2B4AB65A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DB0AB790-9CB7-4789-9044-2F3E2B4AB65A}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">width of the tile</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{769411F4-4805-4c6a-B19D-9A9B89ED9B41}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{769411F4-4805-4c6a-B19D-9A9B89ED9B41}" border="0" />heightLayout: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{769411F4-4805-4c6a-B19D-9A9B89ED9B41}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>100</td>
+						</tr>
+						<tr id="param{769411F4-4805-4c6a-B19D-9A9B89ED9B41}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{769411F4-4805-4c6a-B19D-9A9B89ED9B41}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{769411F4-4805-4c6a-B19D-9A9B89ED9B41}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">height of the tile</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{156FD700-1E07-4f2b-87F7-8EC98F62CA41}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{156FD700-1E07-4f2b-87F7-8EC98F62CA41}" border="0" />layoutScrollbar: Boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{156FD700-1E07-4f2b-87F7-8EC98F62CA41}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>true</td>
+						</tr>
+						<tr id="param{156FD700-1E07-4f2b-87F7-8EC98F62CA41}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{156FD700-1E07-4f2b-87F7-8EC98F62CA41}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{156FD700-1E07-4f2b-87F7-8EC98F62CA41}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">whether or not the canvas creates and uses a mask to show only the content within the box</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{03F5B4CA-56DF-4657-AB6A-751EF48E3D4E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{03F5B4CA-56DF-4657-AB6A-751EF48E3D4E}" border="0" />layoutMask: Boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{03F5B4CA-56DF-4657-AB6A-751EF48E3D4E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>true</td>
+						</tr>
+						<tr id="param{03F5B4CA-56DF-4657-AB6A-751EF48E3D4E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{03F5B4CA-56DF-4657-AB6A-751EF48E3D4E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{03F5B4CA-56DF-4657-AB6A-751EF48E3D4E}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">whether or not the canvas creates and uses scrollbars if the content is bigger than the tile (scrollpane instance)</div>
+</td>
+						</tr>
+					</table>
+):var
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constructor Create an instance of the TileUI class&lt;br /&gt;@default 100&lt;br /&gt;@default 100&lt;br /&gt;@default true&lt;br /&gt;@default true
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>updateChildPosition</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{FAC993B7-FC6B-4502-BAA0-715B403E58FC}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{FAC993B7-FC6B-4502-BAA0-715B403E58FC}" border="0" />child: DisplayObject</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FAC993B7-FC6B-4502-BAA0-715B403E58FC}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FAC993B7-FC6B-4502-BAA0-715B403E58FC}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FAC993B7-FC6B-4502-BAA0-715B403E58FC}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FAC993B7-FC6B-4502-BAA0-715B403E58FC}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{600D48F9-57E7-4de3-BEE2-2B0CA2119960}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{600D48F9-57E7-4de3-BEE2-2B0CA2119960}" border="0" />x: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{600D48F9-57E7-4de3-BEE2-2B0CA2119960}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{600D48F9-57E7-4de3-BEE2-2B0CA2119960}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{600D48F9-57E7-4de3-BEE2-2B0CA2119960}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{600D48F9-57E7-4de3-BEE2-2B0CA2119960}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{E7E93B79-FEFA-42e6-AE5B-461B7E81358A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{E7E93B79-FEFA-42e6-AE5B-461B7E81358A}" border="0" />y: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E7E93B79-FEFA-42e6-AE5B-461B7E81358A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E7E93B79-FEFA-42e6-AE5B-461B7E81358A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E7E93B79-FEFA-42e6-AE5B-461B7E81358A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E7E93B79-FEFA-42e6-AE5B-461B7E81358A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			set the positon calculated to the DisplayObject
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>updatePosition</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{E68F9106-4965-4522-9F46-3223B8975EA2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{E68F9106-4965-4522-9F46-3223B8975EA2}" border="0" />child: DisplayObject</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E68F9106-4965-4522-9F46-3223B8975EA2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E68F9106-4965-4522-9F46-3223B8975EA2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E68F9106-4965-4522-9F46-3223B8975EA2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E68F9106-4965-4522-9F46-3223B8975EA2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			calculate the children position in the tile
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>protected</i><br />
+					<strong>updateUI</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{BCCF2874-52E5-403b-AD79-2E09F1D4A136}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{BCCF2874-52E5-403b-AD79-2E09F1D4A136}" border="0" />e: <a href="../EA1/EA113.html">BaseEventUI</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{BCCF2874-52E5-403b-AD79-2E09F1D4A136}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>null</td>
+						</tr>
+						<tr id="param{BCCF2874-52E5-403b-AD79-2E09F1D4A136}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{BCCF2874-52E5-403b-AD79-2E09F1D4A136}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BCCF2874-52E5-403b-AD79-2E09F1D4A136}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>override=true</td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			update the mask and scrollpane instance to match the new size of the wrapper
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>verticalGap</strong>():Number
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			vertical space between each children
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>verticalGap</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{2B6AE1E5-AF26-44c4-8931-A3A94B4342D9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{2B6AE1E5-AF26-44c4-8931-A3A94B4342D9}" border="0" />verticalGap: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2B6AE1E5-AF26-44c4-8931-A3A94B4342D9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2B6AE1E5-AF26-44c4-8931-A3A94B4342D9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2B6AE1E5-AF26-44c4-8931-A3A94B4342D9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2B6AE1E5-AF26-44c4-8931-A3A94B4342D9}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="./EA1/EA125.html">Padding</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> _padding<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="15%" class="TableHeading">Type</td>
+					<td width="15%" class="TableHeading">Connection</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA116.html">CanvasUI</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
+					<td width="15%" class="TableRow" valign="top">Generalization</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

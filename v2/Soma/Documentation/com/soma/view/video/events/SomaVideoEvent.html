@@ -1,0 +1,576 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../../print.css" type="text/css" media="print">
+<meta content="SomaVideoEvent,com.soma.view.video.events.SomaVideoEvent,BUFFERING_COMPLETE,BUFFERING_PROGRESS,BUFFERING_START,BUFFER_EMPTY,BUFFER_FLUSH,BUFFER_FULL,CONNECTION_FAILED,CONNECTION_REJECTED,CONNECTION_SUCCESS,FULLSCREEN_CHANGED,METADATA_UPDATE,ORIGINAL_SIZE_UPDATED,PAUSE,PLAY,PLAYHEAD_UPDATE,PRELOADING_COMPLETE,PRELOADING_PROGRESS,PRELOADING_START,RESUME,SEEK_NOTIFY,STOP,STREAM_NOT_FOUND,STREAM_STARTED,STREAM_STOPPED,VOLUME_CHANGED,XMPDATA_UPDATE,netStatusEvent,player,clone,toString" name="keywords">
+<title>com.soma.view.video.events.SomaVideoEvent</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SomaVideoEvent - Soundstep | Soma';
+				var baseRef = '../../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../index-list.html')" href="../../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../../index.html?com/soma/view/video/events/SomaVideoEvent.html&amp;com/soma/view/video/events/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SomaVideoEvent</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SomaVideoEvent"); titleBar_setSubNav(true,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.view.video.events</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SomaVideoEvent</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SomaVideoEvent <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> flash.events.Event</td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     NetStatusEvent and SomaVideo events related to the NetConnection, NetStream and SomaVideo class. 
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../../video/SomaVideo.html" target="">SomaVideo</a>
+<br>
+<a href="../../video/SomaVideoPlayer.html" target="">SomaVideoPlayer</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#netStatusEvent">netStatusEvent</a> : NetStatusEvent<div class="summaryTableDescription"> Current NetStatusEvent if the SomaVideoEvent is related to it.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#player">player</a> : <a href="../../video/SomaVideo.html">SomaVideo</a>
+<div class="summaryTableDescription"> Current SomaVideo instance that has dispatched the event.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SomaVideoEvent()">SomaVideoEvent</a>(type:String, player:<a href="../SomaVideo.html">SomaVideo</a>, netStatusEvent:NetStatusEvent, bubbles:Boolean = true, cancelable:Boolean = false)</div>
+<div class="summaryTableDescription">
+   Creates a SomaVideoEvent instance.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clone()">clone</a>():Event</div>
+<div class="summaryTableDescription"> Duplicates an instance of an Event subclass.<br/><br/>
+   Returns a new Event object that is a copy of the original instance of the Event object.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription"> Returns a formatted string to display event information.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFER_EMPTY">BUFFER_EMPTY</a> : String = "com.soma.events.SomaVideoEvent.BUFFER_EMPTY"<div class="summaryTableDescription">[static] Indicates if Data is not being received quickly enough to fill the buffer.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFER_FLUSH">BUFFER_FLUSH</a> : String = "com.soma.events.SomaVideoEvent.BUFFER_FLUSH"<div class="summaryTableDescription">[static] Indicates if Data has finished streaming, and if the remaining buffer will be emptied (NetStatusEvent: NetStream.Buffer.Flush).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFER_FULL">BUFFER_FULL</a> : String = "com.soma.events.SomaVideoEvent.BUFFER_FULL"<div class="summaryTableDescription">[static] Indicates if the buffer is full and that the stream will begin playing (NetStatusEvent: NetStream.Buffer.Full).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFERING_COMPLETE">BUFFERING_COMPLETE</a> : String = "com.soma.events.SomaVideoEvent.BUFFERING_COMPLETE"<div class="summaryTableDescription">[static] Indicates that the buffering of the video is complete, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bufferLength, bufferTime, bufferPercentage).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFERING_PROGRESS">BUFFERING_PROGRESS</a> : String = "com.soma.events.SomaVideoEvent.BUFFERING_PROGRESS"<div class="summaryTableDescription">[static] Indicates that the video is currently buffering, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bufferLength, bufferTime, bufferPercentage).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUFFERING_START">BUFFERING_START</a> : String = "com.soma.events.SomaVideoEvent.BUFFERING_START"<div class="summaryTableDescription">[static] Indicates that the video starts buffering, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bufferLength, bufferTime, bufferPercentage).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CONNECTION_FAILED">CONNECTION_FAILED</a> : String = "com.soma.events.SomaVideoEvent.CONNECTION_FAILED"<div class="summaryTableDescription">[static] Indicates if the connection attempt failed (NetStatusEvent: NetConnection.Connect.Failed).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CONNECTION_REJECTED">CONNECTION_REJECTED</a> : String = "com.soma.events.SomaVideoEvent.CONNECTION_REJECTED"<div class="summaryTableDescription">[static] Indicates if the connection attempt did not have permission to access the application (NetStatusEvent: NetConnection.Connect.Rejected).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CONNECTION_SUCCESS">CONNECTION_SUCCESS</a> : String = "com.soma.events.SomaVideoEvent.CONNECTION_SUCCESS"<div class="summaryTableDescription">[static] Indicates if the connection attempt succeeded (NetStatusEvent: NetConnection.Connect.Success).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#FULLSCREEN_CHANGED">FULLSCREEN_CHANGED</a> : String = "com.soma.events.SomaVideoEvent.FULLSCREEN_CHANGED"<div class="summaryTableDescription">[static] Indicates when the fullscreen state changed.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#METADATA_UPDATE">METADATA_UPDATE</a> : String = "com.soma.events.SomaVideoEvent.METADATA_UPDATE"<div class="summaryTableDescription">[static] Indicates a metaData object has been received, the information can be retrieved via different properties of the SomaVideo instance, or via the metaDataObject property.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ORIGINAL_SIZE_UPDATED">ORIGINAL_SIZE_UPDATED</a> : String = "com.soma.events.SomaVideoEvent.ORIGINAL_SIZE_UPDATED"<div class="summaryTableDescription">[static] Indicates that the Video instance has been resized after receiving the metaData event, the resize process can be bypass using the enableAutoResizeOnMetaData property of the SomaVideo instance.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PAUSE">PAUSE</a> : String = "com.soma.events.SomaVideoEvent.PAUSE"<div class="summaryTableDescription">[static] Indicate when the video enter in a pause state.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PLAY">PLAY</a> : String = "com.soma.events.SomaVideoEvent.PLAY"<div class="summaryTableDescription">[static] Indicate when the video starts to play.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PLAYHEAD_UPDATE">PLAYHEAD_UPDATE</a> : String = "com.soma.events.SomaVideoEvent.PLAYHEAD_UPDATE"<div class="summaryTableDescription">[static] Indicates a playhead time update while playing, the time value can be retrieve using the time property of the stream (somaVideoInstance.stream.time).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PRELOADING_COMPLETE">PRELOADING_COMPLETE</a> : String = "com.soma.events.SomaVideoEvent.PRELOADING_COMPLETE"<div class="summaryTableDescription">[static] Indicates that the preloading of the video is complete, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bytesLoaded, bytesTotal, preloadingPercentage).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PRELOADING_PROGRESS">PRELOADING_PROGRESS</a> : String = "com.soma.events.SomaVideoEvent.PRELOADING_PROGRESS"<div class="summaryTableDescription">[static] Indicates that the video is currently preloading, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bytesLoaded, bytesTotal, preloadingPercentage).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#PRELOADING_START">PRELOADING_START</a> : String = "com.soma.events.SomaVideoEvent.PRELOADING_START"<div class="summaryTableDescription">[static] Indicates that the video starts preloading, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bytesLoaded, bytesTotal, preloadingPercentage).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RESUME">RESUME</a> : String = "com.soma.events.SomaVideoEvent.RESUME"<div class="summaryTableDescription">[static] Indicate when the video is resumed.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SEEK_NOTIFY">SEEK_NOTIFY</a> : String = "com.soma.events.SomaVideoEvent.SEEK_NOTIFY"<div class="summaryTableDescription">[static] Indicates if the seek operation is complete (NetStatusEvent: NetStream.Seek.Notify).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#STOP">STOP</a> : String = "com.soma.events.SomaVideoEvent.STOP"<div class="summaryTableDescription">[static] Indicates when the video is stopped.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#STREAM_NOT_FOUND">STREAM_NOT_FOUND</a> : String = "com.soma.events.SomaVideoEvent.STREAM_NOT_FOUND"<div class="summaryTableDescription">[static] Indicates if the FLV passed to the play() method can't be found (NetStatusEvent: NetStream.Play.StreamNotFound).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#STREAM_STARTED">STREAM_STARTED</a> : String = "com.soma.events.SomaVideoEvent.STREAM_STARTED"<div class="summaryTableDescription">[static] Indicates if playback has started (NetStatusEvent: NetStream.Play.Start).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#STREAM_STOPPED">STREAM_STOPPED</a> : String = "com.soma.events.SomaVideoEvent.STREAM_STOPPED"<div class="summaryTableDescription">[static] Indicates if playback has stopped (NetStatusEvent: NetStream.Play.Stop).</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#VOLUME_CHANGED">VOLUME_CHANGED</a> : String = "com.soma.events.SomaVideoEvent.VOLUME_CHANGED"<div class="summaryTableDescription">[static] Indicates when the volume changed.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#XMPDATA_UPDATE">XMPDATA_UPDATE</a> : String = "com.soma.events.SomaVideoEvent.METADATA_UPDATE"<div class="summaryTableDescription">[static] Indicates an XMP data object has been received, the information can be retrieved the xmpDataObject property of the SomaVideo instance.</div>
+</td><td class="summaryTableOwnerCol">SomaVideoEvent</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="netStatusEvent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">netStatusEvent</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var netStatusEvent:NetStatusEvent</code><p> Current NetStatusEvent if the SomaVideoEvent is related to it. </p></div>
+<a name="player"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">player</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var player:<a href="../../video/SomaVideo.html">SomaVideo</a></code><p> Current SomaVideo instance that has dispatched the event. </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SomaVideoEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SomaVideoEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SomaVideoEvent(type:String, player:<a href="../SomaVideo.html">SomaVideo</a>, netStatusEvent:NetStatusEvent, bubbles:Boolean = true, cancelable:Boolean = false)</code><p>
+   Creates a SomaVideoEvent instance.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> &mdash; The type of the event, accessible as ParserEvent.type. 
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">player</span>:<a href="../SomaVideo.html">SomaVideo</a></code> &mdash; current SomaVideo instance.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">netStatusEvent</span>:NetStatusEvent</code> &mdash; current NetStatusEvent.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bubbles</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; Determines whether the Event object participates in the bubbling stage of the event flow. The default value is false. 
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">cancelable</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; Determines whether the Event object can be canceled. The default values is false. 
+      </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="clone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function clone():Event</code><p> Duplicates an instance of an Event subclass.<br/><br/>
+   Returns a new Event object that is a copy of the original instance of the Event object. You do not normally call clone(); the EventDispatcher class calls it automatically when you redispatch an event—that is, when you call dispatchEvent(event) from a handler that is handling event.<br/><br/>
+   The new Event object includes all the properties of the original.
+    </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Event</code> &mdash; A new Event object that is identical to the original. 
+   </td>
+</tr>
+</table>
+</div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code><p> Returns a formatted string to display event information.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; A String.
+   </td>
+</tr>
+</table>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="BUFFER_EMPTY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFER_EMPTY</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFER_EMPTY:String = "com.soma.events.SomaVideoEvent.BUFFER_EMPTY"</code><p> Indicates if Data is not being received quickly enough to fill the buffer. Data flow will be interrupted until the buffer refills, at which time a NetStream.Buffer.Full message will be sent and the stream will begin playing again. (NetStatusEvent: NetStream.Buffer.Empty). </p></div>
+<a name="BUFFER_FLUSH"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFER_FLUSH</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFER_FLUSH:String = "com.soma.events.SomaVideoEvent.BUFFER_FLUSH"</code><p> Indicates if Data has finished streaming, and if the remaining buffer will be emptied (NetStatusEvent: NetStream.Buffer.Flush). </p></div>
+<a name="BUFFER_FULL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFER_FULL</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFER_FULL:String = "com.soma.events.SomaVideoEvent.BUFFER_FULL"</code><p> Indicates if the buffer is full and that the stream will begin playing (NetStatusEvent: NetStream.Buffer.Full). </p></div>
+<a name="BUFFERING_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFERING_COMPLETE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFERING_COMPLETE:String = "com.soma.events.SomaVideoEvent.BUFFERING_COMPLETE"</code><p> Indicates that the buffering of the video is complete, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bufferLength, bufferTime, bufferPercentage). </p></div>
+<a name="BUFFERING_PROGRESS"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFERING_PROGRESS</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFERING_PROGRESS:String = "com.soma.events.SomaVideoEvent.BUFFERING_PROGRESS"</code><p> Indicates that the video is currently buffering, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bufferLength, bufferTime, bufferPercentage). </p></div>
+<a name="BUFFERING_START"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUFFERING_START</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUFFERING_START:String = "com.soma.events.SomaVideoEvent.BUFFERING_START"</code><p> Indicates that the video starts buffering, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bufferLength, bufferTime, bufferPercentage). </p></div>
+<a name="CONNECTION_FAILED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CONNECTION_FAILED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const CONNECTION_FAILED:String = "com.soma.events.SomaVideoEvent.CONNECTION_FAILED"</code><p> Indicates if the connection attempt failed (NetStatusEvent: NetConnection.Connect.Failed). </p></div>
+<a name="CONNECTION_REJECTED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CONNECTION_REJECTED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const CONNECTION_REJECTED:String = "com.soma.events.SomaVideoEvent.CONNECTION_REJECTED"</code><p> Indicates if the connection attempt did not have permission to access the application (NetStatusEvent: NetConnection.Connect.Rejected). </p></div>
+<a name="CONNECTION_SUCCESS"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CONNECTION_SUCCESS</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const CONNECTION_SUCCESS:String = "com.soma.events.SomaVideoEvent.CONNECTION_SUCCESS"</code><p> Indicates if the connection attempt succeeded (NetStatusEvent: NetConnection.Connect.Success). </p></div>
+<a name="FULLSCREEN_CHANGED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">FULLSCREEN_CHANGED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const FULLSCREEN_CHANGED:String = "com.soma.events.SomaVideoEvent.FULLSCREEN_CHANGED"</code><p> Indicates when the fullscreen state changed. </p></div>
+<a name="METADATA_UPDATE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">METADATA_UPDATE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const METADATA_UPDATE:String = "com.soma.events.SomaVideoEvent.METADATA_UPDATE"</code><p> Indicates a metaData object has been received, the information can be retrieved via different properties of the SomaVideo instance, or via the metaDataObject property. </p></div>
+<a name="ORIGINAL_SIZE_UPDATED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ORIGINAL_SIZE_UPDATED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ORIGINAL_SIZE_UPDATED:String = "com.soma.events.SomaVideoEvent.ORIGINAL_SIZE_UPDATED"</code><p> Indicates that the Video instance has been resized after receiving the metaData event, the resize process can be bypass using the enableAutoResizeOnMetaData property of the SomaVideo instance. </p></div>
+<a name="PAUSE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PAUSE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PAUSE:String = "com.soma.events.SomaVideoEvent.PAUSE"</code><p> Indicate when the video enter in a pause state. </p></div>
+<a name="PLAY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PLAY</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PLAY:String = "com.soma.events.SomaVideoEvent.PLAY"</code><p> Indicate when the video starts to play. </p></div>
+<a name="PLAYHEAD_UPDATE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PLAYHEAD_UPDATE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PLAYHEAD_UPDATE:String = "com.soma.events.SomaVideoEvent.PLAYHEAD_UPDATE"</code><p> Indicates a playhead time update while playing, the time value can be retrieve using the time property of the stream (somaVideoInstance.stream.time). </p></div>
+<a name="PRELOADING_COMPLETE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PRELOADING_COMPLETE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PRELOADING_COMPLETE:String = "com.soma.events.SomaVideoEvent.PRELOADING_COMPLETE"</code><p> Indicates that the preloading of the video is complete, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bytesLoaded, bytesTotal, preloadingPercentage). </p></div>
+<a name="PRELOADING_PROGRESS"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PRELOADING_PROGRESS</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PRELOADING_PROGRESS:String = "com.soma.events.SomaVideoEvent.PRELOADING_PROGRESS"</code><p> Indicates that the video is currently preloading, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bytesLoaded, bytesTotal, preloadingPercentage). </p></div>
+<a name="PRELOADING_START"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PRELOADING_START</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const PRELOADING_START:String = "com.soma.events.SomaVideoEvent.PRELOADING_START"</code><p> Indicates that the video starts preloading, you can retrieve the values from the SomaVideo or SomaVideoPlayer instance (bytesLoaded, bytesTotal, preloadingPercentage). </p></div>
+<a name="RESUME"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RESUME</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const RESUME:String = "com.soma.events.SomaVideoEvent.RESUME"</code><p> Indicate when the video is resumed. </p></div>
+<a name="SEEK_NOTIFY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SEEK_NOTIFY</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const SEEK_NOTIFY:String = "com.soma.events.SomaVideoEvent.SEEK_NOTIFY"</code><p> Indicates if the seek operation is complete (NetStatusEvent: NetStream.Seek.Notify). </p></div>
+<a name="STOP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">STOP</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const STOP:String = "com.soma.events.SomaVideoEvent.STOP"</code><p> Indicates when the video is stopped. </p></div>
+<a name="STREAM_NOT_FOUND"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">STREAM_NOT_FOUND</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const STREAM_NOT_FOUND:String = "com.soma.events.SomaVideoEvent.STREAM_NOT_FOUND"</code><p> Indicates if the FLV passed to the play() method can't be found (NetStatusEvent: NetStream.Play.StreamNotFound). </p></div>
+<a name="STREAM_STARTED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">STREAM_STARTED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const STREAM_STARTED:String = "com.soma.events.SomaVideoEvent.STREAM_STARTED"</code><p> Indicates if playback has started (NetStatusEvent: NetStream.Play.Start). </p></div>
+<a name="STREAM_STOPPED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">STREAM_STOPPED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const STREAM_STOPPED:String = "com.soma.events.SomaVideoEvent.STREAM_STOPPED"</code><p> Indicates if playback has stopped (NetStatusEvent: NetStream.Play.Stop). </p></div>
+<a name="VOLUME_CHANGED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VOLUME_CHANGED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const VOLUME_CHANGED:String = "com.soma.events.SomaVideoEvent.VOLUME_CHANGED"</code><p> Indicates when the volume changed. </p></div>
+<a name="XMPDATA_UPDATE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">XMPDATA_UPDATE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const XMPDATA_UPDATE:String = "com.soma.events.SomaVideoEvent.METADATA_UPDATE"</code><p> Indicates an XMP data object has been received, the information can be retrieved the xmpDataObject property of the SomaVideo instance. </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

@@ -1,0 +1,667 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Page,com.soma.view.Page,assets,baseUI,content,depth,hasExternalContent,id,loader,loaderContext,pageXML,parser,parserTarget,type,willBeRemoved,getAssetByID,info,transitionIn,transitionInComplete,transitionOut,transitionOutComplete" name="keywords">
+<title>com.soma.view.Page</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Page - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soma/view/Page.html&amp;com/soma/view/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Page</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Page"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.view</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Page</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Page <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.MovieClip</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../interfaces/IPage.html">IPage</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../view/PageExternal.html">PageExternal</a></td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     The Page view class must be extended to create your own page.<br/><br/>
+     <b>Create a new page</b><br/><br/>
+     1. Create a page node in the XML Site Definition.
+     <div class='listing'><pre>
+&lt;page id="mypage_id" type="MyPage" urlfriendly="my-page"&gt;
+    &lt;title&gt;&lt;![CDATA[My Page]]&gt;&lt;/title&gt;
+&lt;/page&gt;
+     </pre></div>
+     2. Create a class that is extending com.soma.view.Page and implementing com.soma.interfaces.IPage.
+     <div class='listing'><pre>
+package com.project.pages {
+    
+    import com.soma.interfaces.IPage;
+    import com.soma.view.Page;
+    import com.soma.events.PageEvent;
+    
+    public class MyPage extends Page implements IPage {
+    
+        public function MyPage() {
+            addEventListener(PageEvent.INITIALIZED, initialized, false, 0, true);
+        }
+    
+        private function initialized(e:PageEvent = null):void {
+            removeEventListener(PageEvent.INITIALIZED, initialized, false);
+            // initialization complete, build page elements.
+        }
+    
+        override public function transitionIn():void {
+            // show my page and call: super.transitionIn
+            Tweener.addTween(this, {time:1, _autoAlpha:1, onComplete:super.transitionIn});
+        }
+    
+        override public function transitionInComplete():void {
+            // end of the transition to show the page
+            super.transitionInComplete();
+        }
+    
+        override public function transitionOut():void {
+            // hide my page and call: super.transitionOut
+            Tweener.addTween(this, {time:1, _autoAlpha:0, onComplete:super.transitionOut});
+        }
+    
+        override public function transitionOutComplete():void {
+            // end of the transition to hide the page, the page is about to be removed
+            // use a dispose function to destroy elements and listeners, then call super.transitionOutComplete
+            dispose();
+            super.transitionOutComplete();
+        }
+    }
+}
+     </pre></div>
+     3. Register the page class (in the config file seems to be the best place, or anywhere before Soma starts).
+     <div class='listing'><pre>
+Soma.getInstance().registerClass(MyPage);
+     </pre></div>
+     
+     <b>Variables</b><br/><br/>
+     The page super class will initialize some variables before dispatching a PageEvent.INITIALIZED event, you can access them straight from your own page as you're going to extend this Page.
+     <ul>
+      <li>id: id of the page</li>
+      <li>pageXML: page node (XML) of this page</li>
+      <li>baseUI: a BaseUI instance for layout purpose</li>
+      <li>content: content node (XML) of the page, it is use by the NodeParser instance.</li>
+      <li>type: type of the page (type attribute in the page node)</li>
+      <li>depth: depth of the page (depth attribute in the page node)</li>
+      <li>parser: NodeParser instance that will be used to create and load the assets found in the content node</li>
+      <li>parserTarget: the target where the assets will be added to the display list (the page itself is the default but you can specify another container)</li>
+      <li>assets: array containing the assets created by the NodeParser instance</li>
+     </ul>
+     
+     <b>Assets</b><br/><br/>
+     A NodeParser instance is created by the page and it will look for a content node in your page node. The parser will try to instantiate and/or load any children of this content node (unless you add an attribute "parse" set to false).<br/><br/>
+     If asset nodes have been found, the NodeParser will parse and instantiates them. The page will then dispatch a PageEvent.CONTENT_PARSED event. If you don't have any "external assets" (such as a picture or anything that requires loading), the assets are ready to use.<br/><br/>
+     If the node parser has found external assets, it will load them. Your assets won't be ready when you will receive the PageEvent.CONTENT_PARSED event. When the parser will be completely finished (instantiating and loading), the page event will dispatched a PageEvent.CONTENT_COMPLETE.<br/><br/>
+     To receive the information, add the following listeners:
+     <div class='listing'><pre>
+addEventListener(addEventListener(PageEvent.CONTENT_PARSED, contentParsedHandler);
+addEventListener(addEventListener(PageEvent.CONTENT_COMPLETE, contentCompleteHandler);
+     </pre></div>
+     
+     <b>Show and Hide a page</b><br/><br/>
+     As the PageManager can't know how you are going to show and hide your pages (and how long time it will take), it will give you the time to do that in 4 methods that must be overridden.
+     <ul>
+      <li>showing process: transitionIn (start) and transitionInComplete (end)</li>
+      <li>hiding process: transitionOut (start) and transitionOutComplete (end)</li>
+     </ul>
+     You can show your page and/or your page elements in the overridden transitionIn method and call super.transitionIn when you are done.
+     <div class='listing'><pre>
+override public function transitionIn():void {
+    // show my page and call: super.transitionIn
+    Tweener.addTween(this, {time:1, _autoAlpha:1, onComplete:super.transitionIn});
+}
+
+override public function transitionInComplete():void {
+    // end of the transition to show the page
+    super.transitionInComplete();
+}
+     </pre></div>
+     You can hide your page and/or your page elements in the overridden transitionOut method and call super.transitionOut when you are done. Call the super methods are important as it will make the PageManager continue its process. 
+     <div class='listing'><pre>
+override public function transitionOut():void {
+    // hide my page and call: super.transitionOut
+    Tweener.addTween(this, {time:1, _autoAlpha:0, onComplete:super.transitionOut});
+}
+
+override public function transitionOutComplete():void {
+    // end of the transition to hide the page, the page is about to be removed
+    // use a dispose function to destroy elements and listeners, then call super.transitionOutComplete
+    dispose();
+    super.transitionOutComplete();
+}
+     </pre></div>
+     <b>Control</b><br/><br/>
+     You can very easily control or alter a page flow with Soma, you can listen to the PageEvent.STARTED (in the Main class for example) that is dispatched by the PageManager before doing anything.
+     <div class='listing'><pre>
+Soma.getInstance().addEventListener(PageEvent.STARTED, pageHandler);
+
+private function pageHandler(event:PageEvent):void {
+    // every time the PageManager is about to show (and remove) a page this handler will be called.
+    var currentPage:Page = Soma.getInstance().page.currentPage;
+    var nextPageID:String = event.id;
+    // here I stop the PageManager to change the page:
+    if (nextPageID == "PageIDIdontWantToSee") event.preventDefault();
+}
+     </pre></div>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../events/PageEvent.html" target="">PageEvent</a>
+<br>
+<a href="../model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="../assets/ClassImport.html" target="">ClassImport</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#assets">assets</a> : Array<div class="summaryTableDescription">[read-only] Get an array containing the assets created by the NodeParser instance (all assets that are DisplayObject subclasses, you wont find XML in this array)
+   </div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#baseUI">baseUI</a> : <a href="../../soundstep/ui/BaseUI.html">BaseUI</a>
+<div class="summaryTableDescription"> BaseUI instance for layout purpose.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#content">content</a> : XML<div class="summaryTableDescription"> content node (XML) of the page, it is use by the NodeParser instance.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#depth">depth</a> : int<div class="summaryTableDescription"> depth of the page (depth attribute in the page node).</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#hasExternalContent">hasExternalContent</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Whether or external assets have been found (pictures for example, assets that have to be loaded).</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#id">id</a> : String<div class="summaryTableDescription"> id of page (attribute id of the page node).</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loader">loader</a> : <a href="../loader/SomaLoader.html">SomaLoader</a>
+<div class="summaryTableDescription"> SomaLoader instance used by the NodeParser instance to load external assets.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loaderContext">loaderContext</a> : LoaderContext<div class="summaryTableDescription"> LoaderContext instance of the SomaLoader instance of the page (null by default).</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#pageXML">pageXML</a> : XML<div class="summaryTableDescription"> page node (XML) of this page.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parser">parser</a> : <a href="../assets/NodeParser.html">NodeParser</a>
+<div class="summaryTableDescription"> NodeParser instance that will be used to create and load the assets found in the content node.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parserTarget">parserTarget</a> : DisplayObjectContainer<div class="summaryTableDescription"> the target where the assets will be added to the display list (the page itself is the default but you can specify another container).</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#type">type</a> : String<div class="summaryTableDescription"> type of the page (type attribute in the page node).</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#willBeRemoved">willBeRemoved</a> : Boolean<div class="summaryTableDescription"> Whether or not the page is about to be removed by the PageManager.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Page()">Page</a>()</div>
+<div class="summaryTableDescription"> Creates a Page instance (this class should always be extended).</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getAssetByID()">getAssetByID</a>(id:String):DisplayObject</div>
+<div class="summaryTableDescription">
+   Get an asset created and/or loaded by the NodeParser instance using the id attribute of its XML node.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#info()">info</a>():String</div>
+<div class="summaryTableDescription">
+   Get a String describing the page.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionIn()">transitionIn</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, beginning of the showing process.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionInComplete()">transitionInComplete</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, end of the showing process.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionOut()">transitionOut</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, beginning of the hiding process.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionOutComplete()">transitionOutComplete</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, end of the hiding process.</div>
+</td><td class="summaryTableOwnerCol">Page</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="assets"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">assets</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>assets:Array</code>&nbsp;&nbsp;[read-only]<p> Get an array containing the assets created by the NodeParser instance (all assets that are DisplayObject subclasses, you wont find XML in this array)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get assets():Array</code>
+<br>
+</div>
+<a name="baseUI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">baseUI</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>baseUI:<a href="../../soundstep/ui/BaseUI.html">BaseUI</a></code>&nbsp;&nbsp;[read-write]<p> BaseUI instance for layout purpose. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get baseUI():<a href="../../soundstep/ui/BaseUI.html">BaseUI</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set baseUI(value:<a href="../../soundstep/ui/BaseUI.html">BaseUI</a>):void</code>
+<br>
+</div>
+<a name="content"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">content</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>content:XML</code>&nbsp;&nbsp;[read-write]<p> content node (XML) of the page, it is use by the NodeParser instance. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get content():XML</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set content(value:XML):void</code>
+<br>
+</div>
+<a name="depth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">depth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>depth:int</code>&nbsp;&nbsp;[read-write]<p> depth of the page (depth attribute in the page node). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get depth():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set depth(value:int):void</code>
+<br>
+</div>
+<a name="hasExternalContent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasExternalContent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>hasExternalContent:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Whether or external assets have been found (pictures for example, assets that have to be loaded).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get hasExternalContent():Boolean</code>
+<br>
+</div>
+<a name="id"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">id</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>id:String</code>&nbsp;&nbsp;[read-write]<p> id of page (attribute id of the page node). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get id():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set id(value:String):void</code>
+<br>
+</div>
+<a name="loader"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loader</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loader:<a href="../loader/SomaLoader.html">SomaLoader</a></code>&nbsp;&nbsp;[read-write]<p> SomaLoader instance used by the NodeParser instance to load external assets. Set by default to the global loader (Soma.getInstance().loader). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loader():<a href="../loader/SomaLoader.html">SomaLoader</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set loader(value:<a href="../loader/SomaLoader.html">SomaLoader</a>):void</code>
+<br>
+</div>
+<a name="loaderContext"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loaderContext</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loaderContext:LoaderContext</code>&nbsp;&nbsp;[read-write]<p> LoaderContext instance of the SomaLoader instance of the page (null by default). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loaderContext():LoaderContext</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set loaderContext(value:LoaderContext):void</code>
+<br>
+</div>
+<a name="pageXML"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">pageXML</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>pageXML:XML</code>&nbsp;&nbsp;[read-write]<p> page node (XML) of this page. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get pageXML():XML</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set pageXML(value:XML):void</code>
+<br>
+</div>
+<a name="parser"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parser</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>parser:<a href="../assets/NodeParser.html">NodeParser</a></code>&nbsp;&nbsp;[read-write]<p> NodeParser instance that will be used to create and load the assets found in the content node. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get parser():<a href="../assets/NodeParser.html">NodeParser</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set parser(value:<a href="../assets/NodeParser.html">NodeParser</a>):void</code>
+<br>
+</div>
+<a name="parserTarget"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parserTarget</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>parserTarget:DisplayObjectContainer</code>&nbsp;&nbsp;[read-write]<p> the target where the assets will be added to the display list (the page itself is the default but you can specify another container). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get parserTarget():DisplayObjectContainer</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set parserTarget(value:DisplayObjectContainer):void</code>
+<br>
+</div>
+<a name="type"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">type</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>type:String</code>&nbsp;&nbsp;[read-write]<p> type of the page (type attribute in the page node). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get type():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set type(value:String):void</code>
+<br>
+</div>
+<a name="willBeRemoved"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">willBeRemoved</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>willBeRemoved:Boolean</code>&nbsp;&nbsp;[read-write]<p> Whether or not the page is about to be removed by the PageManager. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get willBeRemoved():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set willBeRemoved(value:Boolean):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Page()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Page</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Page()</code><p> Creates a Page instance (this class should always be extended). </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="getAssetByID()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getAssetByID</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getAssetByID(id:String):DisplayObject</code><p>
+   Get an asset created and/or loaded by the NodeParser instance using the id attribute of its XML node.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">id</span>:String</code> &mdash; Attribute id of the XML asset node.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>DisplayObject</code> &mdash; A DisplayObject.
+   </td>
+</tr>
+</table>
+</div>
+<a name="info()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">info</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function info():String</code><p>
+   Get a String describing the page.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; A String.
+   </td>
+</tr>
+</table>
+</div>
+<a name="transitionIn()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionIn</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionIn():void</code><p>
+   Method that should be overridden, beginning of the showing process. Show your page elements here and call super.transitionIn when the page is displayed.
+       <div class='listing'><pre>
+override public function transitionIn():void {
+    // show my page and/or my page elements, and call: super.transitionIn
+    Tweener.addTween(this, {time:1, _autoAlpha:1, onComplete:super.transitionIn});
+}
+      </pre></div>
+   </p></div>
+<a name="transitionInComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionInComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionInComplete():void</code><p>
+   Method that should be overridden, end of the showing process. You must call super.transitionInComplete.
+      <div class='listing'><pre>
+override public function transitionInComplete():void {
+    // end of the transition to show the page, at this moment the page is fully displayed
+    myMethodAferShowingThePage();
+    super.transitionInComplete();
+}
+       </pre></div>
+   </p></div>
+<a name="transitionOut()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionOut</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionOut():void</code><p>
+   Method that should be overridden, beginning of the hiding process. Hide your page elements here and call super.transitionOut when the page is hidden.
+      <div class='listing'><pre>
+override public function transitionOut():void {
+    // hide my page and/or my page elements, and call: super.transitionOut
+    Tweener.addTween(this, {time:1, _autoAlpha:0, onComplete:super.transitionOut});
+}
+      </pre></div>
+   </p></div>
+<a name="transitionOutComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionOutComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionOutComplete():void</code><p>
+   Method that should be overridden, end of the hiding process. You must call super.transitionInComplete (to allow the PageManager to remove the page and continue its process if you are using pages with depths).
+      <div class='listing'><pre>
+override public function transitionOutComplete():void {
+    // end of the transition to hide the page, the page is about to be removed
+    // use a dispose function to destroy elements and listeners, then call super.transitionOutComplete
+    dispose();
+    super.transitionOutComplete();
+}
+      </pre></div>
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

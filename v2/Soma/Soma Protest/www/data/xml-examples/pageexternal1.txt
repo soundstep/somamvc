@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site>
+	<page id="Page1" urlfriendly="page1" type="Page1" external="true">
+		<title><![CDATA[My Page 1]]></title>
+	</page>
+	<page id="Page2" urlfriendly="page2" type="Page2" external="true">
+		<title><![CDATA[My Page 2]]></title>
+	</page>
+	<page id="Page3" urlfriendly="page3" type="Page3" external="true">
+		<title><![CDATA[My Page 3]]></title>
+	</page>
+</site>

@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("1.1.1:1", "", "swfaddress", "EARoot/EA1/EA1/EA1/EA7.html", "175.png", "1", "0", "", "Logical diagram0","{96009114-0CA7-418c-96B6-0C709354BB62}");
+tocTab[tocTab.length] = new Array("1.1.1:2", "", "SWFAddress", "EARoot/EA1/EA1/EA1/EA9.html", "5.png", "5", "0", "", "Class0","{F544BD59-E605-479e-A007-172FA6171019}");
+tocTab[tocTab.length] = new Array("1.1.1:3", "", "SWFAddressEvent", "EARoot/EA1/EA1/EA1/EA10.html", "5.png", "6", "0", "", "Class0","{BF4BABCF-1CA5-49b9-A6A0-EC41DF078925}");

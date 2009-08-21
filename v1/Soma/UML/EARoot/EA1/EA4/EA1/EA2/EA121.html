@@ -1,0 +1,888 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>layouts::VBoxUI</title>
+<link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">VBoxUI  : public   class</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">14/01/2009 17:24:41</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">14/01/2009 17:24:41</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">romuald</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{3225ACB5-E1C1-4d39-8BE9-389BC336FFE7}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA114.html">layouts</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">&lt;p&gt;&lt;b&gt;Author:&lt;/b&gt; Romuald Quantin - &lt;a href=&quot;http://www.soundstep.com/&quot; target=&quot;_blank&quot;&gt;www.soundstep.com&lt;/a&gt;&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Class version:&lt;/b&gt; 3.0.2&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Actionscript version:&lt;/b&gt; 3.0&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Copyright:&lt;/b&gt; Creative Commons Attribution-ShareAlike 3.0 Unported License&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot; target=&quot;_blank&quot;&gt;http://creativecommons.org/licenses/by-sa/3.0/&lt;/a&gt;&lt;br /&gt; You can use BaseUI in any flash site, except to include/distribute it in another framework, application, template, component or structure that is meant to build, scaffold or generate source files.&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Date:&lt;/b&gt; 08-2008&lt;br /&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage:&lt;/b&gt;&lt;br /&gt; HBox is a subclass of CanvasUI that lays out the children vertically in the box.&lt;br&gt; You can set additional properties like verticalGap, padding, alignChildren and horizontalCenterChildren.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;@example&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;listing version=&quot;3.0&quot;&gt; var vbox:VBoxUI = new VBoxUI(); addChildUI(vbox); vbox.alignChildren = VBoxUI.ALIGN_CENTER; vbox.horizontalCenterChildren = 40; vbox.padding = new Padding(10, 25, 10, 10); vbox.name = &quot;vbox&quot;; vbox.reference = this; vbox.percentWidth = &quot;50%&quot;; vbox.height = 200; vbox.right = 20; vbox.bottom = 20; vbox.canvasAlpha = .4;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;/listing&gt;&lt;br/&gt;&lt;/p&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Attribute</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;_alignChildren</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			alignment of the children, can be left, center or right
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_containerRedrawHeight</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			update the height of the container, force the scrollpane to handle correctly the padding
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_containerRedrawWidth</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			update the width of the container, force the scrollpane to handle correctly the padding
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_currrentY</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			value used to calculate the y position in the container of the child added
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_horizontalCenterChildren</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			horizontal alignment value of the children if alignChildren has been set to center
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="./EA1/EA125.html">Padding</a></i><br /><strong>&nbsp;&nbsp;_padding</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			space around the children
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private Number</i><br /><strong>&nbsp;&nbsp;_verticalGap</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			vertical space between each children
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;ALIGN_CENTER</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "center"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			static constant for the alignment (property alignChildren), the children are centered in the layout
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;ALIGN_LEFT</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "left"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			static constant for the alignment (property alignChildren), the children are aligned top in the layout
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;ALIGN_RIGHT</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i><i>Initial:</i> "right"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			static constant for the alignment (property alignChildren), the children are aligned bottom in the layout
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>
+		</table>
+</div><div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Operation</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>addChild</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{3622FEBC-E991-4408-BA8F-D2F7E205C590}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{3622FEBC-E991-4408-BA8F-D2F7E205C590}" border="0" />child: DisplayObject</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3622FEBC-E991-4408-BA8F-D2F7E205C590}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3622FEBC-E991-4408-BA8F-D2F7E205C590}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3622FEBC-E991-4408-BA8F-D2F7E205C590}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3622FEBC-E991-4408-BA8F-D2F7E205C590}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">DisplayObject</div>
+</td>
+						</tr>
+					</table>
+):DisplayObject
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>override=true</td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Adds a child DisplayObject instance to this VBox container, a ElementUI will be created&lt;br /&gt;@return DisplayObject
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>addChildUI</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{C04464C8-A1A3-4a7c-AC84-F7F90D9389CA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{C04464C8-A1A3-4a7c-AC84-F7F90D9389CA}" border="0" />child: DisplayObject</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C04464C8-A1A3-4a7c-AC84-F7F90D9389CA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C04464C8-A1A3-4a7c-AC84-F7F90D9389CA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C04464C8-A1A3-4a7c-AC84-F7F90D9389CA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C04464C8-A1A3-4a7c-AC84-F7F90D9389CA}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">DisplayObject</div>
+</td>
+						</tr>
+					</table>
+):<a href="../EA108.html">ElementUI</a>
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>override=true</td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			create an ElementUI instance and add the child to the display list&lt;br /&gt;@return ElementUI
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>alignChildren</strong>():String
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			alignment of the children, can be VBoxUI.ALIGN_LEFT, VBoxUI.ALIGN_CENTER or VBoxUI.ALIGN_RIGHT
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>alignChildren</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{1E3287F5-30CE-45a7-954E-12E74FA17546}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{1E3287F5-30CE-45a7-954E-12E74FA17546}" border="0" />value: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1E3287F5-30CE-45a7-954E-12E74FA17546}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1E3287F5-30CE-45a7-954E-12E74FA17546}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1E3287F5-30CE-45a7-954E-12E74FA17546}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1E3287F5-30CE-45a7-954E-12E74FA17546}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>horizontalCenterChildren</strong>():Number
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			horizontal alignment value of the children if alignChildren has been set to VBoxUI.ALIGN_CENTER
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>horizontalCenterChildren</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{557846DE-A855-4470-9C76-E73538F3FF40}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{557846DE-A855-4470-9C76-E73538F3FF40}" border="0" />value: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{557846DE-A855-4470-9C76-E73538F3FF40}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{557846DE-A855-4470-9C76-E73538F3FF40}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{557846DE-A855-4470-9C76-E73538F3FF40}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{557846DE-A855-4470-9C76-E73538F3FF40}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>initVBox</strong>():void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			initialize the variables of the box
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>padding</strong>():<a href="./EA1/EA125.html">Padding</a>
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			space around the children
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>padding</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{C253DA0B-043E-4c68-AF86-0EF54AE1421A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{C253DA0B-043E-4c68-AF86-0EF54AE1421A}" border="0" />padding: <a href="./EA1/EA125.html">Padding</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C253DA0B-043E-4c68-AF86-0EF54AE1421A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C253DA0B-043E-4c68-AF86-0EF54AE1421A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C253DA0B-043E-4c68-AF86-0EF54AE1421A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C253DA0B-043E-4c68-AF86-0EF54AE1421A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>redrawContainer</strong>():void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			redraw the container
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>refresh</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{851C87A3-7186-43ad-BEF9-99165F2357E8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{851C87A3-7186-43ad-BEF9-99165F2357E8}" border="0" />e: <a href="../EA1/EA113.html">BaseEventUI</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{851C87A3-7186-43ad-BEF9-99165F2357E8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>null</td>
+						</tr>
+						<tr id="param{851C87A3-7186-43ad-BEF9-99165F2357E8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{851C87A3-7186-43ad-BEF9-99165F2357E8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{851C87A3-7186-43ad-BEF9-99165F2357E8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>override=true</td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			refresh the box elements and its children position
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>resetStyle</strong>():void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			reset the _currentY value before recalculate the children position in the box
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>private</i><br />
+					<strong>updatePosition</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{9208BFF6-DC1C-4028-9383-E97F2D71E1F5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{9208BFF6-DC1C-4028-9383-E97F2D71E1F5}" border="0" />child: DisplayObject</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9208BFF6-DC1C-4028-9383-E97F2D71E1F5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9208BFF6-DC1C-4028-9383-E97F2D71E1F5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9208BFF6-DC1C-4028-9383-E97F2D71E1F5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9208BFF6-DC1C-4028-9383-E97F2D71E1F5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			calculate the children position in the box
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>VBoxUI</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{95EF3937-A364-4590-B79E-EF301DA8180B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{95EF3937-A364-4590-B79E-EF301DA8180B}" border="0" />widthLayout: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{95EF3937-A364-4590-B79E-EF301DA8180B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>100</td>
+						</tr>
+						<tr id="param{95EF3937-A364-4590-B79E-EF301DA8180B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{95EF3937-A364-4590-B79E-EF301DA8180B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{95EF3937-A364-4590-B79E-EF301DA8180B}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">width of the box</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{EE146BE0-6916-480c-90FF-19394FDBB75F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{EE146BE0-6916-480c-90FF-19394FDBB75F}" border="0" />heightLayout: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EE146BE0-6916-480c-90FF-19394FDBB75F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>100</td>
+						</tr>
+						<tr id="param{EE146BE0-6916-480c-90FF-19394FDBB75F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EE146BE0-6916-480c-90FF-19394FDBB75F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EE146BE0-6916-480c-90FF-19394FDBB75F}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">height of the box</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{AD20F200-BBEE-4a3a-B89F-F4B1B76AC0F9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{AD20F200-BBEE-4a3a-B89F-F4B1B76AC0F9}" border="0" />layoutScrollbar: Boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AD20F200-BBEE-4a3a-B89F-F4B1B76AC0F9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>true</td>
+						</tr>
+						<tr id="param{AD20F200-BBEE-4a3a-B89F-F4B1B76AC0F9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AD20F200-BBEE-4a3a-B89F-F4B1B76AC0F9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AD20F200-BBEE-4a3a-B89F-F4B1B76AC0F9}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">whether or not the canvas creates and uses a mask to show only the content within the box</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{3CAD45D1-B322-44ec-9A8F-F254DA9ACEB3}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{3CAD45D1-B322-44ec-9A8F-F254DA9ACEB3}" border="0" />layoutMask: Boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3CAD45D1-B322-44ec-9A8F-F254DA9ACEB3}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td>true</td>
+						</tr>
+						<tr id="param{3CAD45D1-B322-44ec-9A8F-F254DA9ACEB3}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3CAD45D1-B322-44ec-9A8F-F254DA9ACEB3}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3CAD45D1-B322-44ec-9A8F-F254DA9ACEB3}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">whether or not the canvas creates and uses scrollbars if the content is bigger than the box (scrollpane instance)</div>
+</td>
+						</tr>
+					</table>
+):var
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constructor Create an instance of the VBoxUI class&lt;br /&gt;@default 100&lt;br /&gt;@default 100&lt;br /&gt;@default true&lt;br /&gt;@default true
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>verticalGap</strong>():Number
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property get&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			vertical space between each children
+		</td>
+	</tr>
+</table></div>
+
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>verticalGap</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{0D77363E-0B6E-4da7-BB6A-20917E3FCADA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{0D77363E-0B6E-4da7-BB6A-20917E3FCADA}" border="0" />verticalGap: Number</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{0D77363E-0B6E-4da7-BB6A-20917E3FCADA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0D77363E-0B6E-4da7-BB6A-20917E3FCADA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{0D77363E-0B6E-4da7-BB6A-20917E3FCADA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0D77363E-0B6E-4da7-BB6A-20917E3FCADA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;property set&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="./EA1/EA125.html">Padding</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> _padding<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="15%" class="TableHeading">Type</td>
+					<td width="15%" class="TableHeading">Connection</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA116.html">CanvasUI</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
+					<td width="15%" class="TableRow" valign="top">Generalization</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

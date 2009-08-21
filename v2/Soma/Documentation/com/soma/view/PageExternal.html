@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="PageExternal,com.soma.view.PageExternal,isLoaded,page" name="keywords">
+<title>com.soma.view.PageExternal</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'PageExternal - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soma/view/PageExternal.html&amp;com/soma/view/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;PageExternal</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class PageExternal"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.view</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class PageExternal</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">PageExternal <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="Page.html">Page</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.MovieClip</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../interfaces/IPage.html">IPage</a></td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     PageExternal is not meant to be extended, it is internally used by the PageManager to load external SWF that is going to act as a normal page.
+     Here is a node example, it will load a MovieName.swf at the same location of the current SWF:
+     <div class='listing'><pre>
+&lt;page id="external page id" type="MovieName" urlfriendly="external-page" external="true"&gt;
+    &lt;title&gt;&lt;![CDATA[External Page]]&gt;&lt;/title&gt;
+&lt;/page&gt;
+     </pre></div>
+     You can use a path attribute in case your SWF file is located elsewhere, this example will load "assets/swf/MovieName.swf":
+     <div class='listing'><pre>
+&lt;page id="external page id" type="MovieName" path="assets/swf/" urlfriendly="external-page" external="true"&gt;
+    &lt;title&gt;&lt;![CDATA[External Page]]&gt;&lt;/title&gt;
+&lt;/page&gt;
+     </pre></div>
+     </p>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../events/PageEvent.html" target="">PageEvent</a>
+<br>
+<a href="../view/Page.html" target="">Page</a>
+<br>
+<a href="../model/PageManager.html" target="">PageManager</a>
+<br>
+<a href="../assets/ClassImport.html" target="">ClassImport</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#assets">assets</a> : Array<div class="summaryTableDescription"> Get an array containing the assets created by the NodeParser instance (all assets that are DisplayObject subclasses, you wont find XML in this array)
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#baseUI">baseUI</a> : <a href="../../soundstep/ui/BaseUI.html">BaseUI</a>
+<div class="summaryTableDescription"> BaseUI instance for layout purpose.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#content">content</a> : XML<div class="summaryTableDescription"> content node (XML) of the page, it is use by the NodeParser instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#depth">depth</a> : int<div class="summaryTableDescription"> depth of the page (depth attribute in the page node).</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#hasExternalContent">hasExternalContent</a> : Boolean<div class="summaryTableDescription">
+   Whether or external assets have been found (pictures for example, assets that have to be loaded).</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#id">id</a> : String<div class="summaryTableDescription"> id of page (attribute id of the page node).</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isLoaded">isLoaded</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Whether or not the SWF File has been loaded.</div>
+</td><td class="summaryTableOwnerCol">PageExternal</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#loader">loader</a> : <a href="../loader/SomaLoader.html">SomaLoader</a>
+<div class="summaryTableDescription"> SomaLoader instance used by the NodeParser instance to load external assets.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#loaderContext">loaderContext</a> : LoaderContext<div class="summaryTableDescription"> LoaderContext instance of the SomaLoader instance of the page (null by default).</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#page">page</a> : <a href="../view/Page.html">Page</a>
+<div class="summaryTableDescription">[read-only]
+   Get the SWF file that has been loaded (the Main class of the SWF file must extend a the Page class).</div>
+</td><td class="summaryTableOwnerCol">PageExternal</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#pageXML">pageXML</a> : XML<div class="summaryTableDescription"> page node (XML) of this page.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#parser">parser</a> : <a href="../assets/NodeParser.html">NodeParser</a>
+<div class="summaryTableDescription"> NodeParser instance that will be used to create and load the assets found in the content node.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#parserTarget">parserTarget</a> : DisplayObjectContainer<div class="summaryTableDescription"> the target where the assets will be added to the display list (the page itself is the default but you can specify another container).</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#type">type</a> : String<div class="summaryTableDescription"> type of the page (type attribute in the page node).</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Page.html#willBeRemoved">willBeRemoved</a> : Boolean<div class="summaryTableDescription"> Whether or not the page is about to be removed by the PageManager.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#PageExternal()">PageExternal</a>(targetID:String)</div>
+<div class="summaryTableDescription"> Creates a PageExternal instance
+   </div>
+</td><td class="summaryTableOwnerCol">PageExternal</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Page.html#getAssetByID()">getAssetByID</a>(id:String):DisplayObject</div>
+<div class="summaryTableDescription">
+   Get an asset created and/or loaded by the NodeParser instance using the id attribute of its XML node.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Page.html#info()">info</a>():String</div>
+<div class="summaryTableDescription">
+   Get a String describing the page.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Page.html#transitionIn()">transitionIn</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, beginning of the showing process.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Page.html#transitionInComplete()">transitionInComplete</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, end of the showing process.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Page.html#transitionOut()">transitionOut</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, beginning of the hiding process.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Page.html#transitionOutComplete()">transitionOutComplete</a>():void</div>
+<div class="summaryTableDescription">
+   Method that should be overridden, end of the hiding process.</div>
+</td><td class="summaryTableOwnerCol"><a href="Page.html">Page</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="isLoaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isLoaded</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isLoaded:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Whether or not the SWF File has been loaded.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isLoaded():Boolean</code>
+<br>
+</div>
+<a name="page"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">page</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>page:<a href="../view/Page.html">Page</a></code>&nbsp;&nbsp;[read-only]<p>
+   Get the SWF file that has been loaded (the Main class of the SWF file must extend a the Page class).
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get page():<a href="../view/Page.html">Page</a></code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="PageExternal()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">PageExternal</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function PageExternal(targetID:String)</code><p> Creates a PageExternal instance
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">targetID</span>:String</code> &mdash; id attribute of the page node.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

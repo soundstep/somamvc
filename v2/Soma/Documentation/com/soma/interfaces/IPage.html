@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="IPage,com.soma.interfaces.IPage,transitionIn,transitionInComplete,transitionOut,transitionOutComplete" name="keywords">
+<title>com.soma.interfaces.IPage</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'IPage - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soma/interfaces/IPage.html&amp;com/soma/interfaces/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;IPage</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface IPage"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.interfaces</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IPage</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implementors</td><td><a href="../view/Page.html">Page</a>, <a href="../view/PageExternal.html">PageExternal</a></td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     A page class that will be used by the PageManager instance must extend com.soma.view.Page and implements IPage.
+     IPage describes the entry point (transitionIn) and exit point (transitionOutComplete) in a page class.<br/><br/>
+     <b>Page display process</b>
+     1. When the PageManager instantiates a page, it commands the page to be displayed calling the transitionIn method (a PageEvent.TRANSITION_IN is dispatched by the super class), in this method you can display the page elements the way you wish.
+     2. When the page is fully displayed (display process: transition in), you must call the transitionInComplete and call the super class super.transitionInComplete() to end the display process, a PageEvent.TRANSITION_IN_COMPLETE is dispatched by the super class.<br/><br/>
+     <b>Page removing process</b>
+     1. When a page is about to be removed, the PageManager will let you the time to do so by calling first a transitionOut method (a PageEvent.TRANSITION_OUT is dispatched by the super class), in this method you can hide and remove the page elements the way you wish. It is also a good place to destroy and remove instances and event listeners.
+     2. When the elements are hidden or removed (remove process: transition out), you must call the transitionOutComplete and call the super class super.transitionOutComplete() to end the display process and allow the PageManager to display the next page (especially important is you're using pages with depths). A PageEvent.TRANSITION_OUT_COMPLETE is dispatched by the super class.<br/><br/>
+     Note: The proper way to initialize elements in a page is adding a listener PageEvent.INITIALIZED to the page class and build the elements in the Event handler.
+     Here is a simple example to hide and show a page with a tween library:
+     <div class='listing'><pre>
+override public function transitionIn():void {
+    Tweener.addTween(this, {time:1, alpha:1, onComplete:transitionInComplete});
+}
+
+override public function transitionInComplete():void {
+    super.transitionInComplete();
+}
+
+override public function transitionOut():void {
+    Tweener.addTween(this, {time:1, alpha:0, onComplete:transitionOutComplete});
+}
+  
+override public function transitionOutComplete():void {
+    super.transitionOutComplete();
+}
+     </pre></div>
+     </p>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../model/PageManager.html" target="">com.soma.model.PageManager</a>
+<br>
+<a href="../view/Page.html" target="">com.soma.view.Page</a>
+<br>
+<a href="../events/PageEvent.html" target="">com.soma.events.PageEvent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionIn()">transitionIn</a>():void</div>
+<div class="summaryTableDescription"> Called by the PageManager to display a page instantiated.</div>
+</td><td class="summaryTableOwnerCol">IPage</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionInComplete()">transitionInComplete</a>():void</div>
+<div class="summaryTableDescription"> Must be used to call the super.transitionInComplete() method and finish the display process.</div>
+</td><td class="summaryTableOwnerCol">IPage</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionOut()">transitionOut</a>():void</div>
+<div class="summaryTableDescription"> Called by the PageManager to remove a page.</div>
+</td><td class="summaryTableOwnerCol">IPage</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#transitionOutComplete()">transitionOutComplete</a>():void</div>
+<div class="summaryTableDescription"> Must be used to call the super.transitionOutComplete() method and finish the removing process.</div>
+</td><td class="summaryTableOwnerCol">IPage</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="transitionIn()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionIn</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionIn():void</code><p> Called by the PageManager to display a page instantiated. </p></div>
+<a name="transitionInComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionInComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionInComplete():void</code><p> Must be used to call the super.transitionInComplete() method and finish the display process. </p></div>
+<a name="transitionOut()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionOut</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionOut():void</code><p> Called by the PageManager to remove a page. </p></div>
+<a name="transitionOutComplete()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transitionOutComplete</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function transitionOutComplete():void</code><p> Must be used to call the super.transitionOutComplete() method and finish the removing process. </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

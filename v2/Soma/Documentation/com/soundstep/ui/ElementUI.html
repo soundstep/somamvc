@@ -1,0 +1,1096 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="ElementUI,com.soundstep.ui.ElementUI,ALIGN_BOTTOM,ALIGN_CENTER,ALIGN_LEFT,ALIGN_RIGHT,ALIGN_TOP,RATIO_IN,RATIO_OUT,name,rounded,alignX,alignY,autoRefresh,baseUI,bgMask,bottom,bypassSize,element,forceReferenceHeight,forceReferenceWidth,hasMask,height,horizontalCenter,initialHeight,initialWidth,keepOnScreen,left,memorized,onStage,properties,ratio,reference,right,screenHeight,screenWidth,top,useInitialSize,verticalCenter,width,x,y,dispose,forceRefresh,refresh" name="keywords">
+<title>com.soundstep.ui.ElementUI</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ElementUI - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soundstep/ui/ElementUI.html&amp;com/soundstep/ui/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ElementUI</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ElementUI"); titleBar_setSubNav(true,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soundstep.ui</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class ElementUI</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">ElementUI <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  <b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br />
+  <b>Class version:</b> 3.0.2<br />
+  <b>Actionscript version:</b> 3.0<br />
+  <b>Copyright:</b>
+  Creative Commons Attribution-ShareAlike 3.0 Unported License<br /> 
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">http://creativecommons.org/licenses/by-sa/3.0/</a><br />
+  You can use BaseUI in any flash site, except to include/distribute it in another framework, application, template, component or structure that is meant to build, scaffold or generate source files.<br />
+  <br />
+  <b>Date:</b> 08-2008<br />
+  <b>Usage:</b><br />
+  Manage a list of elements (Element UI) to be displayed<br />
+  you can use the following properties to handle the position and sizes of the DisplayObject registered:<br />
+  x, y, left, right, top, bottom, width (also percentage), height (also percentage), horizontalCenter, verticalCenter, ratio, alignX, alignY<br />
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br>  <div class='listing'><pre>
+  var baseUI:BaseUI = new BaseUI(this);
+  var element:ElementUI = baseUI.add(mySprite);
+  element.right = 10;
+  element.bottom = 10;
+  element.width = "50%"
+  element.height = 200;
+  addChild(mySprite);
+  </pre></div>
+  <br />
+  the list of the properties used to change position and sizes are:
+  x, y, left, right, top, bottom, width, height, horizontalCenter, verticalCenter, ratio, alignX, alignY
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#alignX">alignX</a> : String<div class="summaryTableDescription">
+   horizontal alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_LEFT, ElementUI.ALIGN_RIGHT, ElementUI.ALIGN_CENTER
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#alignY">alignY</a> : String<div class="summaryTableDescription">
+   vertical alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_CENTER, ElementUI.ALIGN_TOP, ElementUI.ALIGN_BOTTOM 
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#autoRefresh">autoRefresh</a> : Boolean<div class="summaryTableDescription">
+   whether or not the size/position of the DisplayObject is recalculate after a property change
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#baseUI">baseUI</a> : <a href="../ui/BaseUI.html">BaseUI</a>
+<div class="summaryTableDescription">[read-only]
+   return the BaseUI instance that has created the ElementUI
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bgMask">bgMask</a> : Shape<div class="summaryTableDescription">[read-only]
+   get the Shape instance of the mask used when the ratio is set to ElementUI.RATIO_OUT
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bottom">bottom</a> : Number<div class="summaryTableDescription">
+   value between the bottom of the reference (stage or parent) and the ElementUI, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bypassSize">bypassSize</a> : Boolean<div class="summaryTableDescription">
+   whether or not the DisplayObject will be resized (not working with ratio set to RATIO_IN or RATIO_OUT)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#element">element</a> : DisplayObject<div class="summaryTableDescription">[read-only]
+   get the DisplayObject handle by the ElementUI instance
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#forceReferenceHeight">forceReferenceHeight</a> : Number<div class="summaryTableDescription">
+   force the height of the reference
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#forceReferenceWidth">forceReferenceWidth</a> : Number<div class="summaryTableDescription">
+   force the width of the reference
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#hasMask">hasMask</a> : Boolean<div class="summaryTableDescription">[read-only]
+   whether or not the ElementUI has a mask applied, used when the ratio is set to ElementUI.RATIO_OUT
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#height">height</a> : *<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#horizontalCenter">horizontalCenter</a> : Number<div class="summaryTableDescription">
+   value from the center of the reference (stage or parent), align the ElementUI to the center on the x axis, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#initialHeight">initialHeight</a> : Number<div class="summaryTableDescription">
+   height of the DisplayObject when added to the BaseUI instance
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#initialWidth">initialWidth</a> : Number<div class="summaryTableDescription">
+   width of the DisplayObject when added to the BaseUI instance
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#keepOnScreen">keepOnScreen</a> : Boolean<div class="summaryTableDescription">
+   keep a DisplayObject in the screen
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#left">left</a> : Number<div class="summaryTableDescription">
+   value between the left of the reference (stage or parent) and the ElementUI, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#memorized">memorized</a> : Object<div class="summaryTableDescription">[read-only]
+   return an Object containing the value memorized
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#name">name</a> : String<div class="summaryTableDescription">
+   name of the ElementUI
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onStage">onStage</a> : Boolean<div class="summaryTableDescription">
+   set the stage as a reference to calculate position ans sizes, if false the parent will be the reference
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#properties">properties</a> : Object<div class="summaryTableDescription">
+   Object to get or set the ElementUI properties, for example:<br/>
+   <code>element.properties = {top:0, bottom:"20", onStage:false, width:"50%"};</code>
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ratio">ratio</a> : String<div class="summaryTableDescription">
+   type of ratio of the ElementUI, can be ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   any other String will set the ratio to none <br/>
+   the following properties cannot be set or are not used a ratio has been specified:<br/>
+   x, y, width, height, horizontalCenter and verticalCenter 
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#reference">reference</a> : DisplayObjectContainer<div class="summaryTableDescription">
+   specify a DisplayObjectContainer reference on which the size and position of the ElementUI will refer to<br/>
+   if not set, the onStage property value is the reference (onStage true = stage, onStage false = parent)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#right">right</a> : Number<div class="summaryTableDescription">
+   value between the right of the reference (stage or parent) and the ElementUI, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#rounded">rounded</a> : Boolean = true<div class="summaryTableDescription">
+   Specify the ElementUI instance to display rounded values
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#screenHeight">screenHeight</a> : Number<div class="summaryTableDescription">[read-only]
+   height of the ElementUI that will be displayed on the screen (after calculation)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#screenWidth">screenWidth</a> : Number<div class="summaryTableDescription">[read-only]
+   width of the ElementUI that will be displayed on the screen (after calculation)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#top">top</a> : Number<div class="summaryTableDescription">
+   value between the top of the reference (stage or parent) and the ElementUI, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#useInitialSize">useInitialSize</a> : Boolean<div class="summaryTableDescription">
+   use the size that has been recorded when the DisplayObject has been added to the BaseUI instance<br/>
+   useful when a mask or other DisplayObject can disturb the real size of the DisplayObject 
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#verticalCenter">verticalCenter</a> : Number<div class="summaryTableDescription">
+   value from the center of the reference (stage or parent), align the ElementUI to the center on the y axis, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#width">width</a> : *<div class="summaryTableDescription">
+   width of the ElementUI, Number, String or percentage value
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#x">x</a> : Number<div class="summaryTableDescription">
+   position on the x axis of the ElementUI instance, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#y">y</a> : Number<div class="summaryTableDescription">
+   position on the y axis of the ElementUI instance, Number or String
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#ElementUI()">ElementUI</a>(baseUI:<a href="BaseUI.html">BaseUI</a>, displayObject:DisplayObject)</div>
+<div class="summaryTableDescription">
+   Constructor
+   Not used, instead use the add method of the BaseUI instance to create an element
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispose()">dispose</a>():void</div>
+<div class="summaryTableDescription">
+   remove the mask when the ratio is set to ElementUI.RATIO_OUT, used internally in BaseUI
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#forceRefresh()">forceRefresh</a>():void</div>
+<div class="summaryTableDescription">
+   refresh the position and sizes, bypassing the refresh function
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#refresh()">refresh</a>():void</div>
+<div class="summaryTableDescription">
+   refresh the position and sizes only if the the DisplayObject is visible or if the alpha property is superior to 0
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:BEFORE_UPDATE">BEFORE_UPDATE</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched before updating the DisplayObject
+  </td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:UPDATED">UPDATED</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a display object has been updated
+  </td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ALIGN_BOTTOM">ALIGN_BOTTOM</a> : String = "bottom"<div class="summaryTableDescription">[static]
+   static constant for the alignment (property alignY) in mode ratio_in or ratio_out (ElementUI.ALIGN_BOTTOM)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ALIGN_CENTER">ALIGN_CENTER</a> : String = "center"<div class="summaryTableDescription">[static]
+   static constant for the alignment (property alignX and alignY) in mode ratio_in or ratio_out (ElementUI.ALIGN_CENTER)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ALIGN_LEFT">ALIGN_LEFT</a> : String = "left"<div class="summaryTableDescription">[static]
+   static constant for the alignment (property alignX) in mode ratio_in or ratio_out (ElementUI.ALIGN_LEFT)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ALIGN_RIGHT">ALIGN_RIGHT</a> : String = "right"<div class="summaryTableDescription">[static]
+   static constant for the alignment (property alignX) in mode ratio_in or ratio_out (ElementUI.ALIGN_RIGHT)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ALIGN_TOP">ALIGN_TOP</a> : String = "top"<div class="summaryTableDescription">[static]
+   static constant for the alignment (property alignY) in mode ratio_in or ratio_out (ElementUI.ALIGN_TOP)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RATIO_IN">RATIO_IN</a> : String = "ratio_in"<div class="summaryTableDescription">[static]
+   static constant for the mode ratio_in (ElementUI.RATIO_IN)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RATIO_OUT">RATIO_OUT</a> : String = "ratio_out"<div class="summaryTableDescription">[static]
+   static constant for the mode ratio_out (ElementUI.RATIO_OUT)
+   </div>
+</td><td class="summaryTableOwnerCol">ElementUI</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="alignX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">alignX</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>alignX:String</code>&nbsp;&nbsp;[read-write]<p>
+   horizontal alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_LEFT, ElementUI.ALIGN_RIGHT, ElementUI.ALIGN_CENTER
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get alignX():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set alignX(value:String):void</code>
+<br>
+</div>
+<a name="alignY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">alignY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>alignY:String</code>&nbsp;&nbsp;[read-write]<p>
+   vertical alignment when the property ratio is set to ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   can accept ElementUI.ALIGN_CENTER, ElementUI.ALIGN_TOP, ElementUI.ALIGN_BOTTOM 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get alignY():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set alignY(value:String):void</code>
+<br>
+</div>
+<a name="autoRefresh"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">autoRefresh</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>autoRefresh:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   whether or not the size/position of the DisplayObject is recalculate after a property change
+   </p><p>The default value is <code>true</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get autoRefresh():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set autoRefresh(value:Boolean):void</code>
+<br>
+</div>
+<a name="baseUI"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">baseUI</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>baseUI:<a href="../ui/BaseUI.html">BaseUI</a></code>&nbsp;&nbsp;[read-only]<p>
+   return the BaseUI instance that has created the ElementUI
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get baseUI():<a href="../ui/BaseUI.html">BaseUI</a></code>
+<br>
+</div>
+<a name="bgMask"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bgMask</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bgMask:Shape</code>&nbsp;&nbsp;[read-only]<p>
+   get the Shape instance of the mask used when the ratio is set to ElementUI.RATIO_OUT
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bgMask():Shape</code>
+<br>
+</div>
+<a name="bottom"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bottom</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bottom:Number</code>&nbsp;&nbsp;[read-write]<p>
+   value between the bottom of the reference (stage or parent) and the ElementUI, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bottom():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bottom(value:Number):void</code>
+<br>
+</div>
+<a name="bypassSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bypassSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bypassSize:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   whether or not the DisplayObject will be resized (not working with ratio set to RATIO_IN or RATIO_OUT)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bypassSize():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bypassSize(value:Boolean):void</code>
+<br>
+</div>
+<a name="element"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">element</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>element:DisplayObject</code>&nbsp;&nbsp;[read-only]<p>
+   get the DisplayObject handle by the ElementUI instance
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get element():DisplayObject</code>
+<br>
+</div>
+<a name="forceReferenceHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forceReferenceHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>forceReferenceHeight:Number</code>&nbsp;&nbsp;[read-write]<p>
+   force the height of the reference
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get forceReferenceHeight():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set forceReferenceHeight(value:Number):void</code>
+<br>
+</div>
+<a name="forceReferenceWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forceReferenceWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>forceReferenceWidth:Number</code>&nbsp;&nbsp;[read-write]<p>
+   force the width of the reference
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get forceReferenceWidth():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set forceReferenceWidth(value:Number):void</code>
+<br>
+</div>
+<a name="hasMask"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasMask</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>hasMask:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   whether or not the ElementUI has a mask applied, used when the ratio is set to ElementUI.RATIO_OUT
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get hasMask():Boolean</code>
+<br>
+</div>
+<a name="height"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">height</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>height:*</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get height():*</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set height(value:*):void</code>
+<br>
+</div>
+<a name="horizontalCenter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">horizontalCenter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>horizontalCenter:Number</code>&nbsp;&nbsp;[read-write]<p>
+   value from the center of the reference (stage or parent), align the ElementUI to the center on the x axis, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get horizontalCenter():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set horizontalCenter(value:Number):void</code>
+<br>
+</div>
+<a name="initialHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initialHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>initialHeight:Number</code>&nbsp;&nbsp;[read-write]<p>
+   height of the DisplayObject when added to the BaseUI instance
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get initialHeight():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set initialHeight(value:Number):void</code>
+<br>
+</div>
+<a name="initialWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initialWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>initialWidth:Number</code>&nbsp;&nbsp;[read-write]<p>
+   width of the DisplayObject when added to the BaseUI instance
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get initialWidth():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set initialWidth(value:Number):void</code>
+<br>
+</div>
+<a name="keepOnScreen"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">keepOnScreen</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>keepOnScreen:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   keep a DisplayObject in the screen
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get keepOnScreen():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set keepOnScreen(value:Boolean):void</code>
+<br>
+</div>
+<a name="left"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">left</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>left:Number</code>&nbsp;&nbsp;[read-write]<p>
+   value between the left of the reference (stage or parent) and the ElementUI, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get left():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set left(value:Number):void</code>
+<br>
+</div>
+<a name="memorized"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">memorized</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>memorized:Object</code>&nbsp;&nbsp;[read-only]<p>
+   return an Object containing the value memorized
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get memorized():Object</code>
+<br>
+</div>
+<a name="name"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">name</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var name:String</code><p>
+   name of the ElementUI
+   </p></div>
+<a name="onStage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onStage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>onStage:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   set the stage as a reference to calculate position ans sizes, if false the parent will be the reference
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get onStage():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set onStage(value:Boolean):void</code>
+<br>
+</div>
+<a name="properties"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">properties</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>properties:Object</code>&nbsp;&nbsp;[read-write]<p>
+   Object to get or set the ElementUI properties, for example:<br/>
+   <code>element.properties = {top:0, bottom:"20", onStage:false, width:"50%"};</code>
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get properties():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set properties(value:Object):void</code>
+<br>
+</div>
+<a name="ratio"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ratio</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ratio:String</code>&nbsp;&nbsp;[read-write]<p>
+   type of ratio of the ElementUI, can be ElementUI.RATIO_IN or ElementUI.RATIO_OUT<br/>
+   any other String will set the ratio to none <br/>
+   the following properties cannot be set or are not used a ratio has been specified:<br/>
+   x, y, width, height, horizontalCenter and verticalCenter 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ratio():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set ratio(value:String):void</code>
+<br>
+</div>
+<a name="reference"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reference</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>reference:DisplayObjectContainer</code>&nbsp;&nbsp;[read-write]<p>
+   specify a DisplayObjectContainer reference on which the size and position of the ElementUI will refer to<br/>
+   if not set, the onStage property value is the reference (onStage true = stage, onStage false = parent)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get reference():DisplayObjectContainer</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set reference(value:DisplayObjectContainer):void</code>
+<br>
+</div>
+<a name="right"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">right</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>right:Number</code>&nbsp;&nbsp;[read-write]<p>
+   value between the right of the reference (stage or parent) and the ElementUI, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get right():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set right(value:Number):void</code>
+<br>
+</div>
+<a name="rounded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">rounded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var rounded:Boolean = true</code><p>
+   Specify the ElementUI instance to display rounded values
+   </p></div>
+<a name="screenHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">screenHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>screenHeight:Number</code>&nbsp;&nbsp;[read-only]<p>
+   height of the ElementUI that will be displayed on the screen (after calculation)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get screenHeight():Number</code>
+<br>
+</div>
+<a name="screenWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">screenWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>screenWidth:Number</code>&nbsp;&nbsp;[read-only]<p>
+   width of the ElementUI that will be displayed on the screen (after calculation)
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get screenWidth():Number</code>
+<br>
+</div>
+<a name="top"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">top</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>top:Number</code>&nbsp;&nbsp;[read-write]<p>
+   value between the top of the reference (stage or parent) and the ElementUI, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get top():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set top(value:Number):void</code>
+<br>
+</div>
+<a name="useInitialSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">useInitialSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>useInitialSize:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   use the size that has been recorded when the DisplayObject has been added to the BaseUI instance<br/>
+   useful when a mask or other DisplayObject can disturb the real size of the DisplayObject 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get useInitialSize():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set useInitialSize(value:Boolean):void</code>
+<br>
+</div>
+<a name="verticalCenter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">verticalCenter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>verticalCenter:Number</code>&nbsp;&nbsp;[read-write]<p>
+   value from the center of the reference (stage or parent), align the ElementUI to the center on the y axis, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get verticalCenter():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set verticalCenter(value:Number):void</code>
+<br>
+</div>
+<a name="width"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">width</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>width:*</code>&nbsp;&nbsp;[read-write]<p>
+   width of the ElementUI, Number, String or percentage value
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get width():*</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set width(value:*):void</code>
+<br>
+</div>
+<a name="x"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">x</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>x:Number</code>&nbsp;&nbsp;[read-write]<p>
+   position on the x axis of the ElementUI instance, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get x():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set x(value:Number):void</code>
+<br>
+</div>
+<a name="y"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">y</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>y:Number</code>&nbsp;&nbsp;[read-write]<p>
+   position on the y axis of the ElementUI instance, Number or String
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get y():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set y(value:Number):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="ElementUI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ElementUI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function ElementUI(baseUI:<a href="BaseUI.html">BaseUI</a>, displayObject:DisplayObject)</code><p>
+   Constructor
+   Not used, instead use the add method of the BaseUI instance to create an element
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">baseUI</span>:<a href="BaseUI.html">BaseUI</a></code> &mdash; instance of the BaseUI that creates the element
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">displayObject</span>:DisplayObject</code> &mdash; instance o the DisplayObject that will be handle by the ElementUI instance 
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="dispose()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispose</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function dispose():void</code><p>
+   remove the mask when the ratio is set to ElementUI.RATIO_OUT, used internally in BaseUI
+   </p></div>
+<a name="forceRefresh()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">forceRefresh</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function forceRefresh():void</code><p>
+   refresh the position and sizes, bypassing the refresh function
+   </p></div>
+<a name="refresh()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">refresh</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function refresh():void</code><p>
+   refresh the position and sizes only if the the DisplayObject is visible or if the alpha property is superior to 0
+   </p></div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:BEFORE_UPDATE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BEFORE_UPDATE</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/BaseEventUI.html"><code>com.soundstep.ui.events.BaseEventUI</code></a>
+<br>
+<p></p><p>
+  Dispatched before updating the DisplayObject
+  </p></div>
+<a name="event:UPDATED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UPDATED</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="events/BaseEventUI.html"><code>com.soundstep.ui.events.BaseEventUI</code></a>
+<br>
+<p></p><p>
+  Dispatched when a display object has been updated
+  </p></div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="ALIGN_BOTTOM"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ALIGN_BOTTOM</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ALIGN_BOTTOM:String = "bottom"</code><p>
+   static constant for the alignment (property alignY) in mode ratio_in or ratio_out (ElementUI.ALIGN_BOTTOM)
+   </p></div>
+<a name="ALIGN_CENTER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ALIGN_CENTER</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ALIGN_CENTER:String = "center"</code><p>
+   static constant for the alignment (property alignX and alignY) in mode ratio_in or ratio_out (ElementUI.ALIGN_CENTER)
+   </p></div>
+<a name="ALIGN_LEFT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ALIGN_LEFT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ALIGN_LEFT:String = "left"</code><p>
+   static constant for the alignment (property alignX) in mode ratio_in or ratio_out (ElementUI.ALIGN_LEFT)
+   </p></div>
+<a name="ALIGN_RIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ALIGN_RIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ALIGN_RIGHT:String = "right"</code><p>
+   static constant for the alignment (property alignX) in mode ratio_in or ratio_out (ElementUI.ALIGN_RIGHT)
+   </p></div>
+<a name="ALIGN_TOP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ALIGN_TOP</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ALIGN_TOP:String = "top"</code><p>
+   static constant for the alignment (property alignY) in mode ratio_in or ratio_out (ElementUI.ALIGN_TOP)
+   </p></div>
+<a name="RATIO_IN"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RATIO_IN</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const RATIO_IN:String = "ratio_in"</code><p>
+   static constant for the mode ratio_in (ElementUI.RATIO_IN)
+   </p></div>
+<a name="RATIO_OUT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RATIO_OUT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const RATIO_OUT:String = "ratio_out"</code><p>
+   static constant for the mode ratio_out (ElementUI.RATIO_OUT)
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site>
+	<page id="Home" type="Home" urlfriendly="home" depth="0" template="TemplateParser">
+		<title><![CDATA[Home]]></title>
+		<content>
+			<textfield id="title" style="title" top="20" left="170"><![CDATA[<p>text<br/></p>]]></textfield>
+			<textfield id="subtitle" style="title" top="40" left="170"><![CDATA[<p>text<br/></p>]]></textfield>
+			<textfield id="intro" style="body" top="60" left="170" width="400" multiline="true" wordWrap="true" useStyleSheet="true"><![CDATA[<p class="myStyle">text with style<br/></p>]]></textfield>
+			<bitmap id="externalBitmap" right="20" top="20" external="true" path="images/assets/" file="asset0.jpg" scaleX=".4" scaleY=".4" blendMode="darken"/>
+			<bitmap id="bitmap1FromLibrary" linkage="Asset1" verticalCenter="0" right="20" scaleX=".4" scaleY=".4" blendMode="hardlight"/>
+			<bitmap id="bitmap2FromLibrary" linkage="Asset1" bottom="20" right="20" scaleX=".4" scaleY=".4" blendMode="screen"/>
+			<movieclip id="movieclipFromLibrary" linkage="Asset2" bottom="20" left="170" width="35%" height="35%"/>
+		</content>
+	</page>
+</site>

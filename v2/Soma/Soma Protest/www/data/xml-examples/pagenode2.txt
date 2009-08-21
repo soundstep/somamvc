@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site>
+	<page id="Page1" urlfriendly="page1">
+		<title><![CDATA[My Page 1]]></title>
+		<page id="Page1a" urlfriendly="page1a">
+			<title><![CDATA[My Page 1 A]]></title>
+		</page>
+		<page id="Page1b" urlfriendly="page1b">
+			<title><![CDATA[My Page 1 B]]></title>
+		</page>
+	</page>
+	<page id="Page2" urlfriendly="page2">
+		<title><![CDATA[My Page 2]]></title>
+		<page id="Page21" urlfriendly="page21">
+			<title><![CDATA[My Page 21]]></title>
+			<page id="Page211" urlfriendly="page211">
+				<title><![CDATA[My Page 211]]></title>
+				<page id="Page2111" urlfriendly="page2111">
+					<title><![CDATA[My Page 2111]]></title>
+				</page>
+			</page>
+		</page>
+	</page>
+</site>

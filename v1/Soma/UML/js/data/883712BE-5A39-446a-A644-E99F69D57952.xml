@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("1.3.2:1", "", "control", "EARoot/EA1/EA3/EA2/EA39.html", "175.png", "4", "0", "", "Logical diagram0","{1F2EB9E8-98C7-49ed-8B91-B642B30022CC}");
+tocTab[tocTab.length] = new Array("1.3.2:2", "", "CairngormEvent", "EARoot/EA1/EA3/EA2/EA41.html", "5.png", "22", "0", "", "Class0","{9E049422-2572-41ca-8BEB-E14C70EE1FDD}");
+tocTab[tocTab.length] = new Array("1.3.2:3", "", "CairngormEventDispatcher", "EARoot/EA1/EA3/EA2/EA42.html", "5.png", "23", "0", "", "Class0","{953B476F-9054-4bc7-ABB4-466BFBB9E832}");
+tocTab[tocTab.length] = new Array("1.3.2:4", "", "FrontController", "EARoot/EA1/EA3/EA2/EA43.html", "5.png", "24", "0", "", "Class0","{D16C7CDE-344C-4440-89DD-586E96DCA764}");
+tocTab[tocTab.length] = new Array("1.3.2:5", "", "SomaController", "EARoot/EA1/EA3/EA2/EA44.html", "5.png", "25", "0", "", "Class0","{37D26207-C6E3-4e44-8DBA-5C4928E0CEB2}");

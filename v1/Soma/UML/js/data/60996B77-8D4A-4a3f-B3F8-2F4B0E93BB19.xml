@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("1.4.1.2:1", "", "layouts", "EARoot/EA1/EA4/EA1/EA2/EA114.html", "175.png", "16", "0", "", "Logical diagram0","{63EE09CD-510B-4ab9-8947-C8679720F702}");
+tocTab[tocTab.length] = new Array("1.4.1.2:2", "", "CanvasUI", "EARoot/EA1/EA4/EA1/EA2/EA116.html", "5.png", "86", "0", "", "Class0","{9825F1B5-A3D7-4194-B7D6-D8273E181665}");
+tocTab[tocTab.length] = new Array("1.4.1.2:3", "", "HBoxUI", "EARoot/EA1/EA4/EA1/EA2/EA118.html", "5.png", "87", "0", "", "Class0","{81279E2C-A44F-4692-AAB2-006E349BC896}");
+tocTab[tocTab.length] = new Array("1.4.1.2:4", "", "SpacerUI", "EARoot/EA1/EA4/EA1/EA2/EA119.html", "5.png", "88", "0", "", "Class0","{D58F4B14-B1B5-4478-BA9C-A482491EFECA}");
+tocTab[tocTab.length] = new Array("1.4.1.2:5", "", "TileUI", "EARoot/EA1/EA4/EA1/EA2/EA120.html", "5.png", "89", "0", "", "Class0","{6EE9878A-C7FE-48b1-AE8A-D30A0BB552A5}");
+tocTab[tocTab.length] = new Array("1.4.1.2:6", "", "VBoxUI", "EARoot/EA1/EA4/EA1/EA2/EA121.html", "5.png", "90", "0", "", "Class0","{3225ACB5-E1C1-4d39-8BE9-389BC336FFE7}");
+tocTab[tocTab.length] = new Array("1.4.1.2.1", "1", "core", "EARoot/EA1/EA4/EA1/EA2/EA117.html", "4.png", "", "", "{62D62E8E-B30D-40fb-AC05-1766F85E5761}", "Package");

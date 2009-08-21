@@ -1,0 +1,624 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="SomaLoaderItem,com.soma.loader.SomaLoaderItem,cacheEnabled,container,containerProperties,data,dataFormat,file,fileBinary,fileFonts,fileProperties,fontNames,request,type,url,variables,loadingFromBinary,addContainerProperty,addFileProperty,cloneFile,info,registerFontClassName,removeContainerProperty,removeFileProperty" name="keywords">
+<title>com.soma.loader.SomaLoaderItem</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SomaLoaderItem - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soma/loader/SomaLoaderItem.html&amp;com/soma/loader/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SomaLoaderItem</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SomaLoaderItem"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.loader</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SomaLoaderItem</td>
+</tr>
+</table>
+<p></p>
+  <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+  <b>Project host: </b><a href="http://code.google.com/p/somaloader/" target="_blank">http://code.google.com/p/somaloader/</a><br/>
+  <b>Class version:</b> 1.0.2<br/>
+  <b>Actionscript version:</b> 3.0</p>
+  <p><b>Copyright:</b></p>
+  <p>The contents of this file are subject to the Mozilla Public License<br />
+  Version 1.1 (the "License"); you may not use this file except in compliance<br />
+  with the License. You may obtain a copy of the License at<br /></p>
+  
+  <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+  
+  <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+  WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+  See the License for the specific language governing rights and<br />
+  limitations under the License.<br /></p>
+  
+  <p>The Original Code is SomaLoader.<br />
+  The Initial Developer of the Original Code is Romuald Quantin.<br />
+  Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+  
+  <p><b>Date:</b> 20 Feb 2009<br /></p>
+  <p><b>Usage:</b><br/>
+  A SomaLoaderItem represents an item that will be loaded, it contains all the information of this item such as URL, files and properties.
+  An instance is created when you add an item in the SomaLoader instance, this item will be dispatched with SomaLoaderEvent events when it will be processed.</p>
+  <p></p>
+<br>
+<span class="label">Example</span>
+<br>  <div class='listing'><pre>
+  var loader:SomaLoader = new SomaLoader();
+  var item:SomaLoaderItem = loader.add("picture.jpg"):
+  </pre></div>
+  <p>To retrieve it from a listener:
+  <p></p>  <div class='listing'><pre>
+  function itemComplete(event:SomaLoaderEvent):void {
+      var item:SomaLoaderItem = event.item;
+  }
+  </pre></div>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#cacheEnabled">cacheEnabled</a> : Boolean<div class="summaryTableDescription"> Whether SomaLoader must cache the data loaded.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#container">container</a> : DisplayObjectContainer<div class="summaryTableDescription"> Container of the item.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#containerProperties">containerProperties</a> : Dictionary<div class="summaryTableDescription">[read-only] Returns a Dictionary of properties.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#data">data</a> : *<div class="summaryTableDescription"> Custom Object.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#dataFormat">dataFormat</a> : String<div class="summaryTableDescription"> URLLoaderDataFormat value.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#file">file</a> : *<div class="summaryTableDescription">[read-only] Returns the data loaded from the URL of the item.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fileBinary">fileBinary</a> : ByteArray<div class="summaryTableDescription">[read-only] Get the ByteArray of a file loaded with a dataFormat property set to Binary.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fileFonts">fileFonts</a> : Array<div class="summaryTableDescription">[read-only] Get the list of the font loaded from a swf (SomaLoader.TYPE_FONT).</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fileProperties">fileProperties</a> : Dictionary<div class="summaryTableDescription">[read-only] Returns a Dictionary of properties.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fontNames">fontNames</a> : Array<div class="summaryTableDescription">[read-only]</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loadingFromBinary">loadingFromBinary</a> : Boolean<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#request">request</a> : URLRequest<div class="summaryTableDescription"> URLRequest instance used to load the item.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#type">type</a> : String<div class="summaryTableDescription"> Type of the item, example: SomaLoader.TYPE_BITMAP.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#url">url</a> : String<div class="summaryTableDescription">[read-only] Returns the String of the URL of the item.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#variables">variables</a> : URLVariables<div class="summaryTableDescription"> URLVariables instance used to send and load data.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SomaLoaderItem()">SomaLoaderItem</a>(url:String)</div>
+<div class="summaryTableDescription"> Instantiates a SomaLoaderItem
+   </div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addContainerProperty()">addContainerProperty</a>(property:String, value:*):void</div>
+<div class="summaryTableDescription"> Add a property and a value to the container properties dictionary.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addFileProperty()">addFileProperty</a>(property:String, value:*):void</div>
+<div class="summaryTableDescription"> Add a property and a value to the file properties dictionary.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#cloneFile()">cloneFile</a>(source:*):*</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#info()">info</a>():String</div>
+<div class="summaryTableDescription"> Returns a String describing the SomaLoaderItem instance.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#registerFontClassName()">registerFontClassName</a>(fontNames:Array):void</div>
+<div class="summaryTableDescription"> Register an Array of font class names, to register them in the buit-in Font  class once loaded (Font.registerFont(FontClass)).</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeContainerProperty()">removeContainerProperty</a>(property:String):void</div>
+<div class="summaryTableDescription"> Remove a property from the container properties dictionary.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeFileProperty()">removeFileProperty</a>(property:String):void</div>
+<div class="summaryTableDescription"> Remove a property from the file properties dictionary.</div>
+</td><td class="summaryTableOwnerCol">SomaLoaderItem</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="cacheEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cacheEnabled</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>cacheEnabled:Boolean</code>&nbsp;&nbsp;[read-write]<p> Whether SomaLoader must cache the data loaded.
+   SomaLoader is using a cache system that will be transparent for the user. The cacheEnabled property is set by default to true when the item is created with the value from the static constant in SomaLoader: SomaLoader.DEFAULT_CACHE_ENABLED.<br/>
+   When the cache is set to true, Somaloader will dispatch the same events with the items already loaded. It is completely transparent and no conditions or changes are required from the user to get the file loaded from the cache or the server.<br/>
+   The cache will save you to make the same "calls" to the server and load the same data.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get cacheEnabled():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set cacheEnabled(value:Boolean):void</code>
+<br>
+</div>
+<a name="container"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">container</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>container:DisplayObjectContainer</code>&nbsp;&nbsp;[read-write]<p> Container of the item. It is used to automatically add the item loaded to this container when possible.<br/>
+   Example if you load a picture and set a sprite to the container property, the Bitmap instance will be added to the sprite display list when the loading will be done.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get container():DisplayObjectContainer</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set container(value:DisplayObjectContainer):void</code>
+<br>
+</div>
+<a name="containerProperties"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">containerProperties</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>containerProperties:Dictionary</code>&nbsp;&nbsp;[read-only]<p> Returns a Dictionary of properties. Relevant is a container has been specified, those properties are applied to the container of the file when the loading is complete.<br/>
+   Example: containerProperties["scaleX"] = .5;
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get containerProperties():Dictionary</code>
+<br>
+</div>
+<a name="data"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">data</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>data:*</code>&nbsp;&nbsp;[read-write]<p> Custom Object. 
+   A custom Object can be used with a SomaLoaderItem instance, it can contain anything for your own use (a String, a Class, an Object, etc).
+   <div class='listing'><pre>
+   loader.add("picture.jpg", null, null, {id:"myID"});
+   </pre></div>
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get data():*</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set data(value:*):void</code>
+<br>
+</div>
+<a name="dataFormat"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dataFormat</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>dataFormat:String</code>&nbsp;&nbsp;[read-write]<p> URLLoaderDataFormat value. 
+   When a URLLoader instance is used by SomaLoader to load an item, a dataFormat is set and can be changed with this property.<br/>
+   The default is URLLoaderDataFormat.TEXT and can also be URLLoaderDataFormat.BINARY and URLLoaderDataFormat.VARIABLES.<br/>
+   if you specify a URLLoaderDataFormat.BINARY when you load a picture or a SWF, the Bytes of the item will be loaded but no Bitmap or MovieClip will be created.<br/>
+   The Bytes will be set to the fileBinary property and you will be able to add later this item to the SomaLoader to create the Bitmap or MovieClip from the ByteArray stored.<br/><br/>
+   This functionality is useful for example when you load a lot of pictures and they are not displayed straight away, or for "silent loading". It is not as CPU intensive as it could be when the pictures are loaded with a flash.display.Loader instance.<br/><br/>
+   Later on, you can add this ByteArray item to the SomaLoader to create the Bitmap or MovieClip. It is treated as a loading but takes no time as the file is already loaded. You can then listen to the same event SomaLoaderEvent.COMPLETE event and retrieve the file that way.<br/>
+   It can be very efficient to load many portfolio containing many pictures.
+   <div class='listing'><pre>
+   var item:SomaLoaderItem = loader.add("picture.jpg");
+   item.dataFormat = URLLoaderDataFormat.BINARY;
+   </pre></div>
+   The Bytes will be set to item.fileBinary (ByteArray), then you can show the picture this way (treated as a loading but takes not time):
+   <div class='listing'><pre>
+   loader.addBinary(item);
+   loader.addEventListener(SomaLoaderEvent.COMPLETE, creationComplete);
+   loader.start();
+   function creationComplete(event:SomaLoaderEvent):void {
+       var bitmap:Bitmap = event.item.file as Bitmap;
+       addChild(bitmap);
+   }
+   </pre></div>
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get dataFormat():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set dataFormat(value:String):void</code>
+<br>
+</div>
+<a name="file"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">file</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>file:*</code>&nbsp;&nbsp;[read-only]<p> Returns the data loaded from the URL of the item. For example it can be a Bitmap, a MovieClip, a XML, etc.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get file():*</code>
+<br>
+</div>
+<a name="fileBinary"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fileBinary</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>fileBinary:ByteArray</code>&nbsp;&nbsp;[read-only]<p> Get the ByteArray of a file loaded with a dataFormat property set to Binary. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get fileBinary():ByteArray</code>
+<br>
+</div>
+<a name="fileFonts"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fileFonts</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>fileFonts:Array</code>&nbsp;&nbsp;[read-only]<p> Get the list of the font loaded from a swf (SomaLoader.TYPE_FONT). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get fileFonts():Array</code>
+<br>
+</div>
+<a name="fileProperties"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fileProperties</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>fileProperties:Dictionary</code>&nbsp;&nbsp;[read-only]<p> Returns a Dictionary of properties. Those properties are applied to the file when the loading is complete.<br/>
+   Example: fileProperties["scaleX"] = .5;
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get fileProperties():Dictionary</code>
+<br>
+</div>
+<a name="fontNames"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fontNames</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>fontNames:Array</code>&nbsp;&nbsp;[read-only]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get fontNames():Array</code>
+<br>
+</div>
+<a name="loadingFromBinary"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadingFromBinary</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loadingFromBinary:Boolean</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loadingFromBinary():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set loadingFromBinary(value:Boolean):void</code>
+<br>
+</div>
+<a name="request"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">request</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>request:URLRequest</code>&nbsp;&nbsp;[read-write]<p> URLRequest instance used to load the item. The instance is automatically created by default but you can change its properties is needed. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get request():URLRequest</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set request(value:URLRequest):void</code>
+<br>
+</div>
+<a name="type"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">type</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>type:String</code>&nbsp;&nbsp;[read-write]<p> Type of the item, example: SomaLoader.TYPE_BITMAP. The type will be automatically found with the extension in the URL if possible.<br/>
+   The type can also be set when added to SomaLoader instance. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get type():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set type(value:String):void</code>
+<br>
+</div>
+<a name="url"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">url</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>url:String</code>&nbsp;&nbsp;[read-only]<p> Returns the String of the URL of the item.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get url():String</code>
+<br>
+</div>
+<a name="variables"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">variables</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>variables:URLVariables</code>&nbsp;&nbsp;[read-write]<p> URLVariables instance used to send and load data. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get variables():URLVariables</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set variables(value:URLVariables):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SomaLoaderItem()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SomaLoaderItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SomaLoaderItem(url:String)</code><p> Instantiates a SomaLoaderItem
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; URL of the item to load </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addContainerProperty()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addContainerProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addContainerProperty(property:String, value:*):void</code><p> Add a property and a value to the container properties dictionary.
+   Relevant if a container has been set, You can define properties and values that will be applied to the container of the file when the loading is complete.<br/>
+   For example if you load a picture, create a sprite and set it as the container in the SomaLoaderItem, you can add an scaleX property and its value. When the picture is loaded, the bitmap wll be added to the sprite container and the scaleX will be applied to the container.
+   <div class='listing'><pre>
+   var item:SomaLoaderItem = loader.add("picture.jpg", mySprite);
+   item.addContainerProperty("scaleX", .5);
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">property</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:*</code></td>
+</tr>
+</table>
+</div>
+<a name="addFileProperty()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addFileProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addFileProperty(property:String, value:*):void</code><p> Add a property and a value to the file properties dictionary.
+   You can define properties and values that will be applied to the file when the loading is complete.<br/>
+   For example if you load a picture, you can add an scaleX property and its value. When the picture is loaded, the scaleX will be applied to it.
+   <div class='listing'><pre>
+   var item:SomaLoaderItem = loader.add("picture.jpg");
+   item.addFileProperty("scaleX", .5);
+   </pre></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">property</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:*</code></td>
+</tr>
+</table>
+</div>
+<a name="cloneFile()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cloneFile</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function cloneFile(source:*):*</code><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">source</span>:*</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>*</code></td>
+</tr>
+</table>
+</div>
+<a name="info()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">info</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function info():String</code><p> Returns a String describing the SomaLoaderItem instance.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; a String. </td>
+</tr>
+</table>
+</div>
+<a name="registerFontClassName()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">registerFontClassName</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function registerFontClassName(fontNames:Array):void</code><p> Register an Array of font class names, to register them in the buit-in Font  class once loaded (Font.registerFont(FontClass)). Only necessary with Flash Player 9, this process is automatic with Flash player 10.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">fontNames</span>:Array</code> &mdash; Array of font class names.
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeContainerProperty()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeContainerProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeContainerProperty(property:String):void</code><p> Remove a property from the container properties dictionary. </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">property</span>:String</code></td>
+</tr>
+</table>
+</div>
+<a name="removeFileProperty()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeFileProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeFileProperty(property:String):void</code><p> Remove a property from the file properties dictionary. </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">property</span>:String</code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->

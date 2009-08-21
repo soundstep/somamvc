@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site layout="fixed" width="700" height="450" backgroundColor="000000" backgroundAlpha=".2" horizontalCenter="0" verticalCenter="0">
+</site>

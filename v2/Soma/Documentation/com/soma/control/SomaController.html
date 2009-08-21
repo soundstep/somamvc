@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="SomaController,com.soma.control.SomaController,addCommand,executeCommand,getCommand,init,removeCommand" name="keywords">
+<title>com.soma.control.SomaController</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SomaController - Soundstep | Soma';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Soundstep | Soma</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/soma/control/SomaController.html&amp;com/soma/control/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SomaController</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SomaController"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.soma.control</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SomaController</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SomaController <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="FrontController.html">FrontController</a></td>
+</tr>
+</table>
+<p></p>
+     <p><b>Author:</b> Romuald Quantin - <a href="http://www.soundstep.com/" target="_blank">www.soundstep.com</a><br/>
+     <p><b>Information:</b><br/>
+     Blog page - <a href="http://www.soundstep.com/blog/downloads/somaui/" target="_blank">SomaUI</a><br/>
+     How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
+     Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
+     Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
+     <b>Class version:</b> 2.0<br/>
+     <b>Actionscript version:</b> 3.0</p>
+     <p><b>Copyright:</b></p>
+     <p>The contents of this file are subject to the Mozilla Public License<br />
+     Version 1.1 (the "License"); you may not use this file except in compliance<br />
+     with the License. You may obtain a copy of the License at<br /></p>
+     
+     <p><a href="http://www.mozilla.org/MPL/" target="_blank">http://www.mozilla.org/MPL/</a><br /></p>
+     
+     <p>Software distributed under the License is distributed on an "AS IS" basis,<br />
+     WITHOUT WARRANTY OF ANY KIND, either express or implied.<br />
+     See the License for the specific language governing rights and<br />
+     limitations under the License.<br /></p>
+     
+     <p>The Original Code is Soma.<br />
+     The Initial Developer of the Original Code is Romuald Quantin.<br />
+     Initial Developer are Copyright (C) 2008-2009 Soundstep. All Rights Reserved.</p>
+     
+     <p><b>Usage:</b><br/>
+     SomaController is the internal controller used by the framework.<br/><br/>
+     The command registered are:
+     <ul>
+         <li>ContentEvent.LOADED</li>
+         <li>ContentEvent.UPDATED</li>
+         <li>PageEvent.SHOW</li>
+         <li>PageEvent.SHOW_EXTERNAL_LINK</li>
+         <li>PageEvent.TRANSITION_IN_COMPLETE</li>
+         <li>PageEvent.TRANSITION_OUT_COMPLETE</li>
+         <li>BackgroundEvent.SHOW</li>
+         <li>BackgroundEvent.HIDE</li>
+         <li>MenuEvent.OPEN_MENU</li>
+     </ul>
+     You can extend the FrontController to create your own controller. 
+     Soma Singleton can be extended to overwrite the initController methods to add your own (not a requirement, you controller class can be initialized anywhere).<br/><br/>
+     The SomaController is a static class and can be used to add your own commands (SomaController.addCommand).
+     </p>
+     
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../soma/Soma.html" target="">Soma</a>
+<br>
+<a href="../control/FrontController.html" target="">FrontController</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a><a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedProperty" id="hideInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Properties</a>
+</div>
+<div class="showInheritedProtectedProperty" id="showInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Properties</a>
+</div>
+</div>
+<table id="summaryTableProtectedProperty" class="summaryTable hideInheritedProtectedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="FrontController.html#commands">commands</a> : Dictionary<div class="summaryTableDescription">[static]
+      Dictionary of event name to command class mappings
+      </div>
+</td><td class="summaryTableOwnerCol"><a href="FrontController.html">FrontController</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SomaController()">SomaController</a>()</div>
+<div class="summaryTableDescription"> Creates a SomaController instance but makes no sense (static class) </div>
+</td><td class="summaryTableOwnerCol">SomaController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addCommand()">addCommand</a>(commandName:String, commandRef:Class, useWeakReference:Boolean = true):void</div>
+<div class="summaryTableDescription">[static] 
+      Registers a ICommand class with the Front Controller, against an event name
+      and listens for events with that name.</div>
+</td><td class="summaryTableOwnerCol">SomaController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#init()">init</a>():void</div>
+<div class="summaryTableDescription">[static]
+   Initializes the controller and add the commands to the FrontController.</div>
+</td><td class="summaryTableOwnerCol">SomaController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeCommand()">removeCommand</a>(commandName:String):void</div>
+<div class="summaryTableDescription">[static] 
+      Deregisters an ICommand class with the given event name from the Front Controller 
+            </div>
+</td><td class="summaryTableOwnerCol">SomaController</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#executeCommand()">executeCommand</a>(event:<a href="CairngormEvent.html">CairngormEvent</a>):void</div>
+<div class="summaryTableDescription">[static] 
+      Executes the command
+      </div>
+</td><td class="summaryTableOwnerCol">SomaController</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getCommand()">getCommand</a>(commandName:String):Class</div>
+<div class="summaryTableDescription">[static] 
+      Returns the command class registered with the command name.</div>
+</td><td class="summaryTableOwnerCol">SomaController</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SomaController()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SomaController</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SomaController()</code><p> Creates a SomaController instance but makes no sense (static class) </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addCommand()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addCommand</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function addCommand(commandName:String, commandRef:Class, useWeakReference:Boolean = true):void</code><p> 
+      Registers a ICommand class with the Front Controller, against an event name
+      and listens for events with that name.
+            </p><p>When an event is broadcast that matches commandName,
+      the ICommand class referred to by commandRef receives control of the
+      application, by having its execute() method invoked.</p>
+            <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">commandName</span>:String</code> &mdash; The name of the event that will be broadcast by the
+      when a particular user gesture occurs, eg "login"
+            </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">commandRef</span>:Class</code> &mdash; An ICommand Class reference upon which execute()
+      can be called when the Front Controller hears an event broadcast with
+      commandName. Typically, this argument is passed as "LoginCommand" 
+      or similar.
+      
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useWeakReference</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; A Boolean indicating whether the controller
+      should added as a weak reference to the CairngormEventDispatcher,
+      meaning it will eligibile for garbage collection if it is unloaded from 
+      the main application.
+      </td>
+</tr>
+</table>
+</div>
+<a name="executeCommand()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">executeCommand</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static function executeCommand(event:<a href="CairngormEvent.html">CairngormEvent</a>):void</code><p> 
+      Executes the command
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">event</span>:<a href="CairngormEvent.html">CairngormEvent</a></code></td>
+</tr>
+</table>
+</div>
+<a name="getCommand()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getCommand</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static function getCommand(commandName:String):Class</code><p> 
+      Returns the command class registered with the command name. 
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">commandName</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Class</code></td>
+</tr>
+</table>
+</div>
+<a name="init()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function init():void</code><p>
+   Initializes the controller and add the commands to the FrontController.
+   </p></div>
+<a name="removeCommand()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeCommand</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function removeCommand(commandName:String):void</code><p> 
+      Deregisters an ICommand class with the given event name from the Front Controller 
+            </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">commandName</span>:String</code> &mdash; The name of the event that will be broadcast by the
+      when a particular user gesture occurs, eg "login"
+            </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Soundstep - Soma</center>
+</div>
+</body>
+</html>
+<!--Soundstep - Soma-->
