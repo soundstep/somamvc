@@ -1,7 +1,7 @@
-#summary How to controls the Soma page flow.
+#summary How to control the Soma page flow.
 #labels SomaUI,Soma,tutorial,page,PageManager,flow,PageEvent
 
-== How to controls the Soma Page Flow ==
+== How to control the Soma Page Flow ==
 
 You might want in your Soma site to show or not to show pages in some case, for example for if the person is not logged in, or if you want to show a disclaimer before, or for any reason.
 
