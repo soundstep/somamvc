@@ -1,0 +1,8 @@
+#summary Get started with SomaUI with this video.
+#labels Soma,SomaUI,gettingstarted,tutorial,screencast,video
+
+== Introduction ==
+
+Here is a video tutorial to get started with SomaUI.
+
+[http://www.soundstep.com/blog/source/somaui/tutorials/getting-started/ http://www.soundstep.com/blog/source/somaui/tutorials/getting-started/preview.jpg]
