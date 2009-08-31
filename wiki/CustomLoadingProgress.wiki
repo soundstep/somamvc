@@ -1,4 +1,5 @@
 #summary How to create your own custom menu
+#labels SomaUI,Soma,tutorial,loading,SomaLoader,progress
 
 ==Create a custom loading progress==
 
