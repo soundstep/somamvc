@@ -2,7 +2,7 @@
 
 ==Make a custom menu==
 
-===1. Use BasicMenu===
+====1. Use BasicMenu====
 
 SomaUI by default is exporting a basic menu, useful for development or to start with. This is located in this folder:
 
@@ -23,7 +23,7 @@ You can change this menu to fit your design. You will find the CSS styles used i
 }
 }}}
 
-===2. Start from scratch using SomaUI===
+====2. Start from scratch using SomaUI====
 
 Still using SomaUI, before exporting you can change, in the projects settings, the "Menu Class". The default is "basic.BasicMenu" which is creating the default Basic Menu. If you change this class name, you can replace "basic.BasicMenu" by "MyMenu" for example, it will create an empty Sprite that extends IMenu. You can then use that class to build your own menu.
 
@@ -41,7 +41,7 @@ new PageEvent(PageEvent.SHOW, "myPageID").dispatch();
 
 You will receive updates from the framework in the OpenMenu method, for example when the URL change when press back and forward in the browser. You will receive the ID of the current page so you can update you menu accordingly.
 
-===3. Start from scratch without SomaUI===
+====3. Start from scratch without SomaUI====
 
 To build you own menu class, you must create a class that extends com.soma.view.Menu and implements com.soma.interfaces.IMenu. Let's use a MyMenu.as class in this example.
 
