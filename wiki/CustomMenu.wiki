@@ -1,4 +1,5 @@
 #summary How to create your own custom menu
+#labels SomaUI,Soma,tutorial,menu,BasicMenu
 
 ==Make a custom menu==
 
@@ -47,7 +48,9 @@ To build you own menu class, you must create a class that extends com.soma.view.
 
 The interface IMenu has only one function to implement:
 
+{{{
 function openMenu(id:String):void;
+}}}
 
 You will receive updates from the framework in the OpenMenu method, for example when the URL change when press back and forward in the browser. You will receive the ID of the current page so you can update you menu accordingly.
 
