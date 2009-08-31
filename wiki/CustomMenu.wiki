@@ -25,7 +25,7 @@ You can change this menu to fit your design. You will find the CSS styles used i
 
 ====2. Start from scratch using SomaUI====
 
-Still using SomaUI, before exporting you can change, in the projects settings, the "Menu Class". The default is "basic.BasicMenu" which is creating the default Basic Menu. If you change this class name, you can replace "basic.BasicMenu" by "MyMenu" for example, it will create an empty Sprite that extends IMenu. You can then use that class to build your own menu.
+Still using SomaUI, before exporting you can change, in the projects settings, the "Menu Class". The default is "basic.BasicMenu" which is creating the default Basic Menu. If you change this class name, you can replace "basic.BasicMenu" by "MyMenu", for example. It will create an empty Menu class (that extends Sprite) and that implements IMenu. You can then use that class to build your own menu.
 
 Note: if you want to make it dynamic with the XML, you can retrieve the XML Site Definition this way:
 
