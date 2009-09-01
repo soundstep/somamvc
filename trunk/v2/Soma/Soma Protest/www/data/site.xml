@@ -358,7 +358,7 @@
 					<p>To build you own menu class, you must extend <span class="code">com.soma.view.Menu</span> and implements <span class="code">com.soma.interfaces.IMenu</span>.<br/></p>
 					<p>The interface IMenu has only one function to implement:<br/></p>
 					<textformat indent="30">
-						<p class="code">function forceMenu(id:String):void;<br/></p>
+						<p class="code">function openMenu(id:String):void;<br/></p>
 					</textformat>
 					<p>This function will be called by the <a href="./#/basics/commands/menu/">Menu command</a>, and the only parameter is the id of the new page. You can then update your menu to the new state.<br/></p>
 					<p class="bold">Loading class<br/></p>
