@@ -23,7 +23,7 @@ package com.soma.model {
      * How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
      * Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
      * Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
-     * <b>Class version:</b> 2.0<br/>
+     * <b>Class version:</b> 2.0.1<br/>
      * <b>Actionscript version:</b> 3.0</p>
      * <p><b>Copyright:</b></p>
      * <p>The contents of this file are subject to the Mozilla Public License<br />
@@ -221,7 +221,7 @@ new PageEvent(PageEvent.SHOW, "home_id").dispatch();
 			// remove the beginning of the list
 			if (currentPage != null) {
 				for (var i:uint=0; i<arr.length; i++) {
-					if (arr[i] == targetPage.id) {
+					if (arr[i] == targetPage.id && !_isRemoving) {
 						arr.splice(0, i+1);
 						break;
 					}
@@ -423,7 +423,10 @@ new PageEvent(PageEvent.SHOW, "home_id").dispatch();
 				if (curLabel != "") {
 					_actualURL = curLabel;
 					var value:String = (Soma.getInstance().languageEnabled) ? ("/" + Soma.getInstance().currentLanguage + _actualURL) : _actualURL;
-					if (name == getLandingPageID()) SWFAddress.setValue('/');
+					if (name == getLandingPageID()) {
+						_actualURL = "/";
+						SWFAddress.setValue('/');
+					}
 					else SWFAddress.setValue(value.toLowerCase());
 					if (TITLE_BROWSER_ENABLED) setBrowserTitle(bTitle);
 				}

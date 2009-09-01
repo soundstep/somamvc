@@ -297,7 +297,7 @@ private function initialized(e:SomaEvent = null):void {
 		//------------------------------------
 		
 		/** Constant value of the Soma Version.*/
-		public static const VERSION:String = "2.0";
+		public static const VERSION:String = "2.0.1";
 		
 		/** Constant value used to defined that the layout of the site is a liquid user interface, the width and height of the main container is updated to fit the browser (Soma.getInstance().container). The values are set in the XML Site definition &lt;site layout="liquid"&gt; or &lt;site&gt;.*/
 		public static const LIQUID_LAYOUT:String = "liquid";
