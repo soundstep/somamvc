@@ -201,7 +201,7 @@ package com.soma {
      * How does it work - <a href="http://www.soundstep.com/somaprotest/" target="_blank">Soma Protest</a><br/>
      * Project Host - <a href="http://code.google.com/p/somamvc/" target="_blank">Google Code</a><br/>
      * Documentation - <a href="http://www.soundstep.com/blog/source/somaui/docs/" target="_blank">Soma ASDOC</a><br/>
-     * <b>Class version:</b> 2.0<br/>
+     * <b>Class version:</b> 2.0.1<br/>
      * <b>Actionscript version:</b> 3.0</p>
      * <p><b>Copyright:</b></p>
      * <p>The contents of this file are subject to the Mozilla Public License<br />
@@ -297,7 +297,7 @@ private function initialized(e:SomaEvent = null):void {
 		//------------------------------------
 		
 		/** Constant value of the Soma Version.*/
-		public static const VERSION:String = "2.0.1";
+		public static const VERSION:String = "2.0.2";
 		
 		/** Constant value used to defined that the layout of the site is a liquid user interface, the width and height of the main container is updated to fit the browser (Soma.getInstance().container). The values are set in the XML Site definition &lt;site layout="liquid"&gt; or &lt;site&gt;.*/
 		public static const LIQUID_LAYOUT:String = "liquid";
@@ -615,10 +615,8 @@ private function stylesheetHandler(e:StyleSheetEvent):void {
 				if (!_content.data.hasOwnProperty("@height")) throw new CairngormError(CairngormMessage.LAYOUT_HEIGHT_MISSING);
 				var bgColor:Number = (!_content.data.hasOwnProperty("@backgroundColor")) ? 0x000000 : parseInt(_content.data.@backgroundColor, 16);
 				var bgAlpha:Number = (!_content.data.hasOwnProperty("@backgroundAlpha")) ? 0 : Number(_content.data.@backgroundAlpha);
-				if (bgAlpha > 0) {
-					_container.graphics.beginFill(bgColor, bgAlpha);
-					_container.graphics.drawRect(0, 0, Number(_content.data.@width), Number(_content.data.@height));
-				}
+				_container.graphics.beginFill(bgColor, bgAlpha);
+				_container.graphics.drawRect(0, 0, Number(_content.data.@width), Number(_content.data.@height));
 				_content.data.@bypassSize = "true";
 				_content.data.@useInitialSize = "true";
 				SomaUtils.setBaseUIProperties(_container, _baseUI, _content.data);
