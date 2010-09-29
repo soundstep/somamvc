@@ -1,1 +1,1 @@
-SomaUI v2.0.2, shipped with Soma v2.0.2
+SomaUI v2.0.3, shipped with Soma v2.0.2
